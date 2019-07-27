@@ -1,0 +1,289 @@
+@import '../../../../../../../../node_modules/font-awesome/css/font-awesome.css';
+
+.cover-container img {
+  width: 100%;
+  max-height: 350px;
+}
+
+a {
+  color: #7da0f0;
+  text-decoration: none;
+}
+
+i {
+  background-color: #ffdb58;
+}
+
+i:hover {
+  background-color: rgba(255, 219, 88, 0.753);
+}
+
+.cont-text {
+  width: 70%;
+  margin: auto;
+}
+
+.cont-text h3 {
+  margin: 10px 20px;
+}
+
+i {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.brand-container {
+  text-align: center;
+  position: relative;
+  top: -60px;
+  width: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+.photoInfo {
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+}
+
+.brand-container img {
+  width: 200px;
+  height: 200px;
+  border: 1px solid silver;
+  background: white;
+  margin-left: 109px;
+}
+
+.brand-container h1 {
+  font-size: 30pt;
+  padding: 60px;
+}
+
+.container {
+  width: 60%;
+  margin: 20px auto;
+  font-family: 'Lato';
+}
+
+.container .cont-gal {
+  margin: 20px auto;
+  width: 33%;
+  text-align: center;
+}
+
+section h2 {
+  padding: 40px;
+  padding-left: 0;
+}
+
+.imagen-container {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  justify-content: space-between;
+  padding: 30px 0px;
+}
+
+.about-imagen {
+  width: 20%;
+}
+
+.about-imagen img {
+  width: 100%;
+}
+
+#video-container {
+  width: 60%;
+  margin: 0 20%;
+  padding-bottom: 50px;
+}
+
+.vg-icon-play_arrow:before {
+  content: '\e01b';
+  background: rgba(204, 98, 98, 0.5);
+  border-radius: 0.15em;
+}
+
+#table-assessment,
+#table-jobs {
+  width: 80%;
+}
+
+.table-title th {
+  text-align: left;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+table tbody tr td {
+  padding: 14px 0px;
+}
+
+.take-it {
+  background: #ffd34c;
+  color: black;
+  font-weight: bold;
+  padding: 7px 40px;
+  border-radius: 3px;
+}
+
+.iconEdit {
+  font-size: 2em;
+}
+
+.iconEdit:nth-child(2),
+.iconEdit:nth-child(3) {
+  margin-top: 40px;
+  margin-left: 8em;
+}
+
+.jobs,
+.assessment {
+  display: flex;
+  flex-direction: row;
+}
+
+.editIcon {
+  font-size: 1em;
+  float: right;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  padding: 10px;
+}
+
+.title-modal {
+  text-align: center;
+  padding: 0px;
+}
+
+.form {
+  margin: auto;
+}
+
+.form div {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  padding: 5px 10px;
+}
+
+.filter {
+  width: 75%;
+  margin: 20px auto;
+}
+
+.update {
+  margin: auto;
+  border: 0px;
+  background-color: #01a9db;
+  padding: 6px 25px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.cont-gal {
+  display: inline-block;
+}
+
+.maximunFiles {
+  color: red;
+}
+
+@media screen and (max-width: 800px) {
+  .cont-text[_ngcontent-c6] {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .container {
+    width: 90%;
+    margin: 20px auto;
+    font-family: 'Lato';
+  }
+
+  .container .cont-gal {
+    margin: 20px auto;
+    width: 33%;
+    text-align: center;
+  }
+
+  .brand-container {
+    text-align: center;
+    position: initial;
+    flex-direction: column;
+    display: flex;
+  }
+
+  .brand-container img {
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .cont-text[_ngcontent-c6] {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .brand-container {
+    text-align: center;
+    position: initial;
+    flex-direction: column;
+    display: flex;
+  }
+
+  .container[_ngcontent-c5] {
+    width: 90%;
+    margin: 20px auto;
+    font-family: 'Lato';
+  }
+
+  .container .cont-gal {
+    margin: 15px auto;
+    text-align: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-container img {
+    margin: 0 auto;
+  }
+
+  .brand-container h1 {
+    font-size: 20pt;
+    padding: 10px;
+  }
+
+  #video-container {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  #table-assessment,
+  #table-jobs {
+    width: 100%;
+  }
+
+  .take-it {
+    padding: 7px 20px;
+    font-size: 8pt;
+  }
+}
+
+.has-error {
+  border-color: red;
+}

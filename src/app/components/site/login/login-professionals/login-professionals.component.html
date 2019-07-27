@@ -1,0 +1,51 @@
+<div class="login-professionals">
+  <div class="imgBack">
+    <img src="./assets/images/puzzle-background.PNG" alt="">
+  </div>
+  <div class="formContent">
+    <div class="minicontainer">
+      <form [formGroup]="f" (ngSubmit)="f.valid && login()" #formUpdate="ngForm" class="form">
+        <div class="title">
+          <h2>Sign in</h2>          
+        </div>
+        <!-- email -->
+        <div class="sectionGroup">
+          <label for="email">email</label>
+          <input type="email" placeholder="Email" name="email" id="email" formControlName="email" class="input" [ngClass]="{'has-error' : inputHasError(emailLogin, formUpdate.submitted) }">
+          <span *ngIf="inputHasError(emailLogin, formUpdate.submitted)">
+            <sh-error-message [hasError]="emailLogin.errors.required" text="Email is" strongText="required"></sh-error-message>
+            <sh-error-message [hasError]="emailLogin.errors.isEmail && !emailLogin.errors.required" text="Enter a valid" strongText="email address"></sh-error-message>
+          </span>
+        </div>
+        <!-- password -->
+        <div class="sectionGroup">
+          <label for="password">password</label>
+          <input type="password" placeholder="Password" name="password" id="password" formControlName="password" class="input" [ngClass]="{'has-error' : inputHasError(passwordLogin, formUpdate.submitted) }">
+          <span *ngIf="inputHasError(passwordLogin, formUpdate.submitted)">
+            <sh-error-message [hasError]="passwordLogin.errors.required" text="Password is" strongText="required"></sh-error-message>
+          </span>
+        </div>
+        <div class="resetPass">
+          <a routerLink="/home/recover-password">Password reset</a>
+          <p class="notaccount" style="color: #4f4f4f;" > No account yet? <a href="/home/signup" class="signupLogin"> Sign up </a> </p> 
+        </div>
+
+        <div class="loginButton">
+          <button class="join" type="submit" [disabled]="!f.valid" mat-button>
+            LOGIN
+          </button>
+        </div>
+        <div class="textOpt">
+          <span>- or login with -</span>
+        </div>
+        <div class="loginButton">
+          <button class="join-link" (click)="getAuthCode()" mat-button>Login With LinkedIn</button>
+        </div>
+        <sk-wave
+          [isRunning]="loading"
+          color="lightgrey"
+        ></sk-wave>
+      </form>
+    </div>
+  </div>
+</div>

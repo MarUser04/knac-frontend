@@ -1,0 +1,363 @@
+.container {
+  width: 54.5%;
+  margin: 70px auto;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 1%;
+}
+.title h1 {
+  color: #000000;
+  font-size: 32px;
+  text-align: left;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+.search {
+  display: flex;
+  justify-content: space-between;
+}
+.boxFilter {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.search span {
+  color: #4f4f4f;
+  font-size: 16px;
+  align-self: center;
+}
+.radio {
+  display: flex;
+  position: relative;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  align-self: center;
+}
+
+.radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.radio .check {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background-color: #fff;
+  border: 1px solid #0eaf81;
+  border-radius: 3px;
+}
+.radio .check:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.radio .check:after {
+  top: 0;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 25%;
+  background: white;
+  margin: 4px auto;
+}
+/* on mouse-over, add border color */
+.radio:hover input ~ .check {
+  border: 1px solid #0eaf81;
+}
+/* add background color when the radio is checked */
+.radio input:checked ~ .check {
+  background-color: #0eaf81;
+  border: 1px solid #0eaf81;
+}
+/* show the radio when checked */
+.radio input:checked ~ .check:after {
+  display: flex;
+  position: initial;
+}
+.boxSearch {
+  color: #e4e4e4;
+  margin: 7px 0px;
+  width: 250px;
+}
+.boxSearch span {
+  font-size: 1em;
+  padding: 0 10px;
+}
+.boxSearch .input {
+  height: 30px;
+  font-size: 13px;
+  border-radius: 50px;
+  padding-left: 15px;
+  outline: none;
+  border: none;
+  color: #a3a3a3;
+}
+table {
+  width: 100%;
+}
+td {
+  width: 100%;
+  padding-bottom: 20px;
+}
+.content {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0 0 13px 0;
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  display: flex;
+  border-radius: 50%;
+  border: 1px solid #e4e4e4;
+}
+.track_name {
+  margin: auto;
+  width: 100%;
+  text-align: left;
+  font-size: 15px;
+  color: #4f4f4f;
+}
+.trackCel {
+  color: #000;
+  font-size: 18px;
+}
+.Jobs-img {
+  width: 92%;
+  height: 92%;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: contain;
+  object-position: center center;
+}
+.content_name {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  padding: 0 0 0 6px;
+}
+.info {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+.Jobs-title {
+  color: #0eaf81;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  width: 100%;
+}
+.Jobs-company {
+  font-size: 16px;
+  color: #4f4f4f;
+  text-transform: capitalize;
+  width: 100%;
+  font-weight: 300;
+}
+.boxApplied {
+  display: flex;
+  width: 28%;
+  flex-direction: row;
+  text-align: center;
+  justify-content: flex-end;
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+.content_button {
+  margin: auto 0;
+  width: 15%;
+  text-align: right;
+}
+.content .content_button a {
+  color: white !important;
+  background: #0eaf81;
+  border-radius: 20px;
+  padding: 7px 25px;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+.checksquare {
+  top: 0;
+  left: 0;
+  border-radius: 3px;
+}
+.content_button_taken {
+  margin: auto 0;
+  width: 15%;
+  text-align: right;
+}
+.content .content_button_taken a {
+  color: white !important;
+  background: #6ac358;
+  border-radius: 20px;
+  padding: 7px 19px;
+  text-decoration: none;
+  font-size: 12px;
+  text-transform: uppercase;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+}
+jw-pagination {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 60%;
+  }
+
+  .content .content_button_taken a {
+    border-radius: 20px;
+    padding: 7px 18px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 90%;
+    margin: 5em auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .boxSearch {
+    margin: auto;
+  }
+
+  .avatar {
+    width: 50px;
+    height: 47px;
+  }
+
+  .boxApplied {
+    margin: auto;
+    justify-content: left;
+    width: auto;
+  }
+
+  .content .content_button a {
+    padding: 7px 20px;
+  }
+
+  .content .content_button {
+    width: 25%;
+  }
+
+  .content .content_button_taken a {
+    padding: 7px 1em;
+  }
+
+  .content_button_taken {
+    text-align: right;
+    width: 32%;
+  }
+
+  .content_name {
+    width: 75%;
+  }
+
+  .radio {
+    margin-left: 9px;
+    margin-top: 3px;
+    align-self: flex-start;
+  }
+
+  .search {
+    flex-direction: column;
+  }
+
+  .search div span {
+    color: #4f4f4f;
+    font-size: 16px;
+    margin: 1em 0;
+  }
+
+  .title h1 {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container .header .title h1 {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+  }
+  .container .header .search .boxFilter span {
+    font-size: 14px;
+    color: #4f4f4f;
+  }
+  .container .header .search .boxFilter .boxSearch {
+    font-size: 14px;
+    color: #4f4f4f;
+  }
+  .container .header .search .boxApplied span {
+    color: #4f4f4f;
+    font-size: 14px;
+  }
+  .container .tableJob tr td .content .content_name {
+    flex-direction: column;
+    width: 60%;
+  }
+  .container .tableJob tr td .content .content_name 
+  .info .Jobs-title {
+    font-size: 15px;
+    color: #0EAF81;
+    font-weight: bold;
+    word-break: break-word;
+    margin: 2px 0;
+  }
+  .container .tableJob tr td .content .content_name 
+  .info .Jobs-company {
+    margin: 2px 0;
+    font-size: 12px;
+    color: #4f4f4f;
+  }
+  .container .tableJob tr td .content .content_name 
+  .track_name {
+    font-size: 12px;
+  }
+  .container .tableJob tr td .content .content_name 
+  .track_name .trackCel {
+    font-size: 12px;
+    width: 100%;
+  }
+  .container .tableJob tr td .content .content_button a {
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    padding: 7px 25px;
+  }
+  .container .tableJob tr td .content .content_button_taken a{
+    padding: 7px 20px;
+    font-size: 12px;
+  }
+  .info {
+    width: 100%;
+  }
+}

@@ -1,0 +1,20 @@
+<ng-select
+  [items]="select"
+  [formControl]="selectField"
+  [markFirst]="true"
+  placeholder="Select"
+>
+</ng-select>
+
+<div class="boxSearch">
+  <span> <i class="fa fa-search"></i> </span>
+  <input
+    type="search"
+    placeholder="Search Professional..."
+    name="searchField"
+    id="search"
+    [formControl]="searchField"
+    class="input"
+    [disabled]="selectField.value == ''"
+  />
+</div>

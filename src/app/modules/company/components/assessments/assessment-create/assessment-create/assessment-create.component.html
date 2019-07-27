@@ -1,0 +1,170 @@
+<div class="backMobile">
+  <a routerLink="/company/assessments" *ngIf="isMobile"
+    ><img src="./assets/images/BACK.PNG" alt="" /> Back</a
+  >
+</div>
+<div class="container">
+  <h1 class="titles">
+    {{ action === 'edit' ? 'Update' : 'Create' }} an Assessment
+  </h1>
+  <form [formGroup]="f" (ngSubmit)="clickView()" #formUpdate="ngForm">
+    <div class="form">
+      <div class="divCont">
+        <span class="title">Name</span>
+        <input
+          type="text"
+          placeholder="Name"
+          name="name"
+          id="name"
+          formControlName="name"
+          maxlength="50"
+          class="input"
+          [ngClass]="{ 'has-error': inputHasError(name, formUpdate.submitted) }"
+        />
+        <span
+          *ngIf="inputHasError(name, formUpdate.submitted)"
+          class="spanError"
+        >
+          <sh-error-message
+            [hasError]="name.errors.required"
+            text="Name is "
+            strongText="required"
+          ></sh-error-message>
+          <sh-error-message
+            [hasError]="name.errors.pattern"
+            text="Only text is "
+            strongText="allowed"
+          ></sh-error-message>
+        </span>
+      </div>
+      <div class="divCont">
+        <span class="title">Track</span>
+        <ng-select
+          [items]="tracks"
+          [clearable]="false"
+          bindLabel="name"
+          bindValue="_id"
+          formControlName="track"
+          class="track-select"
+          (change)="onChangeTemplate($event)"
+          placeholder="Select Track"
+          [ngClass]="{
+            'has-error-select': inputHasError(track, formUpdate.submitted)
+          }"
+        >
+        </ng-select>
+        <span
+          *ngIf="inputHasError(track, formUpdate.submitted)"
+          class="spanError"
+        >
+          <sh-error-message
+            [hasError]="track.errors.required"
+            text="Track is "
+            strongText="required"
+          ></sh-error-message>
+        </span>
+      </div>
+      <div class="divContDur">
+        <span class="title">Duration of Assessment</span>
+        <input
+          type="number"
+          min="1"
+          pKeyFilter="int"
+          placeholder="Minutes"
+          name="name"
+          id="duration"
+          formControlName="durationInMinutes"
+          class="inputNumb"
+          onkeydown="javascript: return event.keyCode == 69 ? false : true"
+          [ngClass]="{
+            'has-error': inputHasError(durationInMinutes, formUpdate.submitted)
+          }"
+        />
+        <span
+          *ngIf="inputHasError(durationInMinutes, formUpdate.submitted)"
+          class="spanError"
+        >
+          <sh-error-message
+            [hasError]="durationInMinutes.errors.required"
+            text="Duration in minutes is "
+            strongText="required"
+          ></sh-error-message>
+          <sh-error-message
+            [hasError]="durationInMinutes.errors.min"
+            text=""
+            strongText="Duration in minutes must be more than 0"
+          ></sh-error-message>
+          <sh-error-message
+            [hasError]="
+              durationInMinutes.errors.pattern && !durationInMinutes.errors.min
+            "
+            text=""
+            strongText="only integer values allowed"
+          ></sh-error-message>
+        </span>
+      </div>
+      <div class="divContSkills">
+        <span class="title">Skill(s) Being Tested</span>
+        <ng-select
+          [items]="skills"
+          [clearable]="false"
+          bindLabel="name"
+          bindValue="_id"
+          formControlName="skills"
+          [multiple]="true"
+          class="track-select"
+          (change)="onChangeTemplate($event)"
+          placeholder="Select Skills"
+          [ngClass]="{
+            'has-error-select': inputHasError(skill, formUpdate.submitted)
+          }"
+        >
+        </ng-select>
+        <span
+          *ngIf="inputHasError(skill, formUpdate.submitted)"
+          class="spanError"
+        >
+          <sh-error-message
+            [hasError]="skill.errors.required"
+            text="Skill is "
+            strongText="required"
+          ></sh-error-message>
+        </span>
+      </div>
+      <div class="divContWhich">
+        <span class="title">Which would you like Professionals to do?</span>
+      </div>
+      <div class="file">
+        <div [class.active]="isFile.value" (click)="onClickOptions(true)">
+          <img src="./assets/images/file upload icon.PNG " alt="" />
+        </div>
+        <div>
+          <div
+            [class.active]="isFile.value === false"
+            (click)="onClickOptions(false)"
+            class="writeFile"
+          >
+            <img src="./assets/images/write-answer-icon.PNG" alt="" />
+            <p>Write Answers</p>
+          </div>
+        </div>
+      </div>
+
+      <span
+        *ngIf="inputHasError(isFile, formUpdate.submitted)"
+        class="spanError"
+      >
+        <sh-error-message
+          [hasError]="isFile.errors.required"
+          text="This field is"
+          strongText="required"
+        ></sh-error-message>
+      </span>
+    </div>
+
+    <div class="botton">
+      <button class="next">Next</button>
+      <a class="back" routerLink="/company/assessments">Cancel</a>
+    </div>
+  </form>
+</div>

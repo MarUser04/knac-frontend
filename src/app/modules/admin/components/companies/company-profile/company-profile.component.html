@@ -1,0 +1,661 @@
+<ng-template [ngIf]="company">
+    <div class="cover-container">
+      <img src="./assets/images/company_banner.png" alt="" />
+    </div>
+    <div class="brand-container">
+        <div class="sectOne">
+            <div class="boxLeft">
+                <div *ngIf="!company?.logo; then default; else img"></div>
+                <ng-template #default>
+                    <div class="imgAvatar">
+                      <img src="/assets/images/user_placeholder.png" />
+                    </div>
+                </ng-template>
+                <ng-template #img>
+                      <div class="imgAvatar">
+                        <img src="{{ company?.logo }}" />
+                      </div>
+                </ng-template>
+                <div class="mainCompanyInfo">
+                    <h1>{{ company?.name }}</h1>
+                    <div *ngIf="!isMobile && company?.websiteUrl" >
+                      <p> Website: <span> {{ company?.websiteUrl }} </span> </p>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="!isMobile"  class="dataProf">
+              <div class="data">
+                <div class="colOne">
+                  <div>
+                    <span>Location: </span>
+                    <p>{{ company?.locations }}</p>
+                  </div>
+                  <div>
+                    <span>Company Size: </span>
+                    <p *ngIf="company?.companySize"> {{ company?.companySize }} employees </p>
+                  </div>
+                  <div>
+                    <span>Industry: </span>
+                    <p>{{ company?.industry }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="isMobile"  class="dataProf">
+                <div class="data">
+                  <div class="colOne">
+                    <div>
+                      <span>Location: </span>
+                      <p>{{ company?.locations }}</p>
+                    </div>
+                    <div>
+                      <span>Company Size: </span>
+                      <p>{{ company?.companySize }} employees</p>
+                    </div>
+                    <div *ngIf="company?.websiteUrl"> 
+                      <span> Website: </span>
+                      <p> {{ company?.websiteUrl }} </p>
+                    </div>
+                    <div>
+                      <span>Industry: </span>
+                      <p>{{ company?.industry }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="editB">
+                <button (click)="(showDialog = !showDialog) && setForm()">edit profile</button>
+              </div>
+          </div>
+      <div class="sectTwo">
+        <div *ngIf="company?.aboutUs"  class="sectionDesc" >
+          <div class="title"><h1>About Us</h1></div>
+          <div class="infoText">
+            <p>{{ company?.aboutUs }}</p>
+          </div>
+          <div *ngIf="isMobile; then slider; else galery"></div>
+          <ng-template #galery>
+            <div class="slider">
+              <ul>
+                <li *ngIf="company?.photos1">
+                  <img src="{{ company?.photos1 }}" alt="" width="400px" />
+                </li>
+                <li *ngIf="company?.photos2">
+                  <img src="{{ company?.photos2 }}" alt="" width="400px" />
+                </li>
+                <li *ngIf="company?.photos3">
+                  <img src="{{ company?.photos3 }}" alt="" width="400px" />
+                </li>
+              </ul>
+            </div>
+          </ng-template>
+          <ng-template #slider>
+            <swiper class="swiper-container">
+              <div *ngFor="let item of photosMobile">
+                <img src="{{ item }}" alt="" width="400px" height="300px"/>
+              </div>
+            </swiper>
+          </ng-template>
+        </div>
+        <div *ngIf="company?.ourPeople"  class="sectionDesc">
+          <div class="title"><h1>Our people</h1></div>
+          <div class="infoText">
+            <p>{{ company?.ourPeople }}</p>
+          </div>
+          <div *ngIf="isMobile; then slider1; else galery1"></div>
+          <ng-template #galery1>
+              <div class="slider">
+                <ul>
+                  <li *ngIf="company?.peoplePictures1">
+                      <img src="{{ company?.peoplePictures1 }}" alt="" width="400px" />
+                  </li>
+                  <li *ngIf="company?.peoplePictures2">
+                      <img src="{{ company?.peoplePictures2 }}" alt="" width="400px" />
+                  </li>
+                  <li *ngIf="company?.peoplePictures3">
+                      <img src="{{ company?.peoplePictures3 }}" alt="" width="400px" />
+                  </li>
+                </ul>
+              </div>
+          </ng-template>
+          <ng-template #slider1>
+              <swiper class="swiper-container">
+                  <div *ngFor="let item of picturesMobile">
+                    <img src="{{ item }}" alt="" width="400px" height="300px"/>
+                  </div>
+                </swiper>
+          </ng-template>
+        </div>
+        <div class="divVideo">
+          <mat-accordion>
+            <mat-expansion-panel *ngIf="company?.videos1">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{ company?.video1 }}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+  
+              <vg-player>
+                <video
+                  [vgMedia]="media"
+                  #media
+                  id="singleVideo"
+                  preload="auto"
+                  controls
+                >
+                  <source [src]="company?.videos1" type="video/mp4" />
+                </video>
+              </vg-player>
+            </mat-expansion-panel>
+            <mat-expansion-panel *ngIf="company?.videos2">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{ company?.video2 }}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <vg-player>
+                <video
+                  [vgMedia]="media"
+                  #media
+                  id="singleVideo"
+                  preload="auto"
+                  controls
+                >
+                  <source [src]="company?.videos2" type="video/mp4" />
+                </video>
+              </vg-player>
+            </mat-expansion-panel>
+            <mat-expansion-panel *ngIf="company?.videos3">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  {{ company?.video3 }}
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+  
+              <vg-player>
+                <video
+                  [vgMedia]="media"
+                  #media
+                  id="singleVideo"
+                  preload="auto"
+                  controls
+                >
+                  <source [src]="company?.videos3" type="video/mp4" />
+                </video>
+              </vg-player>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+        <div class="sectionJobs" *ngIf="company?.jobs?.length != 0"  >
+          <div class="title"><h1>Jobs</h1></div>
+          <div class="table">
+            <table style="margin-top: 2em;">
+              <tr
+                *ngFor="let item of pageOfJobs; index as i"
+                class="filaTable"
+              >
+                <div class="resM">
+                  <td class="jobCel">
+                    <a class="job-link">{{ item?.title }}</a>
+                  </td>
+                  <td class="trackCel">
+                    Track: <span>{{ item?.track?.name }}</span>
+                  </td>
+                </div>
+                <div *ngIf="item?.isApplied; then applied; else notApplied"></div>
+                <ng-template #applied>
+                  <td class="editCel content_button">
+                    <a class="Taken"
+                      routerLink="/professional/jobs/{{ item?._id }}"
+                      >applied
+                      <img
+                        src="/assets/images/Images/inspect/004- Company_Homepage_visit-01/CHECK ICON.PNG"
+                        alt=""
+                    /></a>
+                  </td>
+                </ng-template>
+                <ng-template #notApplied>
+                  <td class="editCel content_button">
+                    <a routerLink="/professional/jobs/{{ item?._id }}"
+                      >View Job
+                      <img
+                        src="/assets/images/Images/inspect/004- Company_Homepage_visit-01/next icon.PNG"
+                        alt=""
+                    /></a>
+                  </td>
+                </ng-template>
+              </tr>
+            </table>
+  
+            <div class="pagination">
+              <jw-pagination
+                [items]="jobByCompany"
+                (changePage)="onChangePageJobs($event)"
+              ></jw-pagination>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="company?.assessments?.length != 0"  class="sectionJobs">
+          <div class="title"><h1>Assessments</h1></div>
+          <div class="table">
+            <table>
+              <tr
+                *ngFor="let item of pageOfAssessment; index as i"
+                class="filaTable"
+              >
+                <div class="resM">
+                  <td class="jobCel">
+                    <a class="job-link">{{ item?.name }}</a>
+                  </td>
+                  <td class="trackCel">
+                    Track: <span>{{ item?.track?.name }}</span>
+                  </td>
+                </div>
+                <div *ngIf="item?.isCompleted; then taken; else notTaken"></div>
+                <ng-template #taken>
+                  <td class="editCel content_button">
+                    <a class="Taken"
+                      routerLink="/professional/assessment/{{ item?._id }}"
+                      >Taken
+                      <img
+                        src="/assets/images/Images/inspect/004- Company_Homepage_visit-01/CHECK ICON.PNG"
+                        alt=""
+                    /></a>
+                  </td>
+                </ng-template>
+                <ng-template #notTaken>
+                  <td class="editCel content_button">
+                    <a routerLink="/professional/assessment/{{ item?._id }}"
+                      >Take it
+                      <img
+                        src="/assets/images/Images/inspect/004- Company_Homepage_visit-01/next icon.PNG"
+                        alt=""
+                    /></a>
+                  </td>
+                </ng-template>
+              </tr>
+            </table>
+            <div class="pagination">
+              <jw-pagination
+                [items]="assessmentByCompany"
+                (changePage)="onChangePageAssessment($event)"
+              ></jw-pagination>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <app-dialog [(visible)]="showDialog">
+    <form [formGroup]="f" (ngSubmit)="f.valid && updateProfile()" #formUpdate="ngForm" class="form">
+      <h2 class="title-modal">Edit Profile</h2>
+      <div class="imageModal">
+        <a href="#" class="SelectYour" (click)="openFileBrowser($event, 'logo')">Select your logo</a>
+        <input type="file" name="logo" id="logo" class="hide" (change)="onFileChangeLogo($event)">
+        <img
+        class="imageProfile"
+        [src]="logoUrl" alt="">
+      </div>
+
+
+      <div>
+
+
+      <div class="firstBox">
+      
+      <div>
+        <label for="">Company Name</label>
+        <input type="text" placeholder="Name" name="Name" id="Name" formControlName="name" maxlength="50" [value]="name.value" [ngClass]="{'has-error' : inputHasError(name, formUpdate.submitted) }">
+        <span *ngIf="inputHasError(name, formUpdate.submitted)">
+          <sh-error-message [hasError]="name.errors.required" text="name is" strongText="required"></sh-error-message>
+          <sh-error-message [hasError]="name.errors.pattern" text="only text is" strongText="allowed"></sh-error-message>
+        </span>
+      </div>
+
+      <div class="mobileForm">
+        <label for="">Contact Name</label>
+        <input type="text" placeholder="Contact name" name="Contact Name" id="contactName" formControlName="contactName" maxlength="50"
+          [value]="contactName.value" [ngClass]="{'has-error' : inputHasError(contactName, formUpdate.submitted) }">
+        <span *ngIf="inputHasError(contactName, formUpdate.submitted)">
+          <sh-error-message [hasError]="contactName.errors.required" text="contact name is" strongText="required"></sh-error-message>
+          <sh-error-message [hasError]="contactName.errors.pattern" text="only text is" strongText="allowed"></sh-error-message>
+        </span>
+      </div>
+
+    </div>
+
+
+    <div class="SecondBox">
+
+      <div>
+        <label for="">Phone</label>
+        <input type="text" placeholder="Phone" name="phone" id="phone" formControlName="phone" maxlength="20" [value]="phone.value"
+          [ngClass]="{'has-error' : inputHasError(phone, formUpdate.submitted) }">
+        <span *ngIf="inputHasError(phone, formUpdate.submitted)">
+          <sh-error-message [hasError]="phone.errors.required" text="phone is" strongText="required"></sh-error-message>
+          <sh-error-message [hasError]="phone.errors.isNumber" text="phone is" strongText="invalid"></sh-error-message>
+          <sh-error-message [hasError]="phone.errors.maxlength" text="Must have a" strongText="maximum of 20 digits"></sh-error-message>
+          <sh-error-message [hasError]="phone.errors.minlength" text="Must have" strongText="at least 10 digits"></sh-error-message>
+        </span>
+      </div>
+
+      <div class="mobileForm">
+        <label for="">Number of Employees</label>
+        <input type="number" min="1" placeholder="Number of Employees" name="companySize" id="numberOfEmployees" formControlName="companySize"
+          [value]="companySize.value" [ngClass]="{'has-error' : inputHasError(companySize, formUpdate.submitted) }">
+        <span *ngIf="inputHasError(companySize, formUpdate.submitted)">
+          <sh-error-message [hasError]="companySize.errors.required || companySize.errors.min" text="number of employees is"
+            strongText="required"></sh-error-message>
+          <sh-error-message [hasError]="companySize.errors.isNumber" text="number of employees is" strongText="invalid"></sh-error-message>
+        </span>
+      </div>
+
+
+    </div>
+
+    
+    <div class="ThirdBox">
+
+      <div>
+        <label for="">Industry</label>
+        <input type="text" placeholder="Industry" name="industry" id="industry" formControlName="industry" maxlength="50" [value]="industry.value"
+          [ngClass]="{'has-error' : inputHasError(industry, formUpdate.submitted) }">
+        <span *ngIf="inputHasError(industry, formUpdate.submitted)">
+          <sh-error-message [hasError]="industry.errors.required" text="industry is" strongText="required"></sh-error-message>
+        </span>
+      </div>
+
+      <div>
+        <label for="">Location</label>
+        <input type="text" placeholder="Locations" name="locations" id="locations" formControlName="locations" maxlength="50" [value]="locations.value"
+          [ngClass]="{'has-error' : inputHasError(locations, formUpdate.submitted) }">
+        <span *ngIf="inputHasError(locations, formUpdate.submitted)">
+          <sh-error-message [hasError]="locations.errors.required" text="locations is" strongText="required"></sh-error-message>
+        </span>
+      </div>
+
+      <!-- <div>
+        <label for="">Foundation Date</label>
+        <input type="date" placeholder="Founded" name="founded" id="founded" formControlName="founded" [value]="founded.value.slice(0, 10)"
+          [ngClass]="{'has-error' : inputHasError(founded, formUpdate.submitted) }">
+        <span *ngIf="inputHasError(founded, formUpdate.submitted)">
+          <sh-error-message [hasError]="founded.errors.required" text="founded is" strongText="required"></sh-error-message>
+        </span>
+      </div> -->
+
+      <div>
+        <label for="">Website URL</label>
+        <input type="text" placeholder="www.example.com" name="websiteUrl" id="websiteUrl" formControlName="websiteUrl" [value]="websiteUrl.value" [ngClass]="{'has-error' : inputHasError(websiteUrl, formUpdate.submitted) }">
+        <span *ngIf="inputHasError(websiteUrl, formUpdate.submitted)">
+          <sh-error-message [hasError]="websiteUrl.errors.required" text="website url is" strongText="required"></sh-error-message>
+          <sh-error-message [hasError]="websiteUrl.errors.isUrl" text="website url is" strongText="wrong"></sh-error-message>
+        </span>
+      </div>
+
+      <div>
+        <label for="">Facebook</label>
+        <input type="text" placeholder="Facebook" name="facebook" id="facebook" formControlName="facebook" [value]="facebook.value"
+          [ngClass]="{'has-error' : inputHasError(facebook, formUpdate.submitted) }">
+        <span *ngIf="inputHasError(facebook, formUpdate.submitted)">
+          <sh-error-message [hasError]="facebook.errors.required" text="facebook url is" strongText="required"></sh-error-message>
+          <sh-error-message [hasError]="facebook.errors.isUrl" text="facebook url is" strongText="wrong"></sh-error-message>
+        </span>
+      </div>
+
+      <div>
+        <label for="">Twitter</label>
+        <input type="text" placeholder="Twitter" name="twitter" id="twitter" formControlName="twitter" [value]="twitter.value" [ngClass]="{'has-error' : inputHasError(twitter, formUpdate.submitted) }">
+        <span *ngIf="inputHasError(twitter, formUpdate.submitted)">
+          <sh-error-message [hasError]="twitter.errors.required" text="twitter url is" strongText="required"></sh-error-message>
+          <sh-error-message [hasError]="twitter.errors.isUrl" text="twitter url is" strongText="wrong"></sh-error-message>
+        </span>
+      </div>
+
+      <div>
+        <label for="">About us</label>
+        <textarea type="text" placeholder="about us" name="aboutUs" id="aboutUs" formControlName="aboutUs" rows="6" [value]="aboutUs.value" [ngClass]="{'has-error' : inputHasError(aboutUs, formUpdate.submitted) }">
+        </textarea>
+        <span *ngIf="inputHasError(aboutUs, formUpdate.submitted)">
+          <sh-error-message [hasError]="aboutUs.errors.required" text="aboutUs is" strongText="required"></sh-error-message>
+        </span>
+      </div>
+
+
+            <!-- ABOUT US PHOTOS  -->
+            <div class="profile-photo">
+
+                <div class="rowUp" >
+                    <a> Uploaded images  </a>
+                    <span class="subMax"> Maximum number of images 3 </span>
+                </div>
+
+            <div class="galleryMod">
+      
+              <div *ngIf="!photos1; then default1; else img1"></div>
+                <ng-template #default1>
+                  <div class="containerPhoto" (click)="openFileBrowser($event, 'photos1')" >
+                    <div class="imagePhoto">
+                      <p (click)="openFileBrowser($event, 'photos1')"> Add </p>
+                    </div>
+                  </div>
+                </ng-template>
+                <ng-template #img1>
+
+
+                  <div class="containerPhoto fullPhoto">
+
+                    <div class="titlePicture" >
+                      <p> {{ getPictureName(photos1, photos1File) }} <span (click)="deletePhoto('photos1')" > x </span> </p>
+                    </div>
+                    <div class="marginPicture" >
+                        <img
+                        [src]="photos1"
+                        alt="Loading photo"
+                        class="picture"
+                      />
+                    </div>
+                  </div>
+                </ng-template>
+                <input type="file" name="photos" id="photos1" class="hide" #fileInput (change)="onFileChangePhotos($event, 'photos1')">
+                
+                
+                
+                <div *ngIf="!photos2; then default2; else img2"></div>
+                <ng-template #default2>
+                  <div class="containerPhoto" (click)="openFileBrowser($event, 'photos2')" >
+                    <div class="imagePhoto" >
+                      <p (click)="openFileBrowser($event, 'photos2')"> Add </p>
+                    </div>
+                  </div>
+                </ng-template>
+                <ng-template #img2>
+                    <div class="containerPhoto fullPhoto">
+                      <div class="titlePicture" >
+                        <p> {{ getPictureName(photos2,photos2File) }} <span (click)="deletePhoto('photos2')" > x </span> </p>
+                      </div>
+                      <div class="marginPicture" >
+                        <img
+                            [src]="photos2"
+                            alt="Loading photo"
+                            class="picture"
+                          />
+                        </div>
+                      </div>
+                </ng-template>
+
+
+
+                <input type="file" name="photos" id="photos2" class="hide" #fileInput (change)="onFileChangePhotos($event, 'photos2')">
+                <div *ngIf="!photos3; then default3; else img3"></div>
+                <ng-template #default3>
+                    <div class="containerPhoto" (click)="openFileBrowser($event, 'photos3')" >
+                      <div class="imagePhoto"  >
+                        <p (click)="openFileBrowser($event, 'photos3')"> Add </p>
+                      </div>
+                    </div>
+                </ng-template>
+                <ng-template #img3>
+                    <div class="containerPhoto fullPhoto">
+                        <div class="titlePicture" >
+                          <p> {{ getPictureName(photos3,photos3File) }} <span (click)="deletePhoto('photos3')" > x </span> </p>
+                        </div>
+                        <div class="marginPicture" >
+                          <img
+                              [src]="photos3"
+                              alt="Loading photo"
+                              class="picture"
+                            />
+                          </div>
+                        </div>
+                </ng-template>
+                <input type="file" name="photos" id="photos3" class="hide" #fileInput (change)="onFileChangePhotos($event, 'photos3')">
+            </div>
+          </div>
+          <!-- /ABOUT US PHOTOS  -->
+
+
+
+
+
+      <div>
+        <label for="">Our people</label>
+        <textarea type="text" placeholder="our people" name="ourPeople" id="ourPeople" formControlName="ourPeople" rows="6" [value]="ourPeople.value" [ngClass]="{'has-error' : inputHasError(ourPeople, formUpdate.submitted) }">
+        </textarea>
+        <span *ngIf="inputHasError(ourPeople, formUpdate.submitted)">
+          <sh-error-message [hasError]="ourPeople.errors.required" text="our people is" strongText="required"></sh-error-message>
+        </span>
+      </div>
+
+
+        <!-- OUR PEOPLE PHOTOS -->
+        <div class="profile-photo">
+
+          <div class="rowUp" >
+              <a> Uploaded images  </a>
+              <span class="subMax"> Maximum number of images 3 </span>
+          </div>
+          
+        <div class="galleryMod" >
+            
+          
+          <!--  #1  -->
+          <div  *ngIf="!peoplePictures1; then default4; else img4"></div>
+            <ng-template #default4>
+                <div class="containerPhoto" (click)="openFileBrowser($event, 'peoplePictures1')" >
+                  <div class="imagePhoto">
+                      <p (click)="openFileBrowser($event, 'peoplePictures1')"> Add </p>
+                  </div>
+                </div>
+            </ng-template>
+            <ng-template #img4>
+              <div class="containerPhoto fullPhoto">
+                <div class="titlePicture" >
+                    <p> {{ getPictureName(peoplePictures1,peoplePictures1File) }} <span (click)="deletePeoplePictures('peoplePictures1')" > x </span> </p>
+                </div>
+                <div class="marginPicture" >
+                  <img
+                    [src]="peoplePictures1"
+                    alt="Loading photo"
+                    class="picture"/>
+                </div>
+              </div>
+            </ng-template>
+            <input type="file" name="photos" id="peoplePictures1" class="hide" #fileInput (change)="onFileChangePhotos($event, 'peoplePictures1')">
+            
+            
+            <!--  #2  -->
+            <div *ngIf="!peoplePictures2; then default5; else img5"></div>
+            <ng-template #default5>
+                <div class="containerPhoto" (click)="openFileBrowser($event, 'peoplePictures2')" >
+                  <div class="imagePhoto">
+                      <p (click)="openFileBrowser($event, 'peoplePictures2')"> Add </p>
+                  </div>
+                </div>
+            </ng-template>
+            <ng-template #img5>
+                <div class="containerPhoto fullPhoto">
+                    <div class="titlePicture" >
+                        <p> {{ getPictureName(peoplePictures2,peoplePictures2File) }} <span (click)="deletePeoplePictures('peoplePictures2')" > x </span> </p>
+                    </div>
+                    <div class="marginPicture" >
+                      <img
+                        [src]="peoplePictures2"
+                        alt="Loading photo"
+                        class="picture"/>
+                    </div>
+                  </div>            
+            </ng-template>
+            <input type="file" name="photos" id="peoplePictures2" class="hide" #fileInput (change)="onFileChangePhotos($event, 'peoplePictures2')">
+
+
+
+
+            <!--  #3  -->
+            <div *ngIf="!peoplePictures3; then default6; else img6"></div>
+            <ng-template #default6>
+                <div class="containerPhoto" (click)="openFileBrowser($event, 'peoplePictures3')" >
+                    <div class="imagePhoto">
+                        <p (click)="openFileBrowser($event, 'peoplePictures3')"> Add </p>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template #img6>
+                <div class="containerPhoto fullPhoto">
+                    <div class="titlePicture" >
+                        <p> {{ getPictureName(peoplePictures3,peoplePictures3File) }} <span (click)="deletePeoplePictures('peoplePictures3')" > x </span> </p>
+                    </div>
+                    <div class="marginPicture" >
+                      <img
+                        [src]="peoplePictures3"
+                        alt="Loading photo"
+                        class="picture"/>
+                    </div>
+                  </div> 
+            </ng-template>
+            <input type="file" name="photos" id="peoplePictures3" class="hide" #fileInput (change)="onFileChangePhotos($event, 'peoplePictures3')">
+        </div>
+      </div>
+      <!-- /OUR PEOPLE PHOTOS -->
+
+
+
+      </div>
+    </div>
+
+      
+
+
+
+      <div class="videoBox">
+        <a href="#" (click)="openFileBrowser($event, 'videos1')">Select your first video (MP4)</a>
+        <input type="file" name="videos1" id="videos1" class="hide" #fileInput (change)="onFileChangeVideos($event, 'videos1')" >
+        <div class="videoLine">
+          <span (click)="deleteVideo('videos1')" *ngIf="videos1">x</span>
+          {{videos1}}
+        </div>
+        <a href="#" (click)="openFileBrowser($event, 'videos2')">Select your second video (MP4) </a>
+        <input type="file" name="videos2" id="videos2" class="hide" #fileInput (change)="onFileChangeVideos($event, 'videos2')" >
+        <div  class="videoLine">
+          <span (click)="deleteVideo('videos2')" *ngIf="videos2">x</span>
+          {{videos2}}
+        </div>
+        <a href="#" (click)="openFileBrowser($event, 'videos3')">Select your third video (MP4)</a>
+        <input type="file" name="videos3" id="videos3" class="hide" #fileInput (change)="onFileChangeVideos($event, 'videos3')" >
+        <div class="videoLine">
+          <span (click)="deleteVideo('videos3')" *ngIf="videos3">x</span>
+          {{videos3}}
+        </div>
+      </div>
+
+      <div *ngIf="!pending; then button; else spinner"></div>
+      <ng-template #button>
+        <button class="update">Update</button>
+      </ng-template>
+      <ng-template #spinner>
+        <div style="display: block;">
+          <sk-wave [isRunning]="pending" color="lightgrey"></sk-wave>
+        </div>
+      </ng-template>
+    </form>
+  </app-dialog>
+</ng-template>
+  

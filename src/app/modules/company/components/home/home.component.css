@@ -1,0 +1,106 @@
+.container {
+  height: 100%;
+  width: 80%;
+  margin: 30px auto;
+  overflow: -webkit-paged-y;
+  font-family: 'Lato';
+}
+
+.header {
+  width: 100%;
+}
+
+.title {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.main-container {
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+	flex-wrap: row;
+  justify-content: space-around;
+}
+
+.card {
+  width: 260px;
+  height: 200px;
+  -moz-width: 260px;
+  -moz-height: 200px;
+}
+
+.button {
+  height: 35px;
+  padding: 0px 57px;
+  margin: 20px auto;
+  color: white;
+  background-color: rgba(39, 196, 158, 0.932);
+}
+
+@media screen and (max-width: 1240px) {
+  .main-container {
+    flex-direction: column;
+    height: 100%;
+    margin: 60px auto;
+  }
+
+  .card {
+    width: 100%;
+    height: 130px;
+    margin-top: 30px;
+  }
+  
+  .button {
+    padding: 0px 100px;
+  }
+
+  p {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1153px) {
+  .card {
+    height: 140px;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .card {
+    height: 160px;
+    margin-top: 40px;
+  }
+}
+
+
+@media screen and (max-width: 603px) {
+  .card {
+    height: 180px;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .card {
+    height: 200px;
+    margin-top: 40px;
+  }
+
+  .button {
+    padding: 0px 80px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .card {
+    height: 220px;
+    margin-top: 40px;
+  }
+
+  .button {
+    padding: 0px 60px;
+  }
+}

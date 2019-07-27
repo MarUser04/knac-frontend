@@ -1,0 +1,223 @@
+<div class="backMobile">
+  <a routerLink="/company/jobs" *ngIf="isMobile"
+    ><img src="./assets/images/BACK.PNG" alt="" /> Back</a
+  >
+</div>
+<div class="container">
+  <h1 class="titles">{{ action === 'edit' ? 'Update' : 'Post' }} a Job</h1>
+  <form [formGroup]="f" class="form" #formUpdate="ngForm">
+    <!-- <div>
+      <input type="file" name="logo" id="logo" class="hide" (change)="onFileChangeLogo($event)">
+      <img style="padding: 10px" height="70" width="70" [src]="logoUrl" alt="">
+      <a href="#" (click)="openFileBrowser($event)">Select your image</a>
+    </div> -->
+
+    <div class="divCont">
+      <div class="inputTitle">
+        <span class="title">Title</span>
+        <input
+          type="text"
+          placeholder="Title"
+          name="title"
+          id="title"
+          formControlName="title"
+          maxlength="50"
+          class="input"
+          [ngClass]="{
+            'has-error': inputHasError(title, formUpdate.submitted)
+          }"
+        />
+        <span
+          *ngIf="inputHasError(title, formUpdate.submitted)"
+          class="spanError"
+        >
+          <sh-error-message
+            [hasError]="title.errors.required"
+            text="title is "
+            strongText="required"
+          ></sh-error-message>
+          <!-- <sh-error-message [hasError]="title.errors.pattern" text="only text is " strongText="allowed"></sh-error-message> -->
+        </span>
+      </div>
+      <div>
+        <span class="title">Location</span>
+        <input
+          type="text"
+          placeholder="Location"
+          name="location"
+          id="location"
+          formControlName="location"
+          maxlength="50"
+          class="input"
+          [ngClass]="{
+            'has-error': inputHasError(location, formUpdate.submitted)
+          }"
+        />
+        <span
+          *ngIf="inputHasError(location, formUpdate.submitted)"
+          class="spanError"
+        >
+          <sh-error-message
+            [hasError]="location.errors.required"
+            text="location is "
+            strongText="required"
+          ></sh-error-message>
+        </span>
+      </div>
+    </div>
+    <div class="divTrack">
+      <span class="title">Track</span>
+      <ng-select
+        [items]="tracks"
+        [clearable]="false"
+        bindLabel="name"
+        bindValue="_id"
+        formControlName="track"
+        class="track-select"
+        (change)="onChangeTemplate($event)"
+        placeholder="Select Track"
+        [ngClass]="{
+          'has-error-select': inputHasError(track, formUpdate.submitted)
+        }"
+      >
+      </ng-select>
+      <span
+        *ngIf="inputHasError(track, formUpdate.submitted)"
+        class="spanError"
+      >
+        <sh-error-message
+          [hasError]="track.errors.required"
+          text="track is "
+          strongText="required"
+        ></sh-error-message>
+      </span>
+    </div>
+
+    <div class="divAvai">
+      <span class="title">Availability</span>
+      <ng-select
+        [items]="jobTypes"
+        [clearable]="false"
+        bindLabel="name"
+        bindValue="_id"
+        formControlName="type"
+        class="track-select"
+        (change)="onChangeTemplate($event)"
+        placeholder="Select Availability"
+        [ngClass]="{
+          'has-error-select': inputHasError(type, formUpdate.submitted)
+        }"
+      >
+      </ng-select>
+      <span *ngIf="inputHasError(type, formUpdate.submitted)" class="spanError">
+        <sh-error-message
+          [hasError]="type.errors.required"
+          text="Job type is "
+          strongText="required"
+        ></sh-error-message>
+      </span>
+    </div>
+    <div class="divTextDesc">
+      <span class="title">Description</span>
+      <textarea
+        class="text"
+        rows="5"
+        placeholder="Enter description right here..."
+        formControlName="description"
+        [ngClass]="{
+          'has-error': inputHasError(description, formUpdate.submitted)
+        }"
+      ></textarea>
+      <span
+        *ngIf="inputHasError(description, formUpdate.submitted)"
+        class="spanError"
+      >
+        <sh-error-message
+          [hasError]="description.errors.required"
+          text="description is "
+          strongText="required"
+        ></sh-error-message>
+        <!-- <sh-error-message [hasError]="title.errors.pattern" text="only text is " strongText="allowed"></sh-error-message> -->
+      </span>
+    </div>
+    <div class="divText">
+      <span class="title">Perks/Benefits</span>
+      <textarea
+        class="text2"
+        rows="1"
+        placeholder="Enter the sweet perks right here..."
+        formControlName="perks"
+        [ngClass]="{ 'has-error': inputHasError(perks, formUpdate.submitted) }"
+      ></textarea>
+      <span
+        *ngIf="inputHasError(perks, formUpdate.submitted)"
+        class="spanError"
+      >
+        <sh-error-message
+          [hasError]="perks.errors.required"
+          text="perks is "
+          strongText="required"
+        ></sh-error-message>
+        <!-- <sh-error-message [hasError]="title.errors.pattern" text="only text is " strongText="allowed"></sh-error-message> -->
+      </span>
+    </div>
+    <br />
+  </form>
+  <div *ngIf="!loading; then button; else spinner"></div>
+  <ng-template #button>
+    <div class="botton">
+      <div class="groupBotton">
+        <a (click)="(showDialog = !showDialog) && getDate()" class="preview">
+          <p class="pre">Preview</p>
+        </a>
+        <a class="back" (click)="submit()" [class.disabled]="!f.valid">
+          <p>{{ action === 'edit' ? 'Update' : 'Submit' }}</p>
+        </a>
+      </div>
+      <a class="next" routerLink="/company/jobs">
+        <p class="canc">Cancel</p>
+      </a>
+    </div>
+  </ng-template>
+  <ng-template #spinner>
+    <sk-wave [isRunning]="loading" color="lightgrey"></sk-wave>
+  </ng-template>
+</div>
+
+<app-dialog [(visible)]="showDialog">
+  <div class="modal">
+    <div class="headerBox">
+      <h1>{{ title.value }}</h1>
+    </div>
+    <div class="boxDetail">
+      <div>
+        <img src="./assets/images/locaion-icon.PNG" alt="" />
+        <span matTooltip="Location" matTooltipPosition="above">{{
+          location.value
+        }}</span>
+      </div>
+      <div>
+        <img src="./assets/images/calendar-icon.PNG" alt="" />
+        <span matTooltip="Date" matTooltipPosition="above">{{ date }}.</span>
+      </div>
+      <div>
+        <img src="./assets/images/time-icon.PNG" alt="" />
+        <span matTooltip="Job Type" matTooltipPosition="above">{{
+          type.value
+        }}</span>
+      </div>
+    </div>
+    <div class="sectModal trackBox">
+      <h3>Track:</h3>
+      <span>{{ trackInfo?.name }}</span>
+    </div>
+    <div class="sectModal">
+      <h3>Job Description:</h3>
+      <p>{{ description.value }}</p>
+    </div>
+    <div class="sectModal">
+      <h3>Perks/Benefits:</h3>
+      <p>{{ perks.value }}</p>
+    </div>
+  </div>
+</app-dialog>

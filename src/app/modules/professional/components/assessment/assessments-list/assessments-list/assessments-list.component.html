@@ -1,0 +1,157 @@
+<div class="container">
+  <div class="header">
+    <div class="title"><h1>Assessments</h1></div>
+    <div class="search">
+      <span class="textSearch"
+        >Complete assessments to show companies how amazing your are</span
+      >
+      <div class="boxSearch">
+        <div>Show completed</div>
+        <!-- <div *ngIf="checked; then completed; else notCompleted"></div>
+        <ng-template #notCompleted>Show Incompleted</ng-template>
+        <ng-template #completed>Show completed</ng-template> -->
+        <label class="radio" (click)="changeSwitch()">
+          <span *ngIf="checked" style="color: #0eaf81;" class="checksquare fa fa-check-square"></span>
+          <span *ngIf="!checked"  class="checksquare fa fa-square"></span>
+        </label>
+        <!--
+          <mat-slide-toggle [checked]="checked" (change)="changeSwitch()">
+          </mat-slide-toggle>
+        -->
+      </div>
+    </div>
+    <!--
+      <a routerLink="/company/assessments/create">Create An Assessment</a>
+    -->
+  </div>
+  <div>
+    <table>
+      <ng-template [ngIf]="assessmentsList != undefined">
+        <tr *ngFor="let item of pageOfItems">
+          <td>
+            <div
+              *ngIf="
+                checked;
+                then notCompletedAssessment;
+                else completedAssessment
+              "
+            ></div>
+            <ng-template #notCompletedAssessment>
+              <div class="content">
+                <div class="avatar">
+                  <img
+                    src="{{ (item?.assessment?.company)[0].logo }}"
+                    class="assessment-img"
+                  />
+                </div>
+                <!---->
+                <div class="content_name_two">
+                  <div class="info">
+                    <span class="assessment-title">{{
+                      item?.assessment?.name
+                    }}</span>
+                    <span class="assessment-content">{{
+                      (item?.assessment?.company)[0]?.name
+                    }}</span>
+                    <span class="assessment-content-track"
+                      >Track:
+                      <span class="track">{{
+                        item?.assessment?.track?.name
+                      }}</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="content_button_Two content_button_take">
+                  <span
+                    >TAKEN
+                    <img
+                      src="../../../../../../../assets/images/TAKEN_ICON.PNG"
+                      alt=""
+                    />
+                  </span>
+                  <button
+                    class="assessment-link"
+                    routerLink="/professional/assessments/feedback/{{
+                      item?.assessment?._id
+                    }}"
+                    [disabled]="item?.submission?.feedback.length == 0"
+                  >
+                    VIEW FEEDBACK
+                  </button>
+                </div>
+                <!--
+                  <div class="content_name">
+                    <div class="avatar">
+                      <img src="../../../../../../assets/images/no-image.png" class="assessment-img">
+                    </div>
+                    <div>
+                      <div>
+                        <span class="assessment-title">{{item?.name}}</span>
+                      </div>
+                      <div>
+                        <span class="assessment-content">Mastercard</span>
+                      </div>
+                      <div>
+                        <p class="assessment-content">Track:
+                          <span>{{item?.track.name}}</span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="content_button">
+                    <span>TAKEN
+                      <img src="../../../../../../../assets/images/TAKEN_ICON.PNG" alt=""> </span>
+                    <a class="assessment-link" (click)="selectAssessment(item._id, item.isCompleted)">VIEW FEEDBACK</a>
+                  </div>
+                -->
+              </div>
+              <!--
+                <span class="assessment-link" (click)="selectAssessment(item._id, item.isCompleted)">{{item?.name}}</span>
+              -->
+            </ng-template>
+            <ng-template #completedAssessment>
+              <div class="content">
+                <div class="avatar">
+                  <img
+                    src="{{ (item?.assessment?.company)[0].logo }}"
+                    class="assessment-img"
+                  />
+                </div>
+                <div class="content_name">
+                  <div class="info">
+                    <span class="assessment-title">{{
+                      item?.assessment?.name
+                    }}</span>
+                    <span class="assessment-content">{{
+                      (item?.assessment?.company)[0]?.name
+                    }}</span>
+                    <span class="assessment-content-track"
+                      >Track:
+                      <span class="track">{{
+                        item?.assessment?.track?.name
+                      }}</span>
+                    </span>
+                  </div>
+                </div>
+                <div class="content_button">
+                  <a
+                    (click)="
+                      selectAssessment(
+                        item?.assessment?._id
+                      )
+                    "
+                    >VIEW</a
+                  >
+                </div>
+              </div>
+            </ng-template>
+          </td>
+        </tr>
+        <jw-pagination
+          [items]="assessmentsList"
+          (changePage)="onChangePage($event)"
+        ></jw-pagination>
+      </ng-template>
+    </table>
+  </div>
+</div>

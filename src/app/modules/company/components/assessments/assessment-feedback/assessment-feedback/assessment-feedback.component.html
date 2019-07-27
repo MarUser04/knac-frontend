@@ -1,0 +1,359 @@
+<div class="backMobile">
+    <a routerLink="/company/assessments/{{id}}/submissions/{{ids}}" *ngIf="isMobile"
+      ><img src="./assets/images/BACK.PNG" alt="" /> Back</a
+    >
+  </div>
+<div class="container">
+  <a class="back" routerLink="/company/assessments/{{id}}/submissions/{{ids}}" *ngIf="!isMobile">
+    <img src="./assets/images/BACK.PNG" alt="" /> Back</a
+  >
+
+  <form class="main" [formGroup]="f" #formUpdate="ngForm" (ngSubmit)="f.valid && submit()">
+    <div class="title-container">
+      <h1 class="title">Feedback</h1>
+      <h1 class="subTitle">
+        {{ company?.name }} sent you feedback.
+      </h1>
+    </div>
+    <div class="text-container">
+      <h1 class="text-title">1. {{ questions?.question1 }}</h1>
+      <div class="text-concten">
+        <div>
+          <span class="text one">Unfavorable</span>
+          <span class="text three">Favorable</span>            
+        </div>
+        <div class="bt-container two">
+          <div class="rbutton">
+            <input
+              type="radio"
+              id="radio1"
+              formControlName="answer1"
+              class="input"
+              [value]="1"
+            />
+            <label for="radio1" class="checked"></label>
+            <input
+              type="radio"
+              id="radio2"
+              formControlName="answer1"
+              [value]="2"
+              class="input"
+            />
+            <label for="radio2" class="checked"></label>
+            <input
+              type="radio"
+              id="radio3"
+              formControlName="answer1"
+              [value]="3"
+              class="input"
+            />
+            <label for="radio3" class="checked"></label>
+            <input
+              type="radio"
+              id="radio4"
+              formControlName="answer1"
+              [value]="4"
+              class="input"
+            />
+            <label for="radio4" class="checked"></label>
+            <input
+              type="radio"
+              id="radio5"
+              formControlName="answer1"
+              [value]="5"
+              class="input"
+            />
+            <label for="radio5" class="checked"></label>
+          </div>
+          <div class="rlabel">
+            <label for="radio1">1</label>
+            <label for="radio2">2</label>
+            <label for="radio3">3</label>
+            <label for="radio4">4</label>
+            <label for="radio5">5</label>
+          </div>
+        </div>
+      </div>
+      <span *ngIf="inputHasError(answer1, formUpdate.submitted)" class="spanError">
+        <sh-error-message [hasError]="answer1.errors.required" text="answer is " strongText="required"></sh-error-message>
+      </span>
+    </div>
+    <div class="text-container" *ngIf="questions?.question2">
+      <h1 class="text-title">2. {{ questions?.question2 }}</h1>
+      <div class="text-concten">
+        <div>
+          <span class="text one">Unfavorable</span>
+          <span class="text three">Favorable</span>            
+        </div>
+        <div class="bt-container two">
+          <div class="rbutton">
+              <input
+                type="radio"
+                id="radio6"
+                formControlName="answer2"
+                [value]="1"
+                class="input"
+              />
+              <label for="radio6" class="checked"></label>
+              <input
+                type="radio"
+                id="radio7"
+                formControlName="answer2"
+                [value]="2"
+                class="input"
+              />
+              <label for="radio7" class="checked"></label>
+              <input
+                type="radio"
+                id="radio8"
+                formControlName="answer2"
+                [value]="3"
+                class="input"
+              />
+              <label for="radio8" class="checked"></label>
+              <input
+                type="radio"
+                id="radio9"
+                formControlName="answer2"
+                [value]="4"
+                class="input"
+              />
+              <label for="radio9" class="checked"></label>
+              <input
+                type="radio"
+                id="radio10"
+                formControlName="answer2"
+                [value]="5"
+                class="input"
+              />
+              <label for="radio10" class="checked"></label>
+          </div>
+          <div class="rlabel">
+            <label for="radio6">1</label>
+            <label for="radio7">2</label>
+            <label for="radio8">3</label>
+            <label for="radio9">4</label>
+            <label for="radio10">5</label>
+          </div>
+        </div>
+      </div>
+      <span *ngIf="inputHasError(answer2, formUpdate.submitted)" class="spanError">
+        <sh-error-message [hasError]="answer2.errors.required" text="answer is " strongText="required"></sh-error-message>
+      </span>
+    </div>
+    <div class="text-container" *ngIf="questions?.question3">
+      <h1 class="text-title">3. {{ questions?.question3 }}</h1>
+      <div class="text-concten">
+        <div>
+          <span class="text one">Unfavorable</span>
+          <span class="text three">Favorable</span>            
+        </div>
+        <div class="bt-container two">
+          <div class="rbutton">
+            <input
+              type="radio"
+              id="radio11"
+              formControlName="answer3"
+              [value]="1"
+              class="input"
+            />
+            <label for="radio11" class="checked"></label>
+            <input
+              type="radio"
+              id="radio12"
+              formControlName="answer3"
+              [value]="2"
+              class="input"
+            />
+            <label for="radio12" class="checked"></label>
+            <input
+              type="radio"
+              id="radio13"
+              formControlName="answer3"
+              [value]="3"
+              class="input"
+            />
+            <label for="radio13" class="checked"></label>
+            <input
+              type="radio"
+              id="radio14"
+              formControlName="answer3"
+              [value]="4"
+              class="input"
+            />
+            <label for="radio14" class="checked"></label>
+            <input
+              type="radio"
+              id="radio15"
+              formControlName="answer3"
+              [value]="5"
+              class="input"
+            />
+            <label for="radio15" class="checked"></label>
+          </div>
+          <div class="rlabel">
+            <label for="radio11">1</label>
+            <label for="radio12">2</label>
+            <label for="radio13">3</label>
+            <label for="radio14">4</label>
+            <label for="radio15">5</label>
+          </div>
+        </div>
+      </div>
+      <span *ngIf="inputHasError(answer3, formUpdate.submitted)" class="spanError">
+        <sh-error-message [hasError]="answer3.errors.required" text="answer is " strongText="required"></sh-error-message>
+      </span>
+    </div>
+    <div class="text-container" *ngIf="questions?.question4">
+      <h1 class="text-title">4. {{ questions?.question4 }}</h1>
+      <div class="text-concten">
+        <div>
+          <span class="text one">Unfavorable</span>
+          <span class="text three">Favorable</span>            
+        </div>
+        <div class="bt-container two">
+          <div class="rbutton">
+            <input
+              type="radio"
+              id="radio16"
+              formControlName="answer4"
+              [value]="1"
+              class="input"
+            />
+            <label for="radio16" class="checked"></label>
+            <input
+              type="radio"
+              id="radio17"
+              formControlName="answer4"
+              [value]="2"
+              class="input"
+            />
+            <label for="radio17" class="checked"></label>
+            <input
+              type="radio"
+              id="radio18"
+              formControlName="answer4"
+              [value]="3"
+              class="input"
+            />
+            <label for="radio18" class="checked"></label>
+            <input
+              type="radio"
+              id="radio19"
+              formControlName="answer4"
+              [value]="4"
+              class="input"
+            />
+            <label for="radio19" class="checked"></label>
+            <input
+              type="radio"
+              id="radio20"
+              formControlName="answer4"
+              [value]="5"
+              class="input"
+            />
+            <label for="radio20" class="checked"></label>
+          </div>
+          <div class="rlabel">
+            <label for="radio16">1</label>
+            <label for="radio17">2</label>
+            <label for="radio18">3</label>
+            <label for="radio19">4</label>
+            <label for="radio20">5</label>
+          </div>
+        </div>
+      </div>
+      <span *ngIf="inputHasError(answer4, formUpdate.submitted)" class="spanError">
+        <sh-error-message [hasError]="answer4.errors.required" text="answer is " strongText="required"></sh-error-message>
+      </span>
+    </div>
+    <div class="text-container" *ngIf="questions?.question5">
+      <h1 class="text-title">5. {{ questions?.question5 }}</h1>
+      <div class="text-concten">
+        <div>
+          <span class="text one">Unfavorable</span>
+          <span class="text three">Favorable</span>            
+        </div>
+        <div class="bt-container two">
+          <div class="rbutton">
+            <input
+              type="radio"
+              id="radio21"
+              formControlName="answer5"
+              [value]="1"
+              class="input"
+            />
+            <label for="radio21" class="checked"></label>
+            <input
+              type="radio"
+              id="radio22"
+              formControlName="answer5"
+              [value]="2"
+              class="input"
+            />
+            <label for="radio22" class="checked"></label>
+            <input
+              type="radio"
+              id="radio23"
+              formControlName="answer5"
+              [value]="3"
+              class="input"
+            />
+            <label for="radio23" class="checked"></label>
+            <input
+              type="radio"
+              id="radio24"
+              formControlName="answer5"
+              [value]="4"
+              class="input"
+            />
+            <label for="radio24" class="checked"></label>
+            <input
+              type="radio"
+              id="radio25"
+              formControlName="answer5"
+              [value]="5"
+              class="input"
+            />
+            <label for="radio25" class="checked"></label>
+          </div>
+          <div class="rlabel">
+            <label for="radio21">1</label>
+            <label for="radio22">2</label>
+            <label for="radio23">3</label>
+            <label for="radio24">4</label>
+            <label for="radio25">5</label>
+          </div>
+        </div>
+      </div>
+      <span *ngIf="inputHasError(answer5, formUpdate.submitted)" class="spanError">
+        <sh-error-message [hasError]="answer5.errors.required" text="answer is " strongText="required"></sh-error-message>
+      </span>
+    </div>
+    <div class="text-container">
+      <h1 class="text-title">Any additional comments you’d like to add?</h1>
+      <div class="text-concten">
+        <textarea
+          class="text-area"
+          rows="7"
+          placeholder="Add comments here ..."
+          formControlName="feedback"
+        ></textarea>
+      </div>
+      <span *ngIf="inputHasError(feedback, formUpdate.submitted)" class="spanError">
+          <sh-error-message [hasError]="feedback.errors.required" text="feedback is " strongText="required"></sh-error-message>
+        </span>
+    </div>
+    <div *ngIf="!loading; then button; else spinner;"></div>
+    <ng-template #button>
+      <div  class="container-button" >
+        <button class="next">SUBMIT FEEDBACK</button>
+        <a *ngIf="isMobile" class="cancel" routerLink="/company/assessments/{{id}}/submissions/{{ids}}">CANCEL</a>
+      </div>
+      </ng-template>
+
+    <ng-template #spinner>
+        <sk-wave [isRunning]="loading" color="lightgrey"></sk-wave>
+      </ng-template>
+  </form>
+</div>

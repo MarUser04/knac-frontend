@@ -1,0 +1,138 @@
+<div class="backMobile">
+  <a (click)="clickBack()" *ngIf="isMobile"
+    ><img src="./assets/images/BACK.PNG" alt="" /> Back</a
+  >
+</div>
+<div class="container">
+  <h1 class="titles">
+    {{ action === 'edit' ? 'Update' : 'Create' }} an Assessment
+  </h1>
+  <!-- <p>Write the directions or question you want the candidate to perform. Please be as descriptive as possible.</p> -->
+  <form
+    [formGroup]="f"
+    class="form"
+    (ngSubmit)="clickView()"
+    #formUpdate="ngForm"
+  >
+    <div class="input-select-type">
+      <div class="boxSelect">
+        <span class="type selectDiv"> Assessment type: </span>
+        <div class="input-select-box">
+          <div>
+            <span class="type-button">Behavioral</span>
+            <input
+              type="radio"
+              formControlName="type"
+              class="type-select-type"
+              value="Behavioral"
+              [ngClass]="{
+                'has-error-select': inputHasError(
+                  assessmentType,
+                  formUpdate.submitted
+                )
+              }"
+            />
+          </div>
+          <div>
+            <span class="type-button">Technical</span>
+            <input
+              type="radio"
+              formControlName="type"
+              class="type-select-type"
+              value="Technical"
+              [ngClass]="{
+                'has-error-select': inputHasError(
+                  assessmentType,
+                  formUpdate.submitted
+                )
+              }"
+            />
+          </div>
+          <div>
+            <span class="type-button">Personality</span>
+            <input
+              type="radio"
+              formControlName="type"
+              class="type-select-type"
+              value="Personality"
+              [ngClass]="{
+                'has-error-select': inputHasError(
+                  assessmentType,
+                  formUpdate.submitted
+                )
+              }"
+            />
+          </div>
+        </div>
+      </div>
+      <span
+        *ngIf="inputHasError(assessmentType, formUpdate.submitted)"
+        class="spanError"
+      >
+        <sh-error-message
+          [hasError]="assessmentType.errors.required"
+          text="assessment type is "
+          strongText="required"
+        ></sh-error-message>
+      </span>
+    </div>
+    <div class="input-select">
+      <span class="template">
+        Template
+        <p><i> (Optional)</i></p>
+      </span>
+      <ng-select
+        [items]="templates.templates"
+        [searchable]="false"
+        bindLabel="name"
+        bindValue="_id"
+        formControlName="template"
+        class="type-select"
+        (change)="onChangeTemplate($event)"
+        [ngClass]="{
+          'has-error-select': inputHasError(
+            assessmentTemplate,
+            formUpdate.submitted
+          )
+        }"
+      >
+      </ng-select>
+      <span
+        *ngIf="inputHasError(assessmentTemplate, formUpdate.submitted)"
+        class="spanError"
+      >
+        <sh-error-message
+          [hasError]="assessmentTemplate.errors.required"
+          text="template is "
+          strongText="required"
+        ></sh-error-message>
+      </span>
+    </div>
+    <div class="input-select">
+      <span class="type"
+        >Write the details of the professional assessment. Please be as
+        descriptive as possible.</span
+      >
+      <textarea
+        class="text"
+        rows="7"
+        placeholder="Type in this box..."
+        formControlName="question"
+        [ngClass]="{
+          'has-error': inputHasError(question, formUpdate.submitted)
+        }"
+      ></textarea>
+      <span *ngIf="inputHasError(question, formUpdate.submitted)">
+        <sh-error-message
+          [hasError]="question.errors.required"
+          text="question is"
+          strongText="required"
+        ></sh-error-message>
+      </span>
+    </div>
+    <div class="botton">
+      <button class="next">Next</button>
+      <a class="back" (click)="clickBack()">Back</a>
+    </div>
+  </form>
+</div>

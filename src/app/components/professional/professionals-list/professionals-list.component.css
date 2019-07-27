@@ -1,0 +1,329 @@
+.container {
+  width: 80%;
+  margin: 67px auto;
+}
+
+.title {
+  color: #161616;
+  font-weight: bold;
+  text-align: center;
+  font-size: 19px;
+  letter-spacing: 1px;
+  margin-bottom: 35px;
+}
+
+.abme {
+  width: 20%;
+}
+
+.boxSearch {
+  border: 1px solid #e4e4e4;
+  border-radius: 25px;
+  color: #e4e4e4;
+  width: 48%;
+  margin: 0 auto;
+}
+
+.boxSearch span {
+  font-size: 14px;
+  padding: 0 0 0 15px;
+}
+
+.boxSearch input {
+  margin: 0;
+  border: 0;
+  width: 85%;
+  outline: none;
+  font-size: 16px;
+  padding: 9px 0px;
+  color: #b7b7b7;
+}
+
+.professional-list {
+  padding: 15px;
+}
+
+.sectionProfile {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #e4e4e4;
+  padding: 20px;
+  margin: 5% 2%;
+}
+
+.avatarBox {
+  width: 20%;
+  text-align: right;
+  padding: 20px 0;
+}
+
+.avatarBox img {
+  width: 135px;
+  height: 135px;
+  margin: auto;
+  text-align: center;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.boxProfile {
+  width: 25%;
+  border-right: 1px solid #e2e2e2;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.boxProfile a {
+  color: #000000;
+  font-size: 26px;
+  text-align: left;
+  text-transform: capitalize;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.boxProfile span {
+  color: #4f4f4f;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.viewProfile {
+  width: 50%;
+}
+
+.btnViewProf {
+  text-align: end;
+}
+
+.btnViewProf button {
+  border: 1px solid #0eaf81;
+  border-radius: 20px;
+  padding: 7px;
+  width: 34%;
+  background: #0eaf81;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.boxDesc {
+  margin: 15px 0 15px 25px;
+}
+
+.boxDesc div {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.boxDesc div span {
+  color: #000000;
+  font-size: 14px;
+  font-weight: 300;
+  margin-right: 20px;
+}
+
+.boxDesc div p {
+  color: #4f4f4f;
+  font-size: 14px;
+  font-weight: 300;
+  white-space: pre-line;
+}
+
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.section-Container {
+  width: 100%;
+  border-bottom: 1px solid #e2e2e2;
+  margin-top: 1em;
+}
+
+.sectionProfileMobile {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sectionInfoMobile {
+  display: flex;
+  width: 60%;
+}
+
+.boxProfileMobile {
+  border: 0px;
+  margin-left: 0.8em;
+  align-self: center;
+  cursor: pointer;
+}
+
+.boxProfileMobile i {
+  margin-left: 0.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.show-expansion {
+  display: block !important;
+  transition: display 1s ease;
+  width: 85%;
+}
+
+.subtitleMobile {
+  margin-top: 3px;
+  color: #4f4f4f;
+  font-size: 13px;
+}
+
+.powers {
+  display: flex;
+  margin-top: 10px;
+}
+
+.powers span {
+  margin: 0 10px 0 0;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.powers p {
+  color: #30c2d7;
+  font-size: 13px;
+  text-transform: capitalize;
+  text-align: left;
+  font-weight: 300;
+  margin-top: 1px;
+}
+
+@media screen and (max-width: 1024px) {
+  .btnViewProf button {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 90%;
+  }
+  .title h2 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .professional-list {
+    padding: 0;
+  }
+  .sectionProfile {
+    margin: 5% 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .boxProfile {
+    border: none;
+    width: 100%;
+    margin-bottom: 0;
+  }
+  .avatarBox {
+    width: 22%;
+    text-align: left;
+  }
+  .avatarBox img {
+    width: 45px;
+    height: 45px;
+  }
+  .viewProfile {
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .boxDesc {
+    margin: 0px 0px 20px 56px;
+    /* margin-left: 56px; */
+  }
+  .abme {
+    width: 30%;
+  }
+  .btnViewProf {
+    align-self: center;
+  }
+  .btnViewProf button {
+    width: 100%;
+    font-size: 12px;
+    padding: 4px 10px;
+    font-weight: 500;
+  }
+
+  .sectionInfoMobile {
+    width: 35%;
+  }
+  .powers {
+    margin: 0px;
+  }
+  .boxDesc div span {
+    margin-right: 5px;
+  }
+  .powers div {
+    display: block;
+  }
+  .powers p {
+    color: #30c2d7 !important;
+    white-space: normal !important;
+  }
+  .boxProfileMobile i {
+    margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sectionInfoMobile {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .sectionInfoMobile {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .btnViewProf button {
+    width: 100%;
+    font-size: 12px;
+    padding: 7px 5px !important;
+  }
+}
+
+/**/
+
+.text {
+  width: 100%;
+  max-height: 3.5em;
+  resize: none;
+  background: white;
+  border: 0px;
+  overflow: hidden;
+  text-align: justify;
+  -webkit-transition: max-height 2s ease;
+  transition: max-height 2s ease;
+}
+
+.text:hover {
+  max-height: 40em;
+  -webkit-transition: max-height 2s ease;
+  transition: max-height 2s ease;
+}

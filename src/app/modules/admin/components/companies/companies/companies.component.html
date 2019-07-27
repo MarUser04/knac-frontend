@@ -1,0 +1,86 @@
+<div class="container">
+  <div class="title"><h2>List of companies</h2></div>
+  <search-company-admin></search-company-admin>
+  <!-- <div class="boxSearch">
+    <span> <i class="fa fa-search"></i> </span>
+    <input type="text" placeholder="Search for Companies" name="search" />
+  </div> -->
+  <!-- <div > -->
+  <div *ngFor="let item of pageOfItems" class="professional-list">
+    <div *ngIf="item.user" class="sectionProfile">
+      <div class="avatarBox"><img src="{{ item?.logo }}" alt="" /></div>
+      <div class="boxProfile">
+        <a (click)="redirectTo(item?.name)"> {{ item?.name }} </a>
+        <div class="powers">
+          <span>Location: {{ item?.locations }}</span>
+        </div>
+      </div>
+      <div class="viewProfile">
+        <div class="btnViewProf">
+          <a (click)="setForm(item?.user?.email, item?.user?._id)">
+            Edit email
+          </a>
+          <a (click)="disabledEnabledUser(item?.user?._id)">
+            {{ item?.user?.disabled ? 'Enable' : 'Disable' }}
+          </a>
+          <a class="delete" (click)="deleteCompany(item?.user?._id)">
+            X
+          </a>
+        </div>
+        <div class="boxDesc">
+          <div>
+            <span>Company Size:</span>
+            <p>{{ item?.companySize }} employees</p>
+          </div>
+          <div>
+            <span>Industry:</span>
+            <p>{{ item?.industry }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="pagination">
+    <jw-pagination
+      [items]="companies"
+      (changePage)="onChangePage($event)"
+    ></jw-pagination>
+  </div>
+  <!-- </div> -->
+</div>
+
+<app-dialog [(visible)]="showModal">
+  <h1 class="title-modal">Update company email</h1>
+  <form [formGroup]="f" (ngSubmit)="submit()" #formUpdate="ngForm" class="form">
+    <div>
+      <label for="">Email</label>
+      <input
+        type="email"
+        placeholder="user@email.com"
+        name="email"
+        id="email"
+        formControlName="email"
+        [value]="email.value"
+        [ngClass]="{ 'has-error': inputHasError(email, formUpdate.submitted) }"
+      />
+      <span *ngIf="inputHasError(email, formUpdate.submitted)">
+        <sh-error-message
+          [hasError]="email.errors.required"
+          text="email is"
+          strongText="required"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="email.errors.isEmail && !email.errors.required"
+          text="Enter a valid"
+          strongText="email address"
+        ></sh-error-message>
+      </span>
+    </div>
+
+    <div *ngIf="!loading; then button; else spinner"></div>
+    <ng-template #button> <button class="update">Update</button> </ng-template>
+    <ng-template #spinner>
+      <sk-wave [isRunning]="loading" color="lightgrey"></sk-wave>
+    </ng-template>
+  </form>
+</app-dialog>

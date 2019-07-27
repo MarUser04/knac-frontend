@@ -1,0 +1,232 @@
+@import "../../../../../../node_modules/font-awesome/css/font-awesome.css";
+
+
+* {
+  padding:0;
+  margin:0;
+}
+
+.menu_bar {
+  display:none;
+}
+
+header {
+  width: 100%;
+}
+
+header .menu_bar div {
+  font-size: 1em;
+}
+
+header nav {
+  z-index:1000;
+  width:100%;
+  /*padding: 15px 0px;*/
+}
+
+header nav ul {
+  list-style:none;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  width: 93%;
+  margin: auto;
+}
+
+header nav ul #lg_bar {
+  /*margin-left: 3%*/
+}
+
+header nav ul li {
+  display:inline-block;
+  position: relative;
+}
+
+
+header nav ul li a {
+  color: #4f4f4f;
+  display:block;
+  text-decoration:none;
+  text-transform: uppercase;
+  font-size: 0.75em;
+  /*padding: 20px;*/
+}
+
+header nav ul li a:hover {
+  color: #0eaf81;
+}
+
+header nav ul li a img {
+  width: 55px;
+}
+
+header nav ul #mn_bar {
+  /*margin-right: 3%;*/
+  display: flex;
+  width: 25%;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+header nav ul #mn_bar li {
+  /*padding: 0 15px;*/
+}
+
+header nav ul #mn_bar .SingUp {
+  border: 2px solid #0eaf81;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: #0eaf81;
+  font-weight: bold;
+}
+
+header nav ul #mn_bar .SingUp:hover {
+  background-color: #0eaf81;
+  color: #fff;
+  
+}
+
+.active {
+  color: #0eaf81;
+}
+
+
+.mat-menu-item>a{
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+  padding-right: 60px;
+  padding-left: 60px;
+
+}
+
+.mat-menu-item{
+  padding: 0px 10px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.mat-menu-item:last-child{
+   border-bottom: none;
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    padding-top:64px;
+  }
+
+  header nav {
+    z-index:1000;
+    width:100%;
+    padding: 15px 0px;
+    background: #d8d8d8;
+  }
+  
+  .menu_bar {
+    display:block;
+    position: fixed;
+    width:100%;
+    top:0 !important;
+    background: #d8d8d8;
+    z-index: 1;
+  }
+
+ 
+  .menu_bar .bt-menu {
+    display: block;
+    padding: 28px 20px;
+    overflow: hidden;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .title{
+    display: inline;
+  }
+
+ .title:hover, .icon:hover{
+    cursor: pointer;
+  }
+
+  .menu_bar span {
+    float: right;
+    font-size: 30px;
+    color: #333;
+  }
+
+  header nav {
+    width: 50%;
+    height: calc(100% - 60px);
+    position: fixed;
+    right: 0;
+    margin: 60px 0;
+    overflow-y:hidden;
+  }
+
+  header nav ul {
+    display: block;
+    justify-content: none;
+  }
+
+  header nav ul #lg_bar {
+    display: none;
+  }
+
+  header nav ul li {
+    display: block;
+    border-bottom:1px solid rgba(255,255,255,0.5);
+  }
+
+  header nav ul li a {
+    display: block;
+  }
+
+  header nav ul li:hover .children {
+    display: none;
+    width: auto;
+  }
+
+  header nav ul li .children {
+    width: 100%;
+    position: relative;
+    background: rgba(255, 255, 255, 1);
+    border: none;
+    box-shadow: none;
+  }
+
+  header nav ul li .children li a {
+    margin-left:20px;
+  }
+
+  header nav ul li .caret {
+    float: right;
+  }
+
+  .lg-settings a{
+    padding: 12px 20px;
+  }
+
+  header nav ul .lg-settings {
+    position: inherit;
+    right: 0;
+  }
+
+  header nav ul .lg-settings ul {
+  margin-left: 0px;
+  }
+
+
+  
+}
+@media screen and (max-width: 420px) {
+  .mat-menu-item>a{
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  .menu_bar {
+    background: #d8d8d8;
+  }
+}
+

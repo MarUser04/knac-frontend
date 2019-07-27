@@ -1,0 +1,347 @@
+/* @import '../../../../../../../../node_modules/font-awesome/css/font-awesome.css'; */
+
+.container {
+  width: 70%;
+  margin: 50px 0 65px 15.5%;
+}
+
+.back {
+  color: #4f4f4f;
+  padding: 10px 0;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.back img {
+  margin-right: 5px;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-wrap: row;
+  justify-content: space-around;
+}
+
+.assessment {
+  width: 65%;
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+  margin-right: 2%;
+  padding: 4%;
+}
+
+.headerBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+
+.skills-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-transform: capitalize;
+  margin-left: 2%;
+  text-align: center;
+  grid-gap: 5px;
+}
+
+.skills-content div {
+  width: auto;
+  padding-bottom: 10px;
+}
+
+.skills-content div div {
+  color: #fff;
+  background-color: #6666ff;
+  width: 80%;
+  margin: auto;
+  border-radius: 25px;
+  padding: 10px;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.headerBox h2 {
+  color: #0eaf81;
+  display: block;
+  font-size: 32px;
+  text-transform: capitalize;
+  width: 85%;
+}
+
+.next {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #4f4f4f;
+  padding: 5px 0;
+  font-size: 16px;
+}
+
+.boxDetail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  width: 60%;
+  color: #4f4f4f;
+  font-size: 0.9em;
+}
+
+.boxDetail div {
+  display: flex;
+}
+
+.boxDetail img {
+  margin-right: 5px;
+  width: 20px;
+}
+
+.boxDetail h2 {
+  font-size: 18px;
+  color: #000;
+  text-transform: capitalize;
+  margin-right: 5px;
+  font-weight: lighter;
+}
+
+.boxDetail p {
+  margin: 0;
+  color: #4f4f4f;
+  font-size: 16px;
+  margin-top: 3px;
+}
+
+.boxTrack {
+  margin-bottom: 5%;
+  display: flex;
+}
+
+.boxTrack h2 {
+  font-size: 18px;
+  color: #000;
+  margin-right: 10px;
+  font-weight: lighter;
+}
+
+.boxTrack p {
+  margin: 0;
+  color: #4f4f4f;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.boxCont {
+  margin-bottom: 5%;
+}
+
+.boxCont h2 {
+  font-size: 18px;
+  color: #000;
+  font-weight: lighter;
+  text-transform: capitalize;
+}
+
+.boxCont p {
+  margin: 0;
+  color: #4f4f4f;
+  font-size: 16px;
+  white-space: pre-line;
+  margin-top: 5px;
+}
+
+.text {
+  width: 100%;
+  margin-top: 18px;
+  resize: none;
+  font-size: 0.9em;
+  background: white;
+  border: 0px;
+  color: #b7b7b7;
+  overflow: hidden;
+  white-space: pre-line;
+}
+
+.delet {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #4f4f4f;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.main .list {
+  width: 33%;
+}
+
+.list .headerBox {
+  margin-bottom: 20px;
+}
+
+.headerBox h3 {
+  font-size: 32px;
+  color: #000;
+  font-weight: bold;
+  padding: 0 10px;
+  letter-spacing: 0.5px;
+}
+
+.profList {
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+  padding: 4% 0;
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.contentList {
+  display: flex;
+  padding: 10px 0px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.contentList:hover {
+  border-left: 2px solid #0eaf81;
+  background: #efefef;
+}
+
+.avatar {
+  width: 25%;
+  text-align: center;
+}
+
+.avatar img {
+  width: 42px;
+  height: 42px;
+  margin: auto;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.desc {
+  width: 75%;
+}
+
+.name {
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 2px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.ass {
+  color: #4f4f4f;
+  font-weight: 300;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.notYet {
+  text-align: center;
+  padding: 5px;
+  margin-top: 1em;
+  margin-left: 16px;
+  color: #4f4f4f;
+}
+
+.backMobile {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  position: fixed;
+  left: 0px;
+  background-position: left;
+  background-color: white;
+  z-index: 2;
+  margin-top: -13px;
+}
+
+.backMobile a {
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+  margin-left: 4%;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 90%;
+    margin: auto;
+    margin-top: 5em;
+  }
+
+  .main {
+    flex-direction: column;
+  }
+
+  .assessment {
+    width: auto;
+    border: none;
+    padding: 2%;
+  }
+
+  .headerBox {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .headerBox h2 {
+    width: auto;
+  }
+
+  .next {
+    font-size: 18px;
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
+
+  .boxTrack {
+    flex-direction: column;
+  }
+
+  .boxTrack p {
+    margin-top: 10px;
+  }
+
+  .skills-content {
+    margin-top: 2em;
+    margin-left: 0;
+    grid-gap: 10px;
+  }
+
+  .main .list {
+    width: auto;
+  }
+
+  .boxCont {
+    width: auto;
+  }
+
+  .firstTrack {
+    flex-direction: row;
+  }
+
+  .firstTrack p {
+    margin-top: 3px;
+  }
+
+  .delet {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 18px;
+  }
+}

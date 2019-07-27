@@ -1,0 +1,64 @@
+<ng-template [ngIf]="job?.title">
+  <div class="backMobile">
+    <a routerLink="/professional/jobs" *ngIf="isMobile"
+      ><img src="./assets/images/BACK.PNG" alt="" /> Back</a
+    >
+  </div>
+  <div class="container">
+    <div class="port"><img src="./assets/images/jobs-01.png" alt="" /></div>
+    <div class="main">
+      <div class="content_title">
+        <div class="info">
+          <span class="Job-title">{{ job?.title }}</span>
+          <div class="boxDetail">
+            <div>
+              <img src="./assets/images/JOBS_ICONS/location.png" alt="" />
+              <span matTooltip="Location" matTooltipPosition="above">
+                {{ job?.location }}</span
+              >
+            </div>
+            <div>
+              <img src="./assets/images/JOBS_ICONS/date.png" alt="" />
+              <span matTooltip="Date" matTooltipPosition="above">
+                Posted {{ date(job?.created) }}</span
+              >
+            </div>
+            <div>
+              <img src="./assets/images/JOBS_ICONS/availability.png" alt="" />
+              <span matTooltip="Job Type" matTooltipPosition="above">
+                {{ job?.type }}</span
+              >
+            </div>
+          </div>
+          <span class="Job-company">{{ (job?.company)['0'].name }}</span>
+        </div>
+        <div><img src="{{ (job?.company)['0'].logo }}" class="Job-img" /></div>
+      </div>
+      <div class="sectionGroup">
+        <div class="trackBox">
+          <h2>Track:</h2>
+          <span>{{ job?.track?.name }}</span>
+        </div>
+        <span class="descript">Description:</span>
+        <p class="text">{{ job?.description }}</p>
+      </div>
+      <br />
+      <div class="sectionGroup">
+        <span class="descript">Perks / Benefits</span>
+        <p class="text">{{ job?.perks }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-button" *ngIf="!pendingApplyJob">
+    <button
+      class="next"
+      *ngIf="applied?.applied === 'false'"
+      (click)="submit()"
+    >
+      APPLY
+    </button>
+    <a class="back" routerLink="/professional/jobs/">BACK</a>
+  </div>
+  <sk-wave [isRunning]="pendingApplyJob" color="lightgrey"></sk-wave>
+</ng-template>

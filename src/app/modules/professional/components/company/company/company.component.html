@@ -1,0 +1,345 @@
+<ng-template [ngIf]="company && jobByCompany && assessmentByCompany">
+  <div class="backMobile">
+    <a routerLink="/professional/companies" *ngIf="isMobile"
+      ><img src="./assets/images/BACK.PNG" alt="" /> Back</a
+    >
+  </div>
+  <div class="cover-container">
+    <img src="./assets/images/company_banner.png" alt="" />
+  </div>
+  <div class="brand-container">
+      <div class="sectOne">
+
+          <div class="boxLeft">
+    
+              <div *ngIf="!company?.logo; then default; else img"></div>
+              <ng-template #default>
+                  <div class="imgAvatar">
+                    <img src="/assets/images/user_placeholder.png" />
+                  </div>
+              </ng-template>
+              <ng-template #img>
+                    <div class="imgAvatar">
+                      <img src="{{ company?.logo }}" />
+                    </div>
+              </ng-template>
+    
+              <div class="mainCompanyInfo">
+    
+                  <h1>{{ company?.name }}</h1>
+    
+                  <div *ngIf="!isMobile && company?.websiteUrl" >
+                    
+                    <p> Website: <span> {{ company?.websiteUrl }} </span> </p>
+    
+                  </div>
+    
+              </div>
+    
+          </div>
+          
+          <div *ngIf="!isMobile"  class="dataProf">
+            <div class="data">
+              <div class="colOne">
+                <div>
+                  <span>Location: </span>
+                  <p>{{ company?.locations }}</p>
+                </div>
+                <div>
+                  <span>Company Size: </span>
+                  <p *ngIf="company?.companySize"> {{ company?.companySize }} employees </p>
+                </div>
+                <div>
+                  <span>Industry: </span>
+                  <p>{{ company?.industry }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="isMobile"  class="dataProf">
+              <div class="data">
+                <div class="colOne">
+                  <div>
+                    <span>Location: </span>
+                    <p>{{ company?.locations }}</p>
+                  </div>
+                  <div>
+                    <span>Company Size: </span>
+                    <p>{{ company?.companySize }} employees</p>
+                  </div>
+                  <div *ngIf="company?.websiteUrl"> 
+                    <span> Website: </span>
+                    <p> {{ company?.websiteUrl }} </p>
+                  </div>
+                  <div>
+                    <span>Industry: </span>
+                    <p>{{ company?.industry }}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+        </div>
+
+    <div class="sectTwo">
+      <div *ngIf="company?.aboutUs"  class="sectionDesc" >
+        <div class="title"><h1>About Us</h1></div>
+        <div class="infoText">
+          <p>{{ company?.aboutUs }}</p>
+        </div>
+        <div *ngIf="isMobile; then slider; else galery"></div>
+        <ng-template #galery>
+          <div class="slider">
+            <ul>
+              <li *ngIf="company?.photos1">
+                <img src="{{ company?.photos1 }}" alt="" width="400px" />
+              </li>
+              <li *ngIf="company?.photos2">
+                <img src="{{ company?.photos2 }}" alt="" width="400px" />
+              </li>
+              <li *ngIf="company?.photos3">
+                <img src="{{ company?.photos3 }}" alt="" width="400px" />
+              </li>
+            </ul>
+          </div>
+        </ng-template>
+        <ng-template #slider>
+          <swiper class="swiper-container">
+            <div *ngFor="let item of photosMobile">
+              <img src="{{ item }}" alt="" width="400px" height="300px"/>
+            </div>
+          </swiper>
+        </ng-template>
+      </div>
+      <div *ngIf="company?.ourPeople"  class="sectionDesc">
+        <div class="title"><h1>Our people</h1></div>
+        <div class="infoText">
+          <p>{{ company?.ourPeople }}</p>
+        </div>
+        <div *ngIf="isMobile; then slider1; else galery1"></div>
+        <ng-template #galery1>
+            <div class="slider">
+              <ul>
+                <li *ngIf="company?.peoplePictures1">
+                    <img src="{{ company?.peoplePictures1 }}" alt="" width="400px" />
+                </li>
+                <li *ngIf="company?.peoplePictures2">
+                    <img src="{{ company?.peoplePictures2 }}" alt="" width="400px" />
+                </li>
+                <li *ngIf="company?.peoplePictures3">
+                    <img src="{{ company?.peoplePictures3 }}" alt="" width="400px" />
+                </li>
+              </ul>
+            </div>
+        </ng-template>
+        <ng-template #slider1>
+            <swiper class="swiper-container">
+                <div *ngFor="let item of picturesMobile">
+                  <img src="{{ item }}" alt="" width="400px" height="300px"/>
+                </div>
+              </swiper>
+        </ng-template>
+      </div>
+      <div class="divVideo">
+        <mat-accordion>
+          <mat-expansion-panel *ngIf="company?.videos1" [expanded]="true">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ company?.video1 }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <vg-player>
+              <video
+                [vgMedia]="media"
+                #media
+                id="singleVideo"
+                preload="auto"
+                controls
+              >
+                <source [src]="company?.videos1" type="video/mp4" />
+              </video>
+            </vg-player>
+          </mat-expansion-panel>
+          <mat-expansion-panel *ngIf="company?.videos2">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ company?.video2 }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <vg-player>
+              <video
+                [vgMedia]="media"
+                #media
+                id="singleVideo"
+                preload="auto"
+                controls
+              >
+                <source [src]="company?.videos2" type="video/mp4" />
+              </video>
+            </vg-player>
+          </mat-expansion-panel>
+          <mat-expansion-panel *ngIf="company?.videos3">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                {{ company?.video3 }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <vg-player>
+              <video
+                [vgMedia]="media"
+                #media
+                id="singleVideo"
+                preload="auto"
+                controls
+              >
+                <source [src]="company?.videos3" type="video/mp4" />
+              </video>
+            </vg-player>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+      <div class="sectionJobs" *ngIf="company?.jobs.length != 0"  >
+        <div class="title"><h1>Jobs</h1></div>
+        <div class="table">
+          <table style="margin-top: 2em;">
+            <tr
+              *ngFor="let item of pageOfJobs; index as i"
+              class="filaTable"
+            >
+              <div class="resM">
+                <td class="jobCel">
+                  <a class="job-link">{{ item?.title }}</a>
+                </td>
+                <td class="trackCel">
+                  Track: <span>{{ item?.track?.name }}</span>
+                </td>
+              </div>
+              <div *ngIf="item?.isApplied; then applied; else notApplied"></div>
+              <ng-template #applied>
+                <td class="editCel content_button">
+                  <a class="Taken"
+                    [routerLink]="[
+                      '/professional/jobs/' + item._id,
+                      { applied: true }
+                    ]"
+                    >applied
+                    <img
+                      src="/assets/images/Images/inspect/004- Company_Homepage_visit-01/CHECK ICON.PNG"
+                      alt=""
+                  /></a>
+                </td>
+              </ng-template>
+              <ng-template #notApplied>
+                <td class="editCel content_button">
+                  <a
+                    [routerLink]="[
+                      '/professional/jobs/' + item._id,
+                      { applied: false }
+                    ]"
+                    >View Job
+                    <img
+                      src="/assets/images/Images/inspect/004- Company_Homepage_visit-01/next icon.PNG"
+                      alt=""
+                  /></a>
+                </td>
+              </ng-template>
+            </tr>
+          </table>
+
+          <div class="pagination">
+            <jw-pagination
+              [items]="jobByCompany"
+              (changePage)="onChangePageJobs($event)"
+            ></jw-pagination>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="company?.assessments.length != 0"  class="sectionJobs">
+        <div class="title"><h1>Assessments</h1></div>
+        <div class="table">
+          <table>
+            <tr
+              *ngFor="let item of pageOfAssessment; index as i"
+              class="filaTable"
+            >
+              <div class="resM">
+                <td class="jobCel">
+                  <a class="job-link">{{ item?.assessment?.name }}</a>
+                </td>
+                <td class="trackCel">
+                  Track: <span>{{ item?.assessment?.track?.name }}</span>
+                </td>
+              </div>
+              <div *ngIf="item?.assessment?.isCompleted; then taken; else notTaken"></div>
+              <ng-template #taken>
+                <td class="editCel content_button">
+                  <button
+                    class="Taken"
+                    routerLink="/professional/assessments/feedback/{{
+                      item?.assessment?._id
+                    }}"
+                    [disabled]="item?.submission?.feedback.length == 0"
+                  >
+                    VIEW FEEDBACK
+                  </button>
+                  <!-- <a class="Taken"
+                    >Taken
+                    <img
+                      src="/assets/images/Images/inspect/004- Company_Homepage_visit-01/CHECK ICON.PNG"
+                      alt=""
+                  /></a> -->
+                </td>
+              </ng-template>
+              <ng-template #notTaken>
+                <td class="editCel content_button">
+                  <a routerLink="/professional/assessment/{{ item?.assessment?._id }}"
+                    >Take it
+                    <img
+                      src="/assets/images/Images/inspect/004- Company_Homepage_visit-01/next icon.PNG"
+                      alt=""
+                  /></a>
+                </td>
+              </ng-template>
+              <!--
+                <td class="editCel">
+                  <a routerLink="/company/assessments/edit/{{item._id}}">edit</a>
+                </td>
+              -->
+            </tr>
+          </table>
+
+          <div class="pagination">
+            <jw-pagination
+              [items]="assessmentByCompany"
+              (changePage)="onChangePageAssessment($event)"
+            ></jw-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--
+      <div *ngIf="company?.profile?.logo == 'undefined' || company?.profile?.logo == null; then default; else logo">
+      </div>
+      <ng-template #default>
+        <img src="https://vmcontenders.org/wp-content/plugins/freshweb-cdi-avatar/front/images/avatar-member-min.jpg" alt="Company Logo">
+      </ng-template>
+      <ng-template #logo>
+        <img [src]="company?.profile?.logo" alt="Company Logo">
+      </ng-template>
+
+
+      <p>
+        <span *ngIf="company?.profile.industry">{{company?.profile?.industry}} </span>
+        <span *ngIf="company?.profile.locations">- {{company?.profile?.locations}}</span>
+        <span *ngIf="company?.profile.numberOfEmployees">- {{company?.profile?.numberOfEmployees}} employees </span>
+      </p>
+    -->
+  </div>
+</ng-template>

@@ -1,0 +1,316 @@
+@import '../../../../../../../../node_modules/font-awesome/css/font-awesome.css';
+
+.container {
+  width: 42%;
+  margin: 70px auto;
+}
+
+.titles {
+  color: #000;
+  display: block;
+  margin: 40px 0px;
+  font-weight: bold;
+  opacity: 100%;
+}
+
+.container h1 {
+  font-size: 32px;
+  letter-spacing: 1px;
+}
+
+.form {
+  width: 100%;
+  margin: 10px auto;
+}
+
+.divCont {
+  width: 100%;
+  display: flex;
+  margin: 20px 0 0 0;
+  flex-direction: column;
+}
+
+.divContDur {
+  width: 100%;
+  display: flex;
+  margin: 23px 0 0 0;
+  flex-direction: column;
+}
+
+.divContSkills {
+  width: 100%;
+  display: flex;
+  margin: 15px 0 0 0;
+  flex-direction: column;
+}
+
+.divContWhich {
+  width: 100%;
+  display: flex;
+  margin: 20px 0 0 0;
+  flex-direction: column;
+}
+
+.title {
+  color: #000;
+  font-size: 18px;
+}
+
+.track {
+  color: #8c8c8c;
+  margin-right: 222px;
+  font-size: 24px;
+}
+
+.input {
+  margin: 5px 0;
+  height: 35px;
+  color: #4f4f4f;
+  font-size: 16px;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  padding-left: 15px;
+}
+
+.input:focus {
+  border: 1px solid #d1d1d1;
+}
+
+.inputNumb {
+  margin: 7px 0;
+  width: 25%;
+  height: 35px;
+  font-size: 1em;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  padding-left: 15px;
+}
+
+.file {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.file div {
+  width: auto;
+  overflow: hidden;
+  text-align: center;
+  margin: 20px 30px 0px 0px;
+  font-size: 1em;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  color: #c2c2c2;
+  text-transform: uppercase;
+}
+
+.file .writeFile {
+  width: 119px;
+  justify-content: center;
+  margin: 0;
+}
+
+.file .writeFile img {
+  margin: 15px auto;
+}
+.file .writeFile p {
+  font-size: 12px;
+  color: #c2c2c2;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.update {
+  font-size: 130px;
+  margin-left: 2px;
+}
+
+.write {
+  font-size: 130px;
+  margin-left: 8px;
+}
+
+.select-write {
+  background-color: rgb(39, 196, 158);
+  color: white !important;
+}
+
+.select-update {
+  background-color: rgb(39, 196, 158);
+  color: white !important;
+}
+
+.hide {
+  display: none;
+}
+
+.botton {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.back {
+  width: 25%;
+  margin: auto;
+  color: #4f4f4f;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 10px auto;
+  padding: 10px 30px;
+  text-align: center;
+  border-radius: 50px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+  background-color: #ffffff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.next {
+  width: 35%;
+  margin: auto;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px auto;
+  text-align: center;
+  padding: 10px 30px;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: #0eaf81;
+  border: 1px solid #0eaf81;
+  font-weight: bold;
+}
+/*
+.next:hover {
+  background-color: #fff;
+  color: #fff;
+  border: 1px solid #33ffce;
+}*/
+
+.disabled {
+  background: #0eaf81 !important;
+  cursor: not-allowed !important;
+  color: #ffffff;
+}
+
+.active {
+  border: 2px solid #0eaf81 !important;
+  background: transparent;
+}
+
+.track-select {
+  display: inline-block;
+  width: 100%;
+  margin: 7px 0 2px 0;
+  font-size: 1em;
+}
+
+.track-select input::placeholder {
+  color: red;
+}
+
+.spanError {
+  display: block;
+  width: 500px;
+  margin: auto;
+}
+
+.has-error {
+  border-color: red;
+}
+
+.backMobile {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  position: fixed;
+  left: 0px;
+  background-position: left;
+  background-color: white;
+  z-index: 2;
+  margin-top: -13px;
+}
+
+.backMobile a {
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+  margin-left: 4%;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 90%;
+    margin: 80px auto;
+  }
+  .container h1 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+  }
+  .input {
+    height: 42px;
+  }
+  .inputNumb {
+    height: 42px;
+    width: auto;
+  }
+  .next {
+    width: 100%;
+  }
+  .divCont .track-select {
+    width: 100%;
+  }
+  .divContSkills .track-select {
+    width: 100%;
+  }
+  .title {
+    font-size: 14px;
+    color: #000;
+  }
+  input {
+    font-size: 12px;
+    color: #4f4f4f;
+  }
+  .divCont .track-select {
+    font-size: 12px;
+    color: #4f4f4f;
+  }
+  .divContSkills ng-select {
+    font-size: 12px;
+    color: #4f4f4f;
+  }
+  .next {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .back {
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .spanError {
+    width: 370px !important;
+    margin-left: 0px !important;
+  }
+
+  .track-select {
+    display: block !important;
+    width: 370px;
+    margin: 10px 0px;
+  }
+}
+
+/*    background-color: rgb(255, 219, 88); background-color: rgba(255, 219, 88, 0.753);*/

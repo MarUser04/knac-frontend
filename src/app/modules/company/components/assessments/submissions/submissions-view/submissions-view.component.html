@@ -1,0 +1,249 @@
+<ng-template [ngIf]="assessment.professional">
+    <div class="backMobile">
+        <a routerLink="/company/assessments/{{ assessment?.assessment?._id }}" *ngIf="isMobile"
+          ><img src="./assets/images/BACK.PNG" alt="" /> Back</a
+        >
+      </div>
+  <div class="container" (window:resize)="onResize($event)" >
+
+    <div class="topAssessment">
+    <div class="assessment-submission"> <h2>Assessment Submission</h2> </div>
+    <div *ngIf="!isMobile">
+    <a
+      class="back"
+      routerLink="/company/assessments/{{ assessment?.assessment?._id }}"
+      *ngIf="action === 'company'"
+    >
+      <img src="./assets/images/BACK.PNG" alt="" /> Back </a>
+    <a
+      class="back"
+      routerLink="/company/professionals/{{
+        (assessment?.professional)[0]?.user
+      }}"
+      *ngIf="action === 'professional'"
+    >
+      <img src="./assets/images/BACK.PNG" alt="" /> Back</a>
+    </div>
+  </div>
+
+    <div class="box-path" [ngClass]="{ prf: action === 'professional' }">
+      <div class="box-header" *ngIf="action === 'company'">
+        
+          <div class="viewProfessional" *ngIf="!isMobile" >
+              <a
+                routerLink="/company/professionals/{{
+                  (assessment?.professional)[0]?.user
+                }}"
+              >
+                VIEW PROFESSIONAL
+              </a>
+            </div>
+        
+          <div class="sectionProfile">
+              <div class="avatarBox">
+                  <img
+                    *ngIf="(assessment?.professional)[0]?.profilePicture" 
+                    src="{{ (assessment?.professional)[0]?.profilePicture }}"
+                    alt="Image Profile"
+                  />
+                  <img
+                    *ngIf="!(assessment?.professional)[0]?.profilePicture"
+                    src="https://vmcontenders.org/wp-content/plugins/freshweb-cdi-avatar/front/images/avatar-member-min.jpg"
+                    alt="Profile Picture"
+                  />
+                </div>
+                <div class="boxProfile">
+                    <h1> {{ (assessment?.professional)[0]?.name }} {{ (assessment?.professional)[0]?.lastName }} </h1>
+                    <span class="subtitle" >{{ (assessment?.professional)[0]?.subtitle }}</span>
+                    <div class="powers">
+                      <span>Superpowers:</span>
+                      <div >
+                          <p *ngFor="let super of (assessment?.professional)[0]?.superpowers.split(',');" > {{ super }} </p>
+                      </div>
+          
+                    </div>
+                </div>
+
+                <div class="viewProfile">
+                    <div class="boxDesc" *ngIf="isMobile" >
+                      <div class="subDesc" *ngIf="(assessment?.professional)[0]?.availability" >
+                        <div class="boxDescIzq" >
+                          <span> Availability:</span>
+                        </div>
+                        <div class="boxDescDer" >
+                          <p> {{ (assessment?.professional)[0]?.availability }}</p>
+                        </div>
+                      </div>
+                      <div class="subDesc" *ngIf="(assessment?.professional)[0]?.location" > 
+                        <div class="boxDescIzq" >
+                          <span> Location: </span>
+                        </div>
+                        <div class="boxDescDer" >
+                            <p> {{ (assessment?.professional)[0]?.location }}</p>
+                        </div>
+                      </div>
+                      <div class="subDesc" *ngIf="(assessment?.professional)[0]?.experienceLevel" >
+                        <div class="boxDescIzq" >
+                          <span> Experience Level: </span>
+                        </div>
+                        <div class="boxDescDer" >
+                          <p> {{ (assessment?.professional)[0]?.experienceLevel }}</p>
+                        </div>
+                      </div>
+
+                      <div class="subDesc" *ngIf="(assessment?.professional)[0]?.skills" >
+                        <div class="boxDescIzq" >
+                          <span> Skills: </span>
+                        </div>
+                        <div class="boxDescDer skillder" >
+                          <div class="skills" style="margin-top: 0;">
+                            <ul *ngFor="let item of (assessment?.professional)[0]?.skills" >
+                              <li> {{ item }} </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="subDesc viewProfessional">
+                          <a
+                            routerLink="/company/professionals/{{
+                              (assessment?.professional)[0]?.user
+                            }}"
+                          >
+                            VIEW PROFESSIONAL
+                          </a>
+                      </div>
+
+
+                    </div>
+                    <div class="boxDesc" *ngIf="!isMobile" > <!-- No Mobile -->
+                      <div>
+                        <span> Availability:</span>
+                        <p> {{ (assessment?.professional)[0]?.availability }}</p>
+                      </div>
+                      <div>
+                        <span> Location: </span>
+                        <p> {{ (assessment?.professional)[0]?.location  }}</p>
+                      </div>
+                      <div>
+                        <span> Experience Level:</span>
+                        <p> {{ (assessment?.professional)[0]?.experienceLevel }}</p>                 
+                      </div>
+                      <div>
+                        <span>Skills: </span>
+                        <p class="skills">
+                          <label *ngFor="let item of (assessment?.professional)[0]?.skills; let last = last">
+                            {{ item }} <label *ngIf="!last">,</label>
+                          </label>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+          </div>
+
+
+
+
+
+
+
+      </div>
+      <div class="assessment" *ngIf="action === 'professional'">
+        <h1>Assessment</h1>
+        <div class="headerBox">
+          <h2 class="titles">{{ assessment?.assessment?.name }}</h2>
+        </div>
+        <div class="boxDetail">
+          <div>
+            <img src="./assets/images/time-icon.PNG" alt="" />
+            <h2>Duration :</h2>
+            <p class="content">
+              {{ assessment?.assessment?.durationInMinutes }} min
+            </p>
+          </div>
+        </div>
+        <div class="boxTrack">
+          <h2>Track :</h2>
+          <p>{{ assessment?.assessment?.track.name }}</p>
+        </div>
+        <div class="boxTrack">
+          <h2>Skill(s) Being Tested :</h2>
+          <div class="skills-content">
+            <div *ngFor="let item of skills">
+              <div>{{ item?.name }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="boxTrack">
+          <h2>Assessment type :</h2>
+          <p class="content">{{ assessment?.assessment?.type }}</p>
+        </div>
+        <div class="boxTrack">
+          <h2 class="duration">Which would you like Professionals to do? :</h2>
+          <p class="content">
+            {{
+              assessment?.assessment?.isFile ? 'Upload File' : 'Write Answers'
+            }}
+          </p>
+        </div>
+        <div class="boxCont">
+          <h2 class="duration">Assessment Description :</h2>
+          <p class="text">{{ assessment?.assessment?.question }}</p>
+        </div>
+      </div>
+
+      <div *ngIf="assessment?.isFile; then file; else answer"></div>
+      <ng-template #answer>
+        <div class="box-response">
+          <h3 class="titleBox">Assessment response</h3>
+          <p>{{ assessment?.answer }}</p>
+        </div>
+      </ng-template>
+
+      <ng-template #file>
+        <div class="box-files">
+          <h3 class="titleBox2">Files Attached</h3>
+
+          <div class="filesButtons">
+            <div class="filesRight">
+              <a
+                class="buttonDownload"
+                href="{{ assessment?.file }}"
+                target="_blank"
+              >
+                Download <i class="fa fa-arrow-down"></i>
+              </a>
+
+              <!-- <div class="textButton">
+                <span class="titleDownload">
+                  Reasoning of the strategy.pdf
+                </span>
+
+                <span class="sizeDownload"> 209KB </span>
+              </div> -->
+            </div>
+            <!--
+            <div class="filesRight">
+              <button class="buttonDownload">
+                Download <i class="fa fa-arrow-down"></i>
+              </button>
+
+              <div class="textButton">
+                <span class="titleDownload"> Graphics.pdf </span>
+
+                <span class="sizeDownload"> 25KB </span>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </ng-template>
+    </div>
+
+    <div
+      class="footerButton"
+      *ngIf="assessment?.feedback.length == 0 && action === 'company'"
+    >
+      <button class="giveFeedBack" routerLink="feedback">GIVE FEEDBACK</button>
+    </div>
+  </div>
+</ng-template>

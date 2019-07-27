@@ -1,0 +1,88 @@
+<div class="container">
+  <div class="header">
+    <div class="title"><h1>Jobs</h1></div>
+    <div class="search">
+      <div class="boxFilter">
+        <span>Search and apply for your next great job</span>
+        <div class="boxSearch">
+          <ng-select
+            [items]="tracks"
+            bindLabel="name"
+            bindValue="_id"
+            [formControl]="track"
+            class="track-select"
+            placeholder="Filter by track"
+            (change)="filterJobs()"
+          >
+          </ng-select>
+        </div>
+      </div>
+      <!-- <search-jobs></search-jobs> -->
+      <div class="boxApplied">
+        <span>Jobs applied to</span>
+        <label class="radio" (click)="changeSwitch()">
+          <span
+            *ngIf="checked"
+            style="color: #0eaf81;     font-size: 24px;"
+            class="checksquare fa fa-check-square"
+          ></span>
+          <span
+            *ngIf="!checked"
+            style="font-size: 24px;"
+            class="checksquare fa fa-square"
+          ></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div>
+    <table class="tableJob" style="margin-top: 2em;">
+      <tr *ngFor="let item of pageOfItems">
+        <td>
+          <div class="content">
+            <div class="avatar">
+              <img src="{{ (item?.company)[0].logo }}" class="Jobs-img" />
+            </div>
+            <div class="content_name">
+              <div class="info">
+                <span class="Jobs-title">{{ item?.title }}</span>
+                <span class="Jobs-company">{{ (item?.company)[0].name }}</span>
+              </div>
+
+              <div class="track_name">
+                <span class="trackCel"> Track: </span> {{ item?.track?.name }}
+              </div>
+            </div>
+            <div *ngIf="!item?.isApplied; then view; else taken"></div>
+            <ng-template #view>
+              <div class="content_button">
+                <a
+                  [routerLink]="[
+                    '/professional/jobs/' + item._id,
+                    { applied: false }
+                  ]"
+                  >VIEW</a
+                >
+              </div>
+            </ng-template>
+            <ng-template #taken>
+              <div
+                [routerLink]="[
+                  '/professional/jobs/' + item._id,
+                  { applied: true }
+                ]"
+                class="content_button_taken"
+              >
+                <a>Applied <i class="far fa-check-double"></i></a>
+              </div>
+            </ng-template>
+          </div>
+        </td>
+      </tr>
+      <jw-pagination
+        [items]="jobs"
+        (changePage)="onChangePage($event)"
+      ></jw-pagination>
+    </table>
+  </div>
+</div>

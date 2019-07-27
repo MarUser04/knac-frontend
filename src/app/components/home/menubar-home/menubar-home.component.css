@@ -1,0 +1,327 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.menu_bar {
+  display: none;
+}
+
+header {
+  width: 100%;
+}
+
+header .menu_bar div {
+  font-size: 1em;
+}
+
+header nav {
+  z-index: 1000;
+  width: 100%;
+}
+
+.knacLog {
+  display: none;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  width: 87%;
+  margin: auto;
+}
+
+header nav ul li {
+  display: inline-block;
+  position: relative;
+}
+
+header nav ul li a {
+  color: #4f4f4f;
+  display: block;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 0.9em;
+  font-weight: 300;
+  font-family: Lato;
+}
+
+header nav ul li a:hover {
+  color: #0EAF81;
+  cursor: pointer;
+}
+
+header nav ul li a img {
+  width: 100%;
+  height: 80%;
+}
+
+header nav ul #mn_bar {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 10px 0;
+}
+
+header nav ul #mn_bar .SingUp {
+  border: 1px solid #0EAF81;
+  padding: 7px 30px;
+  border-radius: 20px;
+  color: #0eaf81;
+  font-weight: '500';
+  text-transform: uppercase;
+  font-family: Lato;
+}
+
+header nav ul #mn_bar .SingUp:hover {
+  background-color: #0EAF81;
+  color: #fff;
+  cursor: pointer;
+}
+
+.active {
+  color: #0EAF81;
+}
+
+.xIcon {
+  display: none;
+}
+
+.loginIcon {
+  display: none;
+}
+
+.mat-menu-item > a {
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+.mat-menu-item {
+  padding: 0px 10px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.mat-menu-item:last-child {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 901px){
+  header nav ul #mn_bar {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 900px) and (min-width: 801px){
+  header nav ul #mn_bar {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    padding-top: 64px;
+  }
+
+  header nav ul li a:hover {
+    cursor: pointer;
+  }
+
+  .knacLog {
+    display: inline;
+  }
+
+
+  header nav ul li a {
+    color: #151414;
+  }
+
+  header nav ul #mn_bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    /* justify-content: space-between; */
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+    flex-direction: column;
+    padding: 10px 0;
+    margin-top: -0.5em;
+  }
+
+  header nav ul #mn_bar .SingUp {
+    border: none;
+    padding: 7px 30px;
+    border-radius: 20px;
+    color: rgb(5%,69%,51%);
+    font-weight: '500';
+    text-transform: uppercase;
+    font-size: 1.1em;
+    margin-left: -0.5em;
+  }
+  
+
+
+  .xIcon {
+    margin: auto;
+    top: 0;
+    margin-right: 0.65em;
+    margin-top: -1.1em;
+    display: block;
+    color: #151414;
+    margin-bottom: 1em;
+  }
+
+  .xIcon:hover {
+    cursor: pointer;
+  }
+
+  .loginIcon {
+    display: block;
+  }
+
+  header nav {
+    z-index: 1000;
+    width: 100%;
+    padding: 15px 0px;
+    background: rgba(255 , 255, 255, 1);
+  }
+
+  .menu_bar {
+    display: flex;
+    width: 100%;
+    top: 0 !important;
+    background: #fff;
+    z-index: 1;
+    justify-content: space-between;
+  }
+
+  .burgerIcon {
+    margin: auto 3em;
+  }
+
+  .burgerIcon:hover {
+    cursor: pointer;
+  }
+
+  .burgerIcon i {
+    color: #050505;
+  }
+
+  .menu_bar .bt-menu {
+    display: block;
+    padding: 15px 30px;
+    overflow: hidden;
+    /*font-size: 25px;*/
+    text-decoration: none;
+  }
+
+  .title {
+    display: inline;
+  }
+
+  header nav ul #mn_bar .SingUp:hover {
+    color: grey;
+    background: none;
+    cursor: pointer;
+  }
+
+
+  .title:hover,
+  .icon:hover {
+    cursor: pointer;
+  }
+
+  .menu_bar span {
+    float: right;
+    font-size: 30px;
+    color: #333;
+  }
+
+  header nav {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    right: 0;
+    margin: 60px 0;
+    top: 0;
+    z-index: 2;
+    margin-top: -0.8em;
+  }
+
+  header nav ul {
+    display: block;
+    justify-content: none;
+  }
+
+  header nav ul #lg_bar {
+    display: none;
+  }
+
+  header nav ul li {
+    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    width: calc(100% - 0.5em);
+  }
+
+  header nav ul li a {
+    display: block;
+    font-size: 1em;
+    padding: 20px;
+    width: 100%;
+  }
+
+  header nav ul li:hover .children {
+    display: none;
+    width: auto;
+    cursor: pointer;
+  }
+
+  header nav ul li .children {
+    width: 100%;
+    position: relative;
+    background: rgba(255, 255, 255, 1);
+    border: none;
+    box-shadow: none;
+  }
+
+  header nav ul li .children li a {
+    margin-left: 20px;
+  }
+
+  header nav ul li .caret {
+    float: right;
+  }
+
+  .lg-settings a {
+    padding: 12px 20px;
+  }
+
+  header nav ul .lg-settings {
+    position: inherit;
+    right: 0;
+  }
+
+  header nav ul .lg-settings ul {
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .mat-menu-item > a {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+
+  /* .menu_bar {
+    background: #d8d8d8;
+  } */
+}

@@ -1,0 +1,14 @@
+.ng-select .ng-select-container {
+  border: 1px solid #e4e4e4 !important;
+  border-radius: 25px;
+  color: #e4e4e4 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}

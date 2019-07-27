@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="filter">
+    <div class="titles">
+      <p>skills</p>
+    </div>
+    <div class="creat">
+      <button class="buttonC" (click)="showCreate = !showCreate">
+        create
+      </button>
+    </div>
+  </div>
+  <p-table #dt [columns]="cols" [value]="skills | dataFilter : filterQuery" [paginator]="true" [rows]="10" [totalRecords]="totalRecords"
+    [loading]="loading">
+    <ng-template pTemplate="caption">
+      <div>
+        <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+        <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')"
+          style="width: 50%">
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of cols; let i = index;" [pSortableColumn]="col.field">
+          <div *ngIf="i == 1; then normal; else sortIcon"></div>
+          <ng-template #sortIcon>
+            {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+          </ng-template>
+          <ng-template #normal>
+            {{col.header}}
+          </ng-template>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td>{{rowData?.name | ellipsis:10 }}</td>
+        <td style="text-align: center;">
+          <swal #deleteSwal title="Delete?" text="Are you sure to want to delete this skill?" type="warning" [showCancelButton]="true"
+            [focusCancel]="true" (confirm)="deleteSkillById(rowData)">
+          </swal>
+          <a [matMenuTriggerFor]="menu" class="a-icon">
+            <div class="icon-cog iconMenu" style="display: inline;">
+              <i style="cursor: pointer;" class="fa fa-list"></i>
+            </div>
+          </a>
+          <mat-menu #menu="matMenu" overlapTrigger='true' class="submenu subMenuOpc">
+            <button class="professionalLogoutLink" (click)="(showUpdate = !showUpdate) && setForm(rowData)" mat-menu-item>edit</button>
+            <button class="professionalLogoutLink" href="#" [swal]="deleteSwal" mat-menu-item>delete</button>
+          </mat-menu>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<app-dialog [(visible)]="showCreate">
+  <adm-skill-form [type]="'Create'" [skill]="" [setLoading]="loading" (submitted)="createSkill($event)"></adm-skill-form>
+</app-dialog>
+
+<app-dialog [(visible)]="showUpdate">
+  <adm-skill-form [type]="'Edit'" [skill]="skill" [setLoading]="loading" (submitted)="onUpdateSkill($event)"></adm-skill-form>
+</app-dialog>

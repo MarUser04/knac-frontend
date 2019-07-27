@@ -1,0 +1,284 @@
+.container {
+  width: 48%;
+  margin: 108px auto 80px auto;
+}
+
+.back {
+  color: #4f4f4f;
+  padding: 5px 0;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.back img {
+  margin-right: 5px;
+  width: 16px;
+}
+
+.main {
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  padding: 23px 0;
+}
+
+.title-container {
+  text-align: center;
+}
+
+.title {
+  color: #050505;
+  font-size: 28px;
+  letter-spacing: 1.5px;
+  font-weight: bold;
+}
+
+.subTitle {
+  color: #4f4f4f;
+  font-size: 15px;
+  font-weight: 300;
+  margin-top: 27px;
+}
+
+.text-title {
+  color: #4f4f4f;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 25px;
+}
+
+.text-container {
+  width: 62%;
+  margin: 35px auto 0px auto;
+}
+
+.text-container p {
+  color: #4f4f4f;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.text-container textarea {
+  color: #4f4f4f;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.text-concten {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  text-align: center;
+  margin: 30px auto 0px auto;
+  align-self: center;
+}
+
+.text-concten div {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.text-concten p {
+  text-align: justify;
+  white-space: pre-line;
+  word-break: break-word;
+}
+
+.text {
+  color: #4f4f4f;
+  font-size: 12px;
+  font-weight: 300;
+}
+.one {
+  order: 1;
+}
+
+.two {
+  order: 2;
+  align-self: center;
+}
+
+.three {
+  order: 3;
+}
+.bt-container {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  display: inline-block;
+}
+.bt-container .rbutton {
+  width: 95%;
+  padding: 10px 10px;
+  border: 1px solid #4f4f4f;
+  border-radius: 25px;
+}
+.bt-container .rlabel {
+  padding: 5px 10px;
+  width: 95%;
+  color: #4f4f4f;
+  font-size: 11px;
+}
+
+.text-area {
+  width: 95.3%;
+  resize: none;
+  font-size: 1em;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 7px;
+}
+
+.container-button {
+  width: 260px;
+  margin: 45px auto 35px;
+  text-align: center;
+}
+
+.next {
+  height: 46px;
+  width: 261px;
+  padding: 15px 40px;
+  background-color: #27c49e;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  border: 0px;
+  font-size: 16px;
+  border-radius: 50px;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.has-error {
+  border-color: red;
+}
+
+.spanError {
+  display: block;
+  width: 500px;
+}
+
+.cancel {
+  color: #4f4f4f;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 300;
+  letter-spacing: 3px;
+  font-size: 16px;
+  margin-top: 14px;
+}
+
+.backMobile {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  position: fixed;
+  left: 0px;
+  background-position: left;
+  background-color: white;
+  z-index: 2;
+  margin-top: 70px;
+}
+
+.backMobile a {
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+  margin-left: 4%;
+}
+
+.input[type='radio'] {
+  display: none;
+  opacity: 0;
+  width: 0;
+  margin: 0;
+}
+
+.checked {
+  background-color: #4f4f4f;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.input:checked + .checked {
+  border: 3px solid #0eaf81;
+  background-color: transparent;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 80%;
+    margin-top: 80px;
+  }
+  .main {
+    border: none;
+  }
+  .subTitle {
+    margin-top: 10px;
+  }
+  .text-container {
+    width: 95%;
+  }
+  .text-concten p {
+    width: 100%;
+    word-break: break-word;
+  }
+  .text-area {
+    width: 85%;
+    margin: 7px auto 0px auto;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    width: 90%;
+    margin-top: 80px;
+  }
+  .main {
+    border: none;
+  }
+  .title-container .title {
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+  }
+  .subTitle {
+    margin-top: 10px;
+    color: #4f4f4f;
+    font-size: 14px;
+    text-transform: capitalize;
+  }
+  .text-container {
+    width: 100%;
+  }
+  .text-concten {
+    width: 100%;
+  }
+  .text-concten p {
+    width: 100%;
+    word-break: break-word;
+  }
+  .text-title {
+    color: #000000;
+    font-size: 14px;
+  }
+  .text {
+    color: #4f4f4f;
+    font-size: 12px;
+  }
+  .text-container textarea {
+    font-size: 14px;
+  }
+}

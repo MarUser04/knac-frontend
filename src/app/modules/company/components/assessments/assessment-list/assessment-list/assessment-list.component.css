@@ -1,0 +1,144 @@
+.container {
+  width: 56%;
+  margin: 70px auto;
+}
+
+.title {
+  color: #050505;
+  text-align: left;
+}
+
+.title h1 {
+  font-size: 32px;
+  color: #000;
+}
+
+.createPost {
+  text-align: right;
+}
+
+.createJob {
+  margin: 0;
+  display: flex;
+  color: #0eaf81;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 0px;
+  align-items: center;
+  justify-content: flex-end;
+  text-transform: uppercase;
+}
+
+.createJob i {
+  margin: 0px 10px;
+}
+
+.sectTwo .sectionJobs .table {
+  margin: 0 5%;
+}
+
+.table {
+  margin: 15px auto;
+  width: 98.5%;
+}
+
+.table table {
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.table tr .jobCel {
+  width: 40%;
+  color: #0eaf81;
+  text-align: left;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+
+.table tr .trackCel {
+  width: 40%;
+  text-align: left;
+  color: #4f4f4f;
+  font-size: 16px;
+}
+
+.table tr .trackCel span {
+  color: #000;
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.table tr .numApli {
+  width: 20%;
+  color: #4f4f4f;
+  font-size: 16px;
+  text-align: right;
+  cursor: pointer;
+}
+
+.table tr .numApli img {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.titleassessment {
+  font-size: 16px;
+}
+
+.job-link {
+  text-decoration: none;
+  color: #0eaf81;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.job-link a{
+  font-size: 18px;
+}
+
+.job-link img {
+  margin-right: 5px;
+}
+
+.table td {
+  padding: 15px 10px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 95%;
+    margin: 100px auto;    
+  }
+  .title h1 {
+    text-align: center;
+  }
+  .createJob {
+    justify-content: center;
+    margin: 2em 0;
+  }
+  .table tr .numApli {
+    width: 40%;
+    font-size: 14px;
+  }
+  .tdmobile a {
+    font-size: 18px;
+    color: #0eaf81;
+  }
+  .tdmobile span {
+    color: #000;
+    font-size: 18px;
+  }
+  .tdmobile p {
+    color: #4f4f4f;
+    font-size: 16px;
+  }
+}

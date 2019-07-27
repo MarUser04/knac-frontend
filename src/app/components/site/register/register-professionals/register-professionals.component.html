@@ -1,0 +1,149 @@
+<div class="container-professional">
+  <div class="titles">
+    <div class="title"><h2>Sign Up</h2></div>
+    <div class="none"><h1>Find the Right Fit.</h1></div>
+    <div class="none">
+      <h3>Join Knac now and get ready to meet your professional match.</h3>
+    </div>
+  </div>
+
+  <form
+    [formGroup]="f"
+    (ngSubmit)="f.valid && register()"
+    #formUpdate="ngForm"
+    class="form"
+  >
+    <!-- email -->
+    <div class="sectionGroup">
+      <label for="emailProfessional">Email</label>
+      <input
+        type="email"
+        placeholder="What's Your Email?"
+        name="email"
+        id="emailProfessional"
+        formControlName="email"
+        class="input"
+        [ngClass]="{ 'has-error': inputHasError(email, formUpdate.submitted) }"
+      />
+      <span *ngIf="inputHasError(email, formUpdate.submitted)">
+        <sh-error-message
+          [hasError]="email.errors.required"
+          text="Email is"
+          strongText="required"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="email.errors.isEmail && !email.errors.required"
+          text="Enter a valid"
+          strongText="email address"
+        ></sh-error-message>
+      </span>
+    </div>
+    <!-- password -->
+    <div class="sectionGroup">
+      <label for="passwordProfessional">password</label>
+      <input
+        type="password"
+        placeholder="Create Password"
+        name="password"
+        id="passwordProfessional"
+        formControlName="password"
+        class="input"
+        [ngClass]="{
+          'has-error':
+            inputHasError(password, formUpdate.submitted) &&
+            inputHasErrorPassword(password, formUpdate.submitted)
+        }"
+      />
+      <span *ngIf="inputHasError(password, formUpdate.submitted)">
+        <sh-error-message
+          [hasError]="password.errors.required"
+          text="Password is"
+          strongText="required"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="formUpdate.submitted && password.errors.minlength"
+          text="Must have"
+          strongText="at least 8 characters"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="formUpdate.submitted && password.errors.maxlength"
+          text="Must have a"
+          strongText="maximum of 16 characters long"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="formUpdate.submitted && password.errors.hasNumber"
+          text="Must have"
+          strongText="at least 1 number"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="formUpdate.submitted && password.errors.hasUpper"
+          text="Must have"
+          strongText="at least 1 uppercase letter"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="formUpdate.submitted && password.errors.hasLower"
+          text="Must have"
+          strongText="at least 1 lowercase letter"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="formUpdate.submitted && password.errors.hasCharacter"
+          text="Must have"
+          strongText="at least 1 symbol"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="formUpdate.submitted && password.errors.notSpaces"
+          text="Must not have "
+          strongText="spaces"
+        ></sh-error-message>
+      </span>
+    </div>
+    <!-- confirm password -->
+    <div class="sectionGroup">
+      <label for="passwordConfirmProfessional">confirm password</label>
+      <input
+        type="password"
+        placeholder="Confirm Password"
+        name="passwordConfirm"
+        id="passwordConfirmProfessional"
+        formControlName="passwordConfirm"
+        class="input"
+        [ngClass]="{
+          'has-error': inputHasError(passwordConfirm, formUpdate.submitted)
+        }"
+      />
+      <span *ngIf="inputHasError(passwordConfirm, formUpdate.submitted)">
+        <sh-error-message
+          [hasError]="passwordConfirm.errors.required"
+          text="Confirm password is"
+          strongText="required"
+        ></sh-error-message>
+      </span>
+      <sh-error-message
+        [hasError]="f.hasError('notmatch') && passwordConfirm.value.length > 0"
+        text="Password"
+        strongText="does not match!"
+      ></sh-error-message>
+    </div>
+
+    <div class="titles agreeBox">
+      <h4>
+        <input type="checkbox" id="terms" formControlName="cb" required /> I
+        agree to
+        <a routerLink="/home/terms/professional" style="text-decoration:none"
+          >Knac’s Terms and Conditions.</a
+        >
+      </h4>
+    </div>
+
+    <div class="loginButton">
+      <button class="join" mat-button>JOIN NOW</button>
+    </div>
+    <div class="textOpt"><span>- or login with -</span></div>
+    <div class="loginButton">
+      <button class="join-link" (click)="getAuthCode()" mat-button>
+        Join With LinkedIn
+      </button>
+    </div>
+    <sk-wave [isRunning]="loading" color="lightgrey"></sk-wave>
+  </form>
+</div>

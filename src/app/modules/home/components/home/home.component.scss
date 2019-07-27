@@ -1,0 +1,606 @@
+.container {
+  width: 100%;
+  .header {
+    height: 77vh;
+    margin: auto;
+    width: 85%;
+    display: flex;
+    .titleHeader {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 5px;
+      h1 {
+        color: #4a4a4a;
+        font-size: 35px;
+        font-weight: 900;
+        line-height: 55px;
+        text-transform: capitalize;
+        font-family: 'Lato';
+      }
+      h2 {
+        color: #6b6b6b;
+        font-size: 23.5px;
+        line-height: 40px;
+        font-weight: 300;
+      }
+      .buttonSU {
+        margin-top: 7%;
+        button {
+          width: 28%;
+          padding: 10px 0;
+          border: none;
+          color: #ffffff;
+          font-size: 1em;
+          font-weight: bold;
+          text-align: center;
+          background-color: #0eaf81;
+          text-transform: uppercase;
+          border-radius: 40px;
+          cursor: pointer;
+        }
+      }
+    }
+    .imgBox {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      padding-top: 65px;
+      img {
+        width: 88%;
+        height: 88%;
+      }
+    }
+  }
+
+  .sectionProfessionals {
+    display: flex;
+    flex-direction: column;
+    background-color: #0eaf81;
+    height: 576px;
+    padding: 3.5% 0 4% 0;
+    justify-content: center;
+    .backImgProf {
+      position: absolute;
+      display: flex;
+      align-self: flex-end;
+      img {
+        width: 100%;
+      }
+    }
+    .sectionCont {
+      position: absolute;
+      // padding: 3% 0;
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      .titleProfessionals {
+        color: #ffffff;
+        padding: 10px 0;
+        margin-bottom: 4%;
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: 900;
+        h1 {
+          font-size: 25px;
+          letter-spacing: 0.5px;
+          font-family: 'Lato';
+        }
+      }
+      .contentProfessionals {
+        display: flex;
+        justify-content: space-around;
+        width: 94%;
+        margin: auto;
+        color: #ffffff;
+        .boxProf {
+          width: 22%;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+          img {
+            width: 105px;
+            height: 105px;
+          }
+          div {
+            margin-top: 10%;
+            span {
+              text-align: center;
+              font-size: 1.4em;
+              text-transform: capitalize;
+              font-weight: 300;
+            }
+            p {
+              margin: 7% 9px 0 9px;
+              font-size: 1em;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .buttonMatch {
+        text-align: center;
+        margin-top: 5%;
+        a {
+          width: 14%;
+          padding: 10px 20px;
+          border: none;
+          color: #0eaf81;
+          font-size: 1em;
+          font-weight: bold;
+          text-align: center;
+          background-color: #ffffff;
+          border-radius: 40px;
+          cursor: pointer;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .sectionCompanies {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 3.5% 0 4% 0;
+    box-shadow: 0 2px 20px #ccc;
+    .titleCompanies {
+      text-align: center;
+      padding: 10px 0;
+      text-transform: capitalize;
+      margin-bottom: 5%;
+      color: #9b9b9b;
+      font-weight: 900;
+      h1 {
+        font-size: 25px;
+        letter-spacing: 0.5px;
+        font-family: 'Lato';
+      }
+    }
+    .contentCompanies {
+      display: flex;
+      justify-content: space-between;
+      width: 83%;
+      margin: auto;
+      .boxComp {
+        width: 24%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        img {
+          width: 130px;
+          height: 130px;
+          align-self: center;
+          margin-bottom: 10%;
+        }
+        span {
+          text-align: center;
+          font-size: 1.4em;
+          color: #4a4a4a;
+          font-weight: 300;
+        }
+        p {
+          margin: 10% 0 0 0;
+          font-size: 1em;
+          text-align: center;
+          color: #9b9b9b;
+          font-weight: 300;
+        }
+      }
+    }
+    .learnMore {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 5%;
+      a {
+        width: 17%;
+        padding: 10px 20px;
+        border: none;
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        background-color: #0eaf81;
+        border-radius: 40px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      span {
+        color: #4a4a4a;
+        font-size: 17.6px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  .footerContent {
+    padding: 5% 0;
+    .titleFooter {
+      text-align: center;
+      padding: 10px 0;
+      text-transform: capitalize;
+      margin-bottom: 2%;
+      color: #4a4a4a;
+      h1 {
+        font-size: 25.6px;
+        letter-spacing: 0.5px;
+        font-family: 'Lato';
+      }
+    }
+    .boxSection {
+      display: flex;
+      justify-content: space-evenly;
+      width: 80%;
+      margin: 4% auto;
+      align-items: center;
+      img {
+        width: 125px;
+      }
+    }
+    .sectionNav {
+      .backImg {
+        position: absolute;
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+      .footerF {
+        position: absolute;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        padding: 2% 0;
+        .footerIcob {
+          margin-bottom: 2%;
+          text-align: center;
+          img {
+            width: 35px;
+            height: 35px;
+          }
+        }
+        .footerNav ul {
+          padding: 0;
+          list-style: none;
+          display: flex;
+          justify-content: center;
+          margin-bottom: 5%;
+          li {
+            padding: 0 1%;
+            a {
+              text-decoration: none;
+              color: #4f4f4f;
+              font-size: 0.8em;
+              text-transform: capitalize;
+              font-weight: 300;
+            }
+          }
+        }
+        .copyFooter {
+          text-align: center;
+          color: #4f4f4f;
+          font-size: 0.7em;
+          font-weight: 300;
+        }
+      }
+    }
+  }
+}
+
+
+// RESPONSIVE
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .container {
+    .header {
+      flex-direction: column-reverse;
+      height: auto;
+      margin-top: 72px;
+      .titleHeader {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0 30px 0;
+        h1 {
+          font-size: 25px;
+          line-height: 25px;
+        }
+        h2 {
+          font-size: 18px;
+          line-height: 30px;
+        }
+        .buttonSU {
+          button {
+            width: 50%;
+          }
+        }
+      }
+      .imgBox {
+        padding: 20px 0;
+        margin: auto;
+      }
+    }
+    .sectionProfessionals {
+      height: 450px;
+      .backImgProf {
+        img {
+          display: none;
+        }
+      }
+      .sectionCont {
+        align-self: auto;
+        .titleProfessionals {
+          padding: 0;
+          margin: 0;
+        }
+        .contentProfessionals {
+          flex-direction: column;
+          width: 90%;
+          .boxProf {
+            flex-direction: row;
+            width: 100%;
+            margin: 2.5% 0;
+            img {
+              width: 70px;
+              height: 70px;
+            }
+            div {
+              text-align: left;
+              margin: 0 3%;
+              span {
+                line-height: 30px;
+              }
+              p {
+                margin: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .sectionCompanies {
+      .titleCompanies {
+        padding: 0;
+        margin: 0;
+      }
+      .contentCompanies {
+        flex-direction: column;
+        width: 90%;
+        .boxComp {
+          flex-direction: row;
+          width: 100%;
+          margin: 4% 0;
+          img {
+            width: 90px;
+            height: 90px;
+            margin: 0;
+          }
+          div {
+            text-align: left;
+            margin: 0 3%;
+            span {
+              line-height: 30px;
+            }
+            p {
+              margin: 0;
+            }
+          }
+        }
+      }
+      .learnMore {
+        a {
+          width: auto;
+        }
+        span {
+          font-size: 15px;
+        }
+      }
+    }
+    .footerContent {
+      .titleFooter {
+        h1 {
+          font-size: 25px;
+        }
+      }
+      .boxSection {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        div {
+          width: 50%;
+          margin: 2% 0;
+          text-align: center;
+        }
+      }
+      .sectionNav {
+        .footerF {
+          .footerIcob {
+            margin: 0;
+            img {
+              width: 25px;
+              height: 25px;
+            }
+          }
+          .footerNav {
+            ul {
+              margin: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+} 
+
+@media only screen and (max-width: 800px){
+  .container {
+    .header {
+      flex-direction: column-reverse;
+      height: auto;
+      margin-top: 72px;
+      .titleHeader {
+        width: 100%;
+        text-align: center;
+        padding: 20px 0 30px 0;
+        h1 {
+          font-size: 30px;
+          line-height: 30px;
+        }
+        h2 {
+          font-size: 20px;
+        }
+      }
+      .imgBox {
+        padding: 20px 0;
+        margin: auto;
+      }
+      .buttonSU {
+        button {
+          background-color: #0eaf81 !important;
+          width: 50%;
+        }
+      }
+    }
+    .sectionProfessionals {
+      height: 450px;
+      background-color: #0eaf81;
+      .backImgProf {
+        img {
+          display: none;
+        }
+      }
+      .sectionCont {
+        align-self: auto;
+        .titleProfessionals {
+          padding: 0;
+          margin: 0;
+        }
+        .contentProfessionals {
+          flex-direction: column;
+          width: 90%;
+          .boxProf {
+            flex-direction: row;
+            width: 100%;
+            margin: 2.5% 0;
+            img {
+              width: 70px;
+              height: 70px;
+            }
+            div {
+              margin: 0 3%;
+              span {
+                line-height: 30px;
+                font-size: 20px;
+                text-align: left
+              }
+              p {
+                margin: 0;
+                font-size: 15px;
+                text-align: left;
+              }
+            }
+          }
+        }
+      }
+    }
+    .sectionCompanies {
+      .titleCompanies {
+        padding: 0;
+        margin: 0;
+      }
+      .contentCompanies {
+        flex-direction: column;
+        width: 90%;
+        .boxComp {
+          flex-direction: row;
+          width: 100%;
+          margin: 4% 0;
+          img {
+            width: 90px;
+            height: 90px;
+            margin: 0;
+          }
+          div {
+            margin: 0 3%;
+            span {
+              line-height: 30px;
+              font-size: 20px;
+              text-align: left
+            }
+            p {
+              margin: 0;
+              font-size: 15px;
+              text-align: left
+            }
+          }
+        }
+      }
+      .learnMore {
+        a {
+          width: auto;
+          background-color: #0eaf81;
+        }
+        span {
+          font-size: 15px;
+        }
+      }
+    }
+    .footerContent {
+      .titleFooter {
+        h1 {
+          font-size: 25px;
+        }
+      }
+      .boxSection {
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        div {
+          width: 50%;
+          margin: 2% 0;
+          text-align: center;
+        }
+      }
+      .sectionNav {
+        .footerF {
+          .footerIcob {
+            margin: 0;
+            img {
+              width: 25px;
+              height: 25px;
+            }
+          }
+          .footerNav {
+            ul {
+              margin: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+} 
+
+@media only  (min-width: 800px) and (max-width: 1200px) {
+  .container {
+    .header {
+      height: auto;
+      .titleHeader {
+        h1 {
+          font-size: 35px;
+          line-height: 55px;
+        }
+        h2 {
+          font-size: 23.5px;
+          line-height: 40px;
+        }
+      }
+    }
+    .sectionProfessionals {
+      height: 450px;
+    }
+  }
+}

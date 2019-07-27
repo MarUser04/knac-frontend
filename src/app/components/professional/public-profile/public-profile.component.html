@@ -1,0 +1,316 @@
+<ng-template [ngIf]="profile?.professional">
+  <div class="backMobile">
+    <a routerLink="/company/professionals" *ngIf="isMobile">
+      <img src="./assets/images/BACK.PNG" alt="" /> Back</a>
+  </div>
+  <div (window:resize)="onResize($event)" class="cover-container">
+    <img src="./assets/images/img-profile-profesional/COVER-IMAGE.PNG" alt="" />
+  </div>
+  <div class="brand-container">
+    <div class="boxContProf">
+      <div class="sectionProfile">
+        <div class="avatarBox">
+          <img *ngIf="profile?.professional?.profilePicture" src="{{ profile?.professional?.profilePicture }}" alt="Profile Picture"
+          />
+          <img *ngIf="!profile?.professional.profilePicture" src="https://vmcontenders.org/wp-content/plugins/freshweb-cdi-avatar/front/images/avatar-member-min.jpg"
+            alt="Profile Picture" />
+        </div>
+        <div class="boxProfile">
+          <h1>{{ profile?.professional?.name }} {{ profile?.professional?.lastName }}</h1>
+          <span class="subtitle">{{ profile?.professional?.subtitle }}</span>
+          <div class="powers" *ngIf="!isMobile">
+            <span>Superpowers:</span>
+            <div>
+              <p *ngFor="let super of profile?.professional?.superpowers?.split(',');"> {{ super }} </p>
+            </div>
+
+          </div>
+        </div>
+        <div class="viewProfile">
+          <div class="boxDesc" *ngIf="isMobile">
+            <div class="subDesc">
+
+              <div class="boxDescIzq">
+                <span>Superpowers:</span>
+              </div>
+
+              <div class="boxDescDer">
+                <p class="supPow" *ngFor="let super of profile?.professional?.superpowers?.split(',');"> {{ super }} </p>
+              </div>
+
+            </div>
+            <div class="subDesc" *ngIf="profile?.professional?.availability">
+              <div class="boxDescIzq">
+                <span> Availability:</span>
+              </div>
+              <div class="boxDescDer">
+                <p> {{ profile?.professional?.availability }}</p>
+              </div>
+            </div>
+            <div class="subDesc" *ngIf="profile?.professional?.location">
+              <div class="boxDescIzq">
+                <span> Location: </span>
+              </div>
+              <div class="boxDescDer">
+                <p> {{ profile?.professional?.location }}</p>
+              </div>
+            </div>
+            <div class="subDesc" *ngIf="profile?.professional?.experienceLevel">
+              <div class="boxDescIzq">
+                <span> Experience Level: </span>
+              </div>
+              <div class="boxDescDer">
+                <p> {{ profile?.professional?.experienceLevel }}</p>
+              </div>
+            </div>
+            <div class="subDesc" *ngIf="profile?.professional?.contactInformation">
+              <div class="boxDescIzq">
+                <span> Phone number: </span>
+              </div>
+              <div class="boxDescDer">
+                <p> {{ profile?.professional?.contactInformation }}</p>
+              </div>
+            </div>
+            <div class="subDesc" *ngIf="profile?.professional?.skills">
+              <div class="boxDescIzq">
+                <span> Skills: </span>
+              </div>
+              <div class="boxDescDer skillder">
+                <div class="skills" style="margin-top: 0;">
+                  <ul *ngFor="let item of profile?.professional?.skills">
+                    <li> {{ item }} </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="subDesc" *ngIf="profile?.professional?.contactInformation">
+              <div class="boxDescIzq">
+                <span> Web site: </span>
+              </div>
+              <div class="boxDescDer">
+                <p> {{ profile?.professional?.websiteUrl }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="boxDesc" *ngIf="!isMobile">
+            <!-- No Mobile -->
+            <div>
+              <span> Availability:</span>
+              <p> {{ profile?.professional?.availability }}</p>
+            </div>
+            <div>
+              <span> Location: </span>
+              <p> {{ profile?.professional?.location }}</p>
+            </div>
+            <div>
+              <span> Experience Level:</span>
+              <p> {{ profile?.professional?.experienceLevel }}</p>
+            </div>
+            <div *ngIf="profile?.professional?.contactInformation">
+              <span>Phone number:</span>
+              <p>{{ profile?.professional?.contactInformation }}</p>
+            </div>
+            <div *ngIf="profile?.professional?.websiteUrl">
+              <span>Web Site: </span>
+              <p style="text-transform: none;">{{ profile?.professional?.websiteUrl }}</p>
+            </div>
+            <div>
+              <span>Skills: </span>
+              <p class="skills">
+                <label *ngFor="let item of profile?.professional?.skills; let last = last">
+                  {{ item }}
+                  <label *ngIf="!last">,</label>
+                </label>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sectionDesc">
+        <div class="title">
+          <h2>professional summary</h2>
+        </div>
+        <div class="boxEdu">
+          <span>Education</span>
+          <p class="text">
+            {{ profile?.professional?.education }}
+          </p>
+          <!--
+            <p>rochester institute of technology, university of wisconsin-stout</p>
+          -->
+        </div>
+        <div class="boxEdu">
+          <span> About Me </span>
+          <p class="text">
+            {{ profile?.professional?.experience }}
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="navInt">
+      <mat-tab-group *ngIf="!isMobile">
+        <mat-tab label="cv/resume">
+          <div *ngIf="
+                profile?.professional?.resume &&
+                  profile?.professional?.resume !== 'undefined';
+                then cv;
+                else notResume
+              "></div>
+          <ng-template #cv>
+            <div class="divContainer">
+              <span class="duration" style="text-transform: capitalize;"> {{ profile?.professional?.name }} {{ profile?.professional?.lastName }} CV Resume </span>
+              <a class="upload" href="{{ profile?.professional?.resume }}" target="_blank">VIEW RESUME</a>
+            </div>
+          </ng-template>
+          <ng-template #notResume>
+            <div class="divContainer">
+              <span class="duration">resume not uploaded</span>
+            </div>
+          </ng-template>
+        </mat-tab>
+        <mat-tab label="portfolio ">
+          <div class="divContainerGalery">
+
+            <div class="addImg">
+              <div class="addText">
+                <p> Projects the professional have been involved </p>
+              </div>
+            </div>
+
+            <!-- bucle images -->
+            <div class="contentGalery">
+              <div *ngFor="let item of pageOfPhoto" class="secGalery">
+                <div class="imgGalery">
+                  <img src="{{ item?.picture }}" alt="" />
+                </div>
+                <div class="descImg">
+                  <span>{{ item?.name }}</span>
+                  <p>{{ item?.description }}</p>
+                </div>
+              </div>
+            </div>
+            <!-- pagination -->
+            <div class="pagination">
+              <jw-pagination [items]="profile?.professional?.portfolio" [pageSize]="6" (changePage)="onChangePhoto($event)"></jw-pagination>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="ASSESSMENTS">
+          <!-- Not Assessments -->
+          <div class="containerAssessment">
+            <!-- <span class="duration">Not Assessments</span> -->
+            <div class="table">
+              <p class="tableTitle"> List of Assessments taken </p>
+              <table>
+                <tr *ngFor="let item of pageOfAssessments" class="filaTable" class="filaTable">
+                  <ng-template [ngIf]="item?.assessment">
+                    <td class="jobCel">
+                      <h3 class="job-link">{{ item?.assessment?.name }}</h3>
+                      <p>
+                        <span>Track:</span> {{ item?.assessment?.track?.name }} </p>
+                    </td>
+                    <td class="content_button_Two content_button_take">
+                      <span>TAKEN
+                        <img src="../../../../../../../assets/images/TAKEN_ICON.PNG" alt="" />
+                      </span>
+                    </td>
+                  </ng-template>
+                </tr>
+              </table>
+              <div class="pagination">
+                <jw-pagination [items]="profile?.assessments" (changePage)="onChangeAssessment($event)"></jw-pagination>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+      <mat-accordion *ngIf="isMobile">
+        <mat-expansion-panel class="panel">
+          <mat-expansion-panel-header class="TitleAcc">
+            CV/RESUME
+          </mat-expansion-panel-header>
+          <div *ngIf="
+                profile?.professional?.resume &&
+                  profile?.professional?.resume !== 'undefined';
+                then cv;
+                else notResume
+              "></div>
+          <ng-template #cv>
+            <div class="divContainer">
+              <span class="duration" style="text-transform: capitalize;"> {{ profile?.professional?.name }} {{ profile?.professional?.lastName }} CV Resume </span>
+              <a class="upload" href="{{ profile?.professional?.resume }}" target="_blank">VIEW RESUME</a>
+            </div>
+          </ng-template>
+          <ng-template #notResume>
+            <div class="divContainer">
+              <span class="duration">resume not uploaded</span>
+            </div>
+          </ng-template>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel class="panel">
+
+          <mat-expansion-panel-header class="TitleAcc">
+            PORTFOLIO
+          </mat-expansion-panel-header>
+
+          <div class="addText">
+            <p> Projects the professional have been involved </p>
+          </div>
+
+          <div class="contentGalery">
+            <div *ngFor="let item of pageOfPhoto" class="secGalery">
+              <div class="imgGalery">
+                <img src="{{ item?.picture }}" alt="" />
+              </div>
+              <div class="descImg">
+                <span>{{ item?.name }}</span>
+                <p>{{ item?.description }}</p>
+              </div>
+            </div>
+          </div>
+          <!-- pagination -->
+          <div class="pagination">
+            <jw-pagination [items]="profile?.professional?.portfolio" [pageSize]="6" (changePage)="onChangePhoto($event)"></jw-pagination>
+          </div>
+        </mat-expansion-panel>
+        <mat-expansion-panel class="panel">
+          <mat-expansion-panel-header class="TitleAcc">
+            ASSESSMENTS
+          </mat-expansion-panel-header>
+          <div class="containerAssessment">
+            <!-- <span class="duration">Not Assessments</span> -->
+            <div class="table">
+              <p class="tableTitle"> List of Assessments taken </p>
+              <table>
+                <tr *ngFor="let item of pageOfAssessments" class="filaTable">
+                  <ng-template [ngIf]="item?.assessment">
+
+                    <td class="jobCel">
+                      <h3 class="job-link">{{ item?.assessment?.name }}</h3>
+                      <p>
+                        <span>Track:</span>
+                        {{ item?.assessment?.track?.name }}
+                      </p>
+                    </td>
+                    <td class="content_button_Two content_button_take">
+                      <span>TAKEN
+                        <img src="../../../../../../../assets/images/TAKEN_ICON.PNG" alt="" />
+                      </span>
+                    </td>
+                  </ng-template>
+                </tr>
+              </table>
+              <div class="pagination">
+                <jw-pagination [items]="profile?.assessments" (changePage)="onChangeAssessment($event)"></jw-pagination>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</ng-template>

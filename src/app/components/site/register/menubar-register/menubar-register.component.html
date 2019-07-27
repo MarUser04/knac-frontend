@@ -1,0 +1,30 @@
+<header (window:resize)="onResize($event)" (click)="clickedInside($event)">
+  <div class="menu_bar">
+    <a class="bt-menu">
+      <div class="title"routerLink="/">KNAC</div>
+    </a>
+  </div>
+
+  <nav [@slideInOut]="menuState">
+    <ul>
+      <div id="lg_bar">
+        <li>
+          <a routerLink="/">
+            <img src="./assets/images/Logo-Knac.PNG" alt="knac-logo">
+          </a>
+        </li>        
+      </div>
+      <div id="mn_bar">
+        <li>
+          <a href="#">companies</a>
+        </li>
+        <li>
+          <a  routerLink="/posts" href="#">content</a>
+        </li>
+        <li>
+          <a routerLink="/home/signup" class="SingUp">Sign up</a>
+        </li>        
+      </div>
+    </ul>
+  </nav>
+</header>

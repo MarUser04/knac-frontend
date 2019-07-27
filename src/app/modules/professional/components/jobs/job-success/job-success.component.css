@@ -1,0 +1,68 @@
+/* @import '../../../../../../../../node_modules/font-awesome/css/font-awesome.css'; */
+
+ *{
+  font-family: Lato;
+ }
+
+.container {
+  width: 48%;
+  margin: 130px auto;
+  text-align: center;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+}
+
+div h1 {
+  font-size: 32px;
+  margin-top: 10px;
+  color: #050505;
+}
+
+div img {
+  margin-top: 30px;
+}
+
+div {
+  color: #4f4f4f;
+}
+
+div p {
+  width: 90%;
+  margin: 25px auto 45px auto;
+  font-size: 16px;
+  color: #4f4f4f;
+}
+
+a {
+  text-decoration: none;
+  color: #0eaf81;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+
+  .container {
+    width: 90%;
+    margin: 11em auto;
+  }
+
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    width: 90%;
+    margin: 15em auto;
+  }
+  .container .text div h1 {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .container .text .divCont p {
+    font-size: 15px;
+    color: #4f4f4f;
+  }
+  .container .text .divCont a {
+    font-size: 15px;
+  }
+
+}

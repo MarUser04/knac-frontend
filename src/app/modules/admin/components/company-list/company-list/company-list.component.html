@@ -1,0 +1,74 @@
+<div class="container">
+  <header>
+    <div class="titles">
+      <p>companies</p>
+    </div>
+    <div class="creat">
+      <button class="buttonC" (click)="showCreate = !showCreate">create</button>
+    </div>    
+  </header>
+
+  <p-table #dt [columns]="cols" [value]="companies | dataFilter : sorting" [paginator]="true" [rows]="10" [totalRecords]="totalRecords"
+    [loading]="loading" [responsive]="true">
+    <ng-template pTemplate="caption">
+      <div>
+        <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+        <input type="text" pInputText size="50" placeholder="Global Filter" (input)="dt.filterGlobal($event.target.value, 'contains')"
+          style="width:50%">
+      </div>
+    </ng-template>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of cols; let i = index;" [pSortableColumn]="col.field">
+          <div *ngIf="i == 4 || i == 6; then normal; else sortIcon"></div>
+          <ng-template #sortIcon>
+            {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+          </ng-template>
+          <ng-template #normal>
+            {{col.header}}
+          </ng-template>
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td>{{rowData?.name | ellipsis:10 }}</td>
+        <td>{{rowData?.lastName | ellipsis:10 }}</td>
+        <td>{{rowData?.email | ellipsis:15 }}</td>
+        <td>{{rowData?.companyName | ellipsis:10 }}</td>
+        <td>{{rowData?.phone | ellipsis:10 }}</td>
+        <td>{{rowData?.created | date: 'MM/dd/yyyy' }}</td>
+        <td style="text-align: center;">
+          <swal #deleteSwal title="Delete?" text="Are you sure to want to delete this account?" type="warning" [showCancelButton]="true"
+            [focusCancel]="true" (confirm)="deleteById(rowData)">
+          </swal>
+          <swal #createSwal title="Create?" text="Are you sure to want to create this account?" type="warning" style="font-size: 14px !important;"
+            [showCancelButton]="true" [focusCancel]="true" (confirm)="createById(rowData)" style="font-size: 14px">
+          </swal>
+          <a [matMenuTriggerFor]="menu" class="a-icon">
+            <div class="icon-cog iconMenu" style="display: inline;">
+              <i style="cursor: pointer;" class="fa fa-list"></i>
+            </div>
+          </a>
+          <mat-menu #menu="matMenu" overlapTrigger='true' class="submenu">
+            <button class="professionalLogoutLink" [swal]="createSwal" mat-menu-item>create</button>
+            <button class="professionalLogoutLink" (click)="(showUpdate = !showUpdate) && setForm(rowData)" mat-menu-item>edit</button>
+            <button class="professionalLogoutLink" href="#" [swal]="deleteSwal" mat-menu-item>delete</button>
+          </mat-menu>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<!-- Modal -->
+<app-dialog [(visible)]="showCreate">
+  <adm-company-list-modal [type]="'Create'" [setLoading]="loading" [company]="" (submitted)="createManuallys($event)">
+  </adm-company-list-modal>
+</app-dialog>
+
+<app-dialog [(visible)]="showUpdate">
+  <adm-company-list-modal [type]="'Update'" [setLoading]="loading" [company]="company" (submitted)="updateCompany($event)">
+  </adm-company-list-modal>
+</app-dialog>

@@ -1,0 +1,27 @@
+.container {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.text {
+  width: 100%;
+  margin-top: 18px;
+  resize: none;
+  font-size: 20px;
+  min-width: 100%;
+}
+
+.next {
+  padding: 15px 30px;
+  margin-right: 30px;
+  background-color: rgb(255, 219, 88);
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 100%;
+  }
+}

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="header">
+    <h1 class="title">Hi, {{currentProfile?.name}} {{ currentProfile?.lastName }}!</h1>
+    <p class="text">
+      Get started with any of the buttons below. Filter in the rest of this box as to fill this for over two lines or whatever
+      we want to do with this. There'll most likely be misspellings in this paragraph.
+    </p>
+  </div>
+  <div class="main-container">
+    <a class="card" routerLink="/professional/jobs" routerLinkActive="active">
+      Jobs
+    </a>
+    <a class="card" routerLink="/professional/assessments" routerLinkActive="active">
+      Assessments
+    </a>
+
+    <a class="card" routerLink="/professional/posts" routerLinkActive="active">
+      Content
+    </a>
+  </div>
+</div>

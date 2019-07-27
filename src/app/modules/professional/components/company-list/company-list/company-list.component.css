@@ -1,0 +1,284 @@
+.container {
+  width: 80%;
+  margin: 80px auto;
+  font-family: 'Lato';
+}
+
+.title {
+  padding: 20px;
+  font-size: 32px;
+  color: #000000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.title h2 {
+  font-size: 32px;
+}
+
+.boxSearch {
+  border: 1px solid;
+  border-radius: 25px;
+  color: #c2c2c2;
+  width: 50%;
+  margin: 20px auto;
+}
+
+.boxSearch span {
+  font-size: 1em;
+  padding: 0 15px;
+}
+
+.boxSearch input {
+  margin: 0;
+  border: 0;
+  width: 85%;
+  outline: none;
+  font-size: 1em;
+  padding: 10px 0px;
+  color: #4f4f4f;
+}
+
+.professional-list {
+  padding: 15px;
+}
+
+.sectionProfile {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #e4e4e4;
+  padding: 20px;
+  margin: 5% 0;
+}
+
+.avatarBox {
+  width: 155px;
+  height: 155px;
+  text-align: center;
+  display: flex;
+  border-radius: 50%;
+  border: 1px solid #e4e4e4;
+  overflow: hidden;
+}
+
+.avatarBox img {
+  width: 92%;
+  height: 92%;
+  -ms-flex-item-align: center;
+  -ms-grid-row-align: center;
+  align-self: center;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.boxProfile {
+  width: 25%;
+  border-right: 1px solid #e2e2e2;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.boxProfile a {
+  color: #000;
+  text-align: left;
+  font-size: 32px;
+  text-transform: capitalize;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.boxProfile span {
+  color: #4f4f4f;
+  font-size: 0.95em;
+  text-align: left;
+}
+
+.powers {
+  display: flex;
+  margin-top: 10px;
+}
+
+.powers span {
+  margin: 0 10px 0 0;
+  color: #000000;
+  font-size: 18px;
+}
+
+.powers p {
+  color: #4f4f4f;
+  font-size: 16px;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.viewProfile {
+  width: 50%;
+}
+
+.btnViewProf {
+  text-align: end;
+}
+
+.btnViewProf a {
+  border: 1px solid #0eaf81;
+  border-radius: 20px;
+  padding: 10px 30px;
+  font-size: 12px;
+  width: 50%;
+  background: #0eaf81;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.boxDesc {
+  margin: 15px 0;
+}
+
+.boxDesc div {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.boxDesc div span {
+  color: #000000;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+.boxDesc div p {
+  color: #4f4f4f;
+  font-size: 16px;
+}
+
+.pagination {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.section-Container {
+  width: 100%;
+  border-bottom: 1px solid #e2e2e2;
+  margin-top: 1em;
+  padding-bottom: 1em;
+}
+
+.sectionProfileMobile {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sectionInfoMobile {
+  display: flex;
+  width: 60%;
+}
+
+.boxProfileMobile {
+  border: 0px;
+  margin-left: 0.8em;
+  align-self: center;
+  cursor: pointer;
+}
+
+.boxProfileMobile i {
+  margin-left: 0.5em;
+}
+
+.hidden {
+  display: none;
+}
+
+.show-expansion {
+  display: block;
+  transition: display 1s ease;
+  width: 85%;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 100%;
+  }
+  .avatarBox {
+    width: 30px;
+    height: 30px;
+  }
+  .btnViewProf {
+    width: 40%;
+    align-self: center;
+  }
+
+  .btnViewProf a {
+    padding: 4px 14px;
+    font-size: 13px;
+    font-weight: bold;
+  }
+
+  .boxDesc div span {
+    margin-left: 14%;
+    width: 71px;
+    text-align: right;
+  }
+  .company-size {
+    width: 116px !important;
+    margin-left: 7% !important;
+  }
+  .industry {
+    width: 69px !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .title h2 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+  }
+  .boxSearch {
+    width: 100%;
+  }
+  .btnViewProf a {
+    padding: 4px 10px;
+    font-size: 12px;
+  }
+
+  .boxDesc div span {
+    margin-left: 56px;
+  }
+
+  .boxProfileMobile {
+    border: 0px;
+    margin-left: 0.8em;
+    align-self: center;
+  }
+
+  .boxDesc div span{
+    width: 116px !important;
+    margin-left: 4% !important;
+    font-size: 14px;
+  }
+  .boxDesc div p {
+    font-size: 12px;
+    color: #4f4f4f
+  }
+  .boxProfileMobile i {
+    margin-left: 0px;
+  }
+  .boxProfileMobile a {
+    font-size: 15px;
+    color: #000;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .boxProfileMobile {
+    margin-left: 0.2em;
+  }
+}

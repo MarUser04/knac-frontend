@@ -1,0 +1,192 @@
+<header (window:resize)="onResize($event)" (click)="clickedInside($event)">
+  <div class="menu_bar">
+    <a class="bt-menu">
+      <span *ngIf="menuState === 'out' "  > <i class="fa fa-bars icon" (click)="toggleMenu()"></i> </span>
+      <span *ngIf="menuState === 'in' "  > <i class="fa fa-times icon" (click)="toggleMenu()"></i> </span>
+      <div class="title" routerLink="/professional"><img class="knacLog" src="./assets/images/KNAC-LOGO.PNG" alt="knac-logo" /></div>
+    </a>
+  </div>
+
+  <nav [@slideInOut]="menuState">
+    <ul class="menubar">
+      <li id="lg_bar">
+        <a class="professionalLink" routerLink="/professional"
+          ><img src="./././assets/images/KNAC-LOGO.PNG" alt=""
+        /></a>
+      </li>
+      <div class="menuLi">
+
+
+          <li class="submenu lg-settings"  *ngIf="isMobile" (click)="togglePanel()" >
+              <a class="a-icon" >
+                
+    
+                <div class="firstBar">
+
+                    <div *ngIf="!profile.profilePicture; then default; else img"></div>
+                    <ng-template #default>
+                      <div class="icon-cog">
+                        <img src="/assets/images/user_placeholder.png" />
+                      </div>
+                    </ng-template>
+                    <ng-template #img>
+                      <div class="icon-cog">
+                        <img src="{{ profile.profilePicture }}" />
+                      </div>
+                    </ng-template>
+
+                   <div class="NameBar">
+                      <p class="titleBar">{{ profile?.name }} {{ profile?.lastName }}</p>
+                      <p class="subtitleBar"> {{ profile?.subtitle }} </p>
+                   </div>
+                        
+                </div>
+                    
+                    <i class="fa fa-sort-down"></i>
+
+              </a>
+
+
+
+              <div class="submenu panel" [ngClass]="panelStatus" >
+                <a
+                  class="professionalProfileLink"
+                  routerLink="/professional/"
+                  (click)="toggleClose()" 
+                  >Profile</a
+                >
+                <a
+                  class="professionalAccountLink"
+                  routerLink="/professional/profile/edit"
+                  (click)="toggleClose()" 
+                  >Edit profile</a
+                >
+      
+                
+      
+                <a
+                  class="professionalAccountLink"
+                  routerLink="/professional/terms/"
+                  (click)="toggleClose()" 
+                >  View Terms and Conditions </a>
+      
+                <a
+                  class="professionalAccountLink"
+                  routerLink="/professional/update/password"
+                  (click)="toggleClose()" 
+                  >Change Password</a>
+
+              </div>
+
+            </li>
+
+
+
+        <li class="li">
+          <a
+            class="professionalJobslistLink"
+            routerLink="/professional/jobs"
+            routerLinkActive="active"
+            (click)="toggleClose()" 
+            >Jobs</a
+          >
+        </li>
+        <li class="submenu li">
+          <a
+            class="professionalAssessmentLink"
+            routerLink="/professional/assessments"
+            routerLinkActive="active"
+            (click)="toggleClose()" 
+            >Assessments</a
+          >
+        </li>
+        <li class="li">
+          <a
+            class="professionalJobslistLink"
+            routerLink="/professional/companies"
+            routerLinkActive="active"
+            (click)="toggleClose()" 
+            >Companies</a
+          >
+        </li>
+        <li class="li mrm">
+          <a
+            class="professionalContentLink"
+            routerLink="/professional/posts"
+            routerLinkActive="active"
+            (click)="toggleClose()" 
+            >blog</a
+          >
+        </li>
+        <li class="li" *ngIf="isMobile" > 
+          <a
+          class="professionalJobslistLink"
+          href="#"
+          (click)="logout($event)"
+          (click)="toggleClose()" 
+          >Logout
+        </a>         
+        </li>
+        <li class="submenu lg-settings"  *ngIf="!isMobile" >
+          <a [matMenuTriggerFor]="menu" class="a-icon">
+            <i class="fa fa-sort-down"></i>
+
+            <p>{{ profile?.name }} {{ profile?.lastName }}</p>
+            <!--
+              <div class="icon-cog">
+                <img src="{{profile.profilePicture}}"/>
+              </div>
+            -->
+
+            <div *ngIf="!profile.profilePicture; then default; else img"></div>
+            <ng-template #default>
+              <div class="icon-cog">
+                <img src="/assets/images/user_placeholder.png" />
+              </div>
+            </ng-template>
+            <ng-template #img>
+              <div class="icon-cog">
+                <img src="{{ profile.profilePicture }}" />
+              </div>
+            </ng-template>
+          </a>
+          <mat-menu #menu="matMenu" overlapTrigger="false" class="submenu">
+            <a
+              class="professionalProfileLink"
+              routerLink="/professional/"
+              mat-menu-item
+              >Profile</a
+            >
+            <a
+              class="professionalAccountLink"
+              routerLink="/professional/profile/edit"
+              mat-menu-item
+              >Edit profile</a
+            >
+
+            
+
+            <a
+              class="professionalAccountLink"
+              routerLink="/professional/terms/"
+              mat-menu-item
+            >  View Terms and Conditions </a>
+
+            <a
+              class="professionalAccountLink"
+              routerLink="/professional/update/password"
+              mat-menu-item
+              >Change Password</a>
+            <a
+              class="professionalLogoutLink"
+              href="#"
+              (click)="logout($event)"
+              mat-menu-item
+              >Logout
+            </a>
+          </mat-menu>
+        </li>
+      </div>
+    </ul>
+  </nav>
+</header>

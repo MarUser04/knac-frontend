@@ -1,0 +1,102 @@
+<header (window:resize)="onResize($event)" (click)="clickedInside($event)">
+  <div class="menu_bar">
+    <a class="bt-menu">
+      <span> <i class="fa fa-bars icon" (click)="toggleMenu()"></i> </span>
+      <div class="title" routerLink="/admin">KNAC Admin</div>
+    </a>
+  </div>
+
+  <nav [@slideInOut]="menuState">
+    <ul class="menubar">
+      <li id="lg_bar">
+        <a class="companyLink" routerLink="/company/profile">
+          <img src="./././assets/images/KNAC-LOGO.PNG" />
+        </a>
+      </li>
+
+      <div class="menuLi">
+        <li class="li">
+          <a
+            class="companyListLink"
+            routerLink="/admin/company/list"
+            routerLinkActive="active"
+            >Company</a
+          >
+        </li>
+
+        <li class="li">
+          <a
+            class="trackListLink"
+            routerLink="companies"
+            routerLinkActive="active"
+            >Companies</a
+          >
+        </li>
+        <li class="li">
+          <a
+            class="trackListLink"
+            routerLink="professionals"
+            routerLinkActive="active"
+            >Professionals</a
+          >
+        </li>
+
+        <li class="li">
+          <a
+            class="trackListLink"
+            routerLink="/admin/track"
+            routerLinkActive="active"
+            >Tracks</a
+          >
+        </li>
+
+        <li class="li">
+          <a
+            class="trackListLink"
+            routerLink="/admin/questions"
+            routerLinkActive="active"
+            >Questions</a
+          >
+        </li>
+        <li class="li">
+          <a
+            class="trackListLink"
+            routerLink="/admin/skill"
+            routerLinkActive="active"
+            >Skill</a
+          >
+        </li>
+        <li class="li">
+          <a
+            class="trackListLink"
+            routerLink="/admin/template"
+            routerLinkActive="active"
+            >Template</a
+          >
+        </li>
+        <li class="space"></li>
+
+        <li class="submenu lg-settings">
+          <a [matMenuTriggerFor]="menu" class="a-icon">
+            <div class="icon-cog"><i class="fa fa-cog"></i></div>
+          </a>
+          <mat-menu #menu="matMenu" overlapTrigger="false" class="submenu">
+            <a
+              class="companyListLink"
+              routerLink="/admin/update/password"
+              mat-menu-item
+              >Change Password</a
+            >
+            <a
+              class="professionalLogoutLink"
+              href="#"
+              (click)="logout($event)"
+              mat-menu-item
+              >Logout
+            </a>
+          </mat-menu>
+        </li>
+      </div>
+    </ul>
+  </nav>
+</header>

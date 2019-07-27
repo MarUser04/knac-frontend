@@ -1,0 +1,211 @@
+<ng-template [ngIf]="preView?.name">
+  <div class="backMobile">
+    <a routerLink="/professional/assessments" *ngIf="isMobile"
+      ><img src="./assets/images/BACK.PNG" alt="" /> Back</a
+    >
+  </div>
+  <div class="containerContent" [ngClass]="{ 'container-taking': taking }">
+    <div *ngIf="taking" class="container-time">
+      <countdown-timer
+        *ngIf="assessmentExpiration"
+        style="width:300px;display:inline-block;text-align:center;font-size:32px;color:black;font-family:Lato;font-weight:bold;"
+        [end]="assessmentExpiration"
+        (zeroTrigger)="timeIsOver()"
+      ></countdown-timer>
+      <span class="timer">Remaining time</span>
+    </div>
+    <div>
+      <div class="title-container">
+        <h1 class="title">{{ preView?.name }}</h1>
+      </div>
+    </div>
+    <div class="text-container">
+      <span class="duration">
+        <img src="./assets/images/time-icon.PNG" alt="" /> Duration:
+      </span>
+      <span class="content">{{ preView?.durationInMinutes }} min</span>
+    </div>
+    <div class="text-container">
+      <span class="duration">Track: </span>
+      <p class="content">{{ preView?.track?.name }}</p>
+    </div>
+    <div class="text-container skillscontainer">
+      <div class="skillizq">
+        <span class="duration">Skill(s) Being Tested: </span>
+      </div>
+      <div class="skills-content skillder">
+        <div *ngFor="let item of skill">
+          <div>{{ item?.name }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-assessment">
+      <span class="duration">Assessment type: </span>
+      <p class="content">{{ preView?.type }}</p>
+    </div>
+    <div class="text-assessment">
+      <span class="duration">Which would you like Professionals to do?: </span>
+      <p class="content">
+        {{ preView?.isFile ? 'Upload File' : 'Write Answers' }}
+      </p>
+    </div>
+    <div class="text-assessment desc">
+      <span class="duration">Assessment Description:</span>
+      <p class="text">{{ preView?.question }}</p>
+    </div>
+    <div *ngIf="taking">
+      <form
+        [formGroup]="f"
+        *ngIf="!pendingProcessingAssessment"
+        class="form"
+        #formUpdate="ngForm"
+      >
+        <div *ngIf="!preView?.isFile; then writeAnswer; else uploadFile"></div>
+        <ng-template #writeAnswer>
+          <span class="duration">Your answer: </span>
+          <textarea
+            class="text-write"
+            rows="5"
+            placeholder="Type in this box..."
+            formControlName="answer"
+            [ngClass]="{
+              'has-error': inputHasError(answer, formUpdate.submitted)
+            }"
+          >
+          </textarea>
+          <span
+            *ngIf="inputHasError(answer, formUpdate.submitted)"
+            class="spanError"
+          >
+            <sh-error-message
+              [hasError]="answer.errors.required"
+              text="answer is"
+              strongText="required"
+            ></sh-error-message>
+          </span>
+        </ng-template>
+        <br />
+        <ng-template #uploadFile>
+          <span class="duration">Please choose a file to upload: </span> <br />
+          <button class="upload" (click)="openFileBrowser($event)">
+            Choose File
+          </button>
+          <span class="content">{{ fileName }}</span>
+          <input
+            type="file"
+            name="file"
+            id="file"
+            class="hide"
+            (change)="onFileChange($event)"
+            [ngClass]="{
+              'has-error': inputHasError(file, formUpdate.submitted)
+            }"
+          />
+          <span
+            *ngIf="inputHasError(file, formUpdate.submitted)"
+            class="spanError"
+          >
+            <sh-error-message
+              [hasError]="file.errors.required"
+              text="file is "
+              strongText="required"
+            ></sh-error-message>
+          </span>
+        </ng-template>
+      </form>
+    </div>
+  </div>
+</ng-template>
+<br />
+
+<div *ngIf="!taking; then button; else buttonTaking"></div>
+
+<ng-template #button>
+  <div class="container-button">
+    <button
+      *ngIf="!pendingProcessingAssessment"
+      class="next"
+      (click)="show = !show"
+    >
+      TAKE IT
+    </button>
+    <a
+      class="back"
+      routerLink="/professional/assessments"
+      *ngIf="!pendingProcessingAssessment"
+      >BACK</a
+    >
+  </div>
+  <!-- <swal
+    #select
+    text="Are you sure you want to take this assessment? Once you begin, you must finish the assessment. You cannot return if you leave."
+    type="warning"
+    style="font-size: 14px !important;"
+    [showCancelButton]="true"
+    [focusCancel]="true"
+    (confirm)="onClickTake()"
+    style="font-size: 14px"
+  </swal>
+  > -->
+</ng-template>
+
+<ng-template #buttonTaking>
+  <div class="container-button">
+    <button class="next" type="submit" (click)="submit()">SUBMIT</button>
+    <a class="back" (click)="showWarning = !showWarning">BACK</a>
+  </div>
+</ng-template>
+
+<sk-wave [isRunning]="pendingProcessingAssessment" color="lightgrey"></sk-wave>
+
+<app-dialog [(visible)]="show || showWarning">
+  <div *ngIf="show; then showTakeModal; else showWarningModal"></div>
+  <ng-template #showTakeModal>
+    <div class="modal">
+      <h1 class="titleModal">Start the Assessment</h1>
+      <div class="contentModal">
+        <img
+          src="/assets/images/start_assessment_icon/start_assessments.png"
+          alt=""
+        />
+        <p>
+          Are you sure you want to take this assessment? Once you begin, you
+          must finish the assessment.
+        </p>
+      </div>
+      <div class="contentModalButtom">
+        <button (click)="onClickTake()">
+          YES, CONTINUE
+        </button>
+        <br />
+        <span (click)="show = !show">
+          NO, CANCEL
+        </span>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #showWarningModal>
+    <div class="modal">
+      <h1 class="titleModal">Quit the Assessment</h1>
+      <div class="contentModal">
+        <img
+          src="/assets/images/start_assessment_icon/quit_assessment.png"
+          alt=""
+        />
+        <p>
+          Are you sure you want to quit this assessment? . You cannot return if
+          you leave.
+        </p>
+      </div>
+      <div class="contentModalButtomWarning">
+        <button (click)="redirect()">
+          YES, LEAVE
+        </button>
+        <br />
+        <span (click)="showWarning = !showWarning && (take = false)">
+          NO, GO BACK
+        </span>
+      </div>
+    </div>
+  </ng-template>
+</app-dialog>

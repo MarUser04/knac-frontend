@@ -1,0 +1,182 @@
+<header (window:resize)="onResize($event)" (click)="clickedInside($event)">
+  <div class="menu_bar">
+    <a class="bt-menu">
+      <span *ngIf="menuState === 'out'">
+        <i class="fa fa-bars icon" (click)="toggleMenu()"></i>
+      </span>
+      <span *ngIf="menuState === 'in'">
+        <i class="fa fa-times icon" (click)="toggleMenu()"></i>
+      </span>
+      <div class="title" routerLink="/company/profile">
+        <img
+          class="knacLog"
+          src="./assets/images/KNAC-LOGO.PNG"
+          alt="knac-logo"
+        />
+      </div>
+    </a>
+  </div>
+
+  <nav [@slideInOut]="menuState">
+    <ul class="menubar">
+      <li id="lg_bar">
+        <a class="professionalLink" routerLink="/company/profile"
+          ><img src="./././assets/images/KNAC-LOGO.PNG" alt=""
+        /></a>
+      </li>
+      <div class="menuLi">
+        <li
+          class="submenu lg-settings"
+          *ngIf="isMobile"
+          (click)="togglePanel()"
+        >
+          <a class="a-icon">
+            <div class="firstBar">
+              <div *ngIf="!logo; then default; else img"></div>
+              <ng-template #default>
+                <div class="icon-cog">
+                  <img src="/assets/images/user_placeholder.png" />
+                </div>
+              </ng-template>
+              <ng-template #img>
+                <div class="icon-cog">
+                  <img src="{{ logo }}" />
+                </div>
+              </ng-template>
+
+              <div class="NameBar">
+                <p class="titleBar">{{ contactName }}</p>
+                <p class="subtitleBar">{{ website }}</p>
+              </div>
+            </div>
+
+            <i class="fa fa-sort-down"></i>
+          </a>
+
+          <div class="submenu panel" [ngClass]="panelStatus">
+            <a
+              class="professionalProfileLink"
+              routerLink="/company/profile"
+              (click)="toggleClose()"
+              >Profile</a
+            >
+            <a
+              class="professionalAccountLink"
+              [routerLink]="['/company/profile', { edit: true }]"
+              (click)="toggleClose()"
+              >Edit profile</a
+            >
+
+            <a
+              class="professionalAccountLink"
+              routerLink="/company/terms"
+              (click)="toggleClose()"
+            >
+              View Terms and Conditions
+            </a>
+
+            <a
+              class="professionalAccountLink"
+              routerLink="/company/update/password"
+              (click)="toggleClose()"
+              >Change Password</a
+            >
+          </div>
+        </li>
+
+        <li class="li">
+          <a
+            class="professionalJobslistLink"
+            routerLink="/company/jobs"
+            routerLinkActive="active"
+            (click)="toggleClose()"
+            >Jobs</a
+          >
+        </li>
+        <li class="li">
+          <a
+            class="professionalJobslistLink"
+            routerLink="/company/professionals"
+            routerLinkActive="active"
+            (click)="toggleClose()"
+            >Professionals</a
+          >
+        </li>
+        <li class="submenu li">
+          <a
+            class="professionalAssessmentLink"
+            routerLink="/company/assessments"
+            routerLinkActive="active"
+            (click)="toggleClose()"
+            >Assessments</a
+          >
+        </li>
+
+        <li class="li" *ngIf="isMobile">
+          <a
+            class="professionalJobslistLink"
+            href="#"
+            (click)="logout($event)"
+            (click)="toggleClose()"
+            >Logout
+          </a>
+        </li>
+        <li class="submenu lg-settings" *ngIf="!isMobile">
+          <a [matMenuTriggerFor]="menu" class="a-icon">
+            <i class="fa fa-sort-down"></i>
+
+            <p>{{ contactName }}</p>
+
+            <div *ngIf="!logo; then default; else img"></div>
+            <ng-template #default>
+              <div class="icon-cog">
+                <img src="/assets/images/user_placeholder.png" />
+              </div>
+            </ng-template>
+            <ng-template #img>
+              <div class="icon-cog">
+                <img src="{{ logo }}" />
+              </div>
+            </ng-template>
+          </a>
+          <mat-menu #menu="matMenu" overlapTrigger="false" class="submenu">
+            <a
+              class="professionalProfileLink"
+              routerLink="/company/profile"
+              mat-menu-item
+              >Profile</a
+            >
+            <a
+              class="professionalAccountLink"
+              [routerLink]="['/company/profile', { edit: true }]"
+              mat-menu-item
+              >Edit profile</a
+            >
+
+            <a
+              class="professionalAccountLink"
+              routerLink="/company/terms/"
+              mat-menu-item
+            >
+              View Terms and Conditions
+            </a>
+
+            <a
+              class="professionalAccountLink"
+              routerLink="/company/update/password"
+              mat-menu-item
+              >Change Password</a
+            >
+            <a
+              class="professionalLogoutLink"
+              href="#"
+              (click)="logout($event)"
+              mat-menu-item
+              >Logout
+            </a>
+          </mat-menu>
+        </li>
+      </div>
+    </ul>
+  </nav>
+</header>

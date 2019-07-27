@@ -1,0 +1,66 @@
+.boxSearch {
+  // border: 1px solid;
+  // border-radius: 25px;
+  // color: #e4e4e4;
+  // margin: 7px 0px;
+  // width: 230px;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  border: 1px solid #4f4f4f;
+  border-radius: 25px;
+  color: #e4e4e4;
+  width: 48%;
+  margin: 10px auto;
+  span {
+    font-size: 15px;
+    padding: 0 0 0 15px;
+  }
+  .input {
+    margin: 0;
+    border: 0;
+    width: 85%;
+    outline: none;
+    font-size: 16px;
+    padding: 9px 0px;
+    color: #4f4f4f;
+  }
+}
+
+.boxSelect {
+  color: #4f4f4f;
+  width: 48%;
+  margin: 10px auto;
+  span {
+    font-size: 14px;
+    color: #000000;
+    margin-right: 10px;
+    align-self: center;
+    margin-bottom: 10px;
+    display: block;
+  }
+}
+
+.helper {
+  text-align: center;
+  display: block;
+  font-style: italic;
+  font-size: 15px;
+  color: #5a5a5a;
+}
+
+@media screen and (max-width: 800px) {
+  .boxSearch {
+    width: 90%;
+  }
+  .boxSelect {
+    width: 90%;
+  }
+  .helper {
+    text-align: center;
+    display: block;
+    font-style: italic;
+    font-size: 15px;
+    color: #5a5a5a;
+  }
+}

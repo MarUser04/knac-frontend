@@ -1,0 +1,62 @@
+.container {
+  width: 20%;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  padding: 10px;
+}
+
+.title-modal {
+  margin-top: 1em;
+  text-align: center;
+  padding: 0px;
+}
+
+.form {
+  margin: auto;
+}
+
+.form div {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  padding: 5px 10px;
+}
+
+.filter {
+  width: 75%;
+  margin: 20px auto;
+}
+
+swal {
+  font-size: 14px !important;
+}
+
+.has-error {
+  border-color: red;
+}
+
+.update {
+  border: 1px solid #0eaf81;
+  border-radius: 20px;
+  padding: 10px 5px;
+  font-size: 1em;
+  width: 7em;
+  background: #0eaf81;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}

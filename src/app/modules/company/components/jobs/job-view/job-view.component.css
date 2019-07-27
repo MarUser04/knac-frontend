@@ -1,0 +1,357 @@
+.container {
+  width: 70%;
+  margin: 50px 0 65px 15.5%;
+}
+
+.back {
+  color: #4f4f4f;
+  padding: 10px 0;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.back img {
+  margin-right: 5px;
+}
+
+.main {
+  width: 100%;
+  display: flex;
+  flex-wrap: row;
+  justify-content: space-around;
+}
+
+.job {
+  width: 82%;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  margin-right: 15px;
+  padding: 33px 50px;
+  overflow: hidden;
+}
+
+.headerBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+
+.headerBox h2 {
+  color: #0eaf81;
+  display: block;
+  font-size: 24px;
+  text-transform: capitalize;
+  width: 85%;
+}
+
+.next {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #4f4f4f;
+  font-size: 16px;
+}
+
+.boxDetail {
+  display: flex;
+  margin-bottom: 5%;
+  width: auto;
+}
+
+.boxDetail div {
+  width: auto;
+  align-self: baseline;
+  margin-right: 1em;
+}
+
+.boxDetail div img {
+  margin-right: 5px;
+}
+
+.boxDetail div span {
+  font-size: 16px;
+  font-weight: 300;
+  color: #4f4f4f;
+  text-transform: capitalize;
+}
+
+.trackBox {
+  display: -webkit-inline-box;
+  margin-bottom: 25px;
+}
+
+.trackBox h2 {
+  font-size: 16px;
+  color: #000;
+  font-weight: 300;
+  margin: 0 10px 0 0;
+}
+
+.trackBox span {
+  font-size: 16px;
+  color: #4f4f4f;
+  text-transform: capitalize;
+}
+
+.boxCont {
+  margin-bottom: 10px;
+}
+
+.boxCont h2 {
+  font-size: 16px;
+  color: #000;
+  font-weight: 300;
+  margin: 0 10px 0 0;
+}
+
+.boxCont span {
+  font-size: 16px;
+  color: #4f4f4f;
+}
+.boxCont .text {
+  width: 100%;
+  margin-top: 15px;
+  font-size: 16px;
+  background: white;
+  border: 0px;
+  color: #4f4f4f;
+  overflow: hidden;
+  white-space: pre-line;
+}
+
+.delet {
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #4f4f4f;
+  font-size: 16px;
+}
+
+.main .list {
+  width: 45%;
+}
+
+.list .headerBox {
+  margin-bottom: 15px;
+}
+
+.headerBox h3 {
+  font-size: 32px;
+  color: #000;
+  font-weight: bold;
+  padding: 0 10px;
+  letter-spacing: 0.5px;
+}
+
+.profList {
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  padding: 4% 0;
+  overflow-y: scroll;
+  height: 250px;
+}
+
+.contentList {
+  display: flex;
+  padding: 5px 0px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+
+.contentList:hover {
+  border-left: 2px solid #0eaf81;
+  background: #efefef;
+}
+
+.avatar {
+  width: 35%;
+  text-align: center;
+  margin-right: 6%;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar img {
+  width: 42px;
+  height: 42px;
+  margin: auto;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.desc {
+  width: 59%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.name {
+  color: #000;
+  font-size: 16px;
+  margin-bottom: 2px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.ass {
+  color: #4f4f4f;
+  font-weight: 300;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+/******/
+
+.notYet {
+  text-align: center;
+  padding: 5px;
+  margin-top: 1em;
+  margin-left: 16px;
+  color: #4f4f4f;
+}
+
+.backMobile {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  position: fixed;
+  left: 0px;
+  background-position: left;
+  background-color: white;
+  z-index: 2;
+  margin-top: 67px;
+}
+
+.backMobile a {
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+  margin-left: 4%;
+}
+
+@media screen and (max-width: 1000px) {
+  .boxDetail {
+    flex-direction: column;
+  }
+
+  .boxDetail div {
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  .container {
+    width: 80%;
+    margin: 50px 0 65px 10%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    flex-direction: column;
+  }
+
+  .container {
+    width: 90%;
+    margin: auto;
+    margin-top: 5em;
+  }
+
+  .job {
+    width: auto;
+    border: none;
+  }
+
+  .headerBox h2 {
+    width: auto;
+    margin-bottom: 1em;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .boxDetail {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .boxCont {
+    width: auto;
+  }
+
+  .job {
+    padding: 0;
+    margin-right: 0;
+  }
+  .headerBox .next {
+    font-size: 15px;
+    color: #4f4f4f;
+  }
+  .next {
+    margin-bottom: 10px;
+  }
+
+  .headerBox {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .trackBox {
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+  .trackBox h2 {
+    font-size: 14px;
+  }
+  .trackBox span {
+    font-size: 12px;
+  }
+  .boxCont h2 {
+    font-size: 14px;
+  }
+  .boxCont p {
+    font-size: 12px;
+  }
+  .main .list {
+    width: auto;
+  }
+
+  .headerBox h3 {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .next {
+    font-size: 18px;
+  }
+
+  .boxDetail div {
+    margin: 7px auto;
+  }
+  .boxDetail div span {
+    font-size: 14px;
+  }
+
+  .delet {
+    justify-content: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    font-size: 15px;
+    color: #4f4f4f;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .boxDetail {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

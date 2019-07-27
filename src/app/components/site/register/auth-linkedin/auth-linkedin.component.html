@@ -1,0 +1,19 @@
+<div class="card">
+  <div *ngIf="appIsApproved">
+    <div class="log">
+      <img src="../../../../assets/images/logo.png" alt="" srcset="" width="130px" height="170px">
+    </div>
+    <h3>LinkedIn session with success!</h3>
+    Application is approved.
+    <button routerLink="/professional/profile" class="join" > Continue <i class="fa fa-arrow-right"></i></button>
+  </div>
+
+  <div *ngIf="!appIsApproved">
+    <div class="log">
+      <img src="../../../../assets/images/logo.png" alt="" srcset="" width="130px" height="170px">
+    </div>
+    <h3>LinkedIn session with errors!</h3>
+    Application was not approved.
+    <button routerLink="/home/signup/professional" class="join" ><i class="fa fa-arrow-left"></i> Back </button>
+  </div>
+</div>

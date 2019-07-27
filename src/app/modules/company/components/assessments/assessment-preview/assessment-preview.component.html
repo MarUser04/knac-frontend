@@ -1,0 +1,95 @@
+<div class="backMobile">
+  <a routerLink="/company/assessments" *ngIf="isMobile"
+    ><img src="./assets/images/BACK.PNG" alt="" /> Back</a
+  >
+</div>
+<div *ngIf="loading">
+  <sk-wave [isRunning]="loading" color="lightgrey"></sk-wave>
+</div>
+<ng-template [ngIf]="preView?.name">
+  <div *ngIf="!loading" class="container" (window:resize)="onResize($event)">
+    <a class="back" routerLink="/company/assessments/" *ngIf="!isMobile">
+      <img src="./assets/images/BACK.PNG" alt="" /> Back</a
+    >
+    <div class="main">
+      <div class="assessment">
+        <div class="headerBox">
+          <h2 class="titles">{{ preView?.name }}</h2>
+          <div *ngIf="action === 'edit'" class="botton">
+            <a
+              class="next"
+              routerLink="/company/assessments/edit/{{ preView?._id }}"
+            >
+              Edit
+            </a>
+          </div>
+        </div>
+        <div class="boxDetail">
+          <div>
+            <img src="./assets/images/time-icon.PNG" alt="" />
+            <h2>Duration:</h2>
+            <p class="content">{{ preView?.durationInMinutes }} min</p>
+          </div>
+        </div>
+        <div class="boxTrack firstTrack">
+          <h2>Track:</h2>
+          <p>{{ preView?.track?.name }}</p>
+        </div>
+        <div class="boxTrack">
+          <h2>Skill(s) Being Tested:</h2>
+          <div class="skills-content">
+            <div *ngFor="let item of skill">
+              <div>{{ item?.name }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="boxTrack">
+          <h2>Assessment type:</h2>
+          <p class="content">{{ preView?.type }}</p>
+        </div>
+        <div class="boxTrack">
+          <h2 class="duration">Which would you like Professionals to do?:</h2>
+          <p class="content">
+            {{ preView?.isFile ? 'Upload File' : 'Write Answers' }}
+          </p>
+        </div>
+        <div class="boxCont">
+          <h2 class="duration">Assessment Description:</h2>
+          <p class="text">{{ preView?.question }}</p>
+        </div>
+        <a class="delet" *ngIf="!isMobile" (click)="deleteAssessmentById()"
+          >Delete</a
+        >
+      </div>
+      <!-- STATIC LIST OF APPLICANTS -->
+      <div class="list">
+        <div class="headerBox"><h3>List of Applicants</h3></div>
+        <div class="profList">
+          <div *ngIf="preView?.assessmentSubmissions == 0" class="notYet">
+            <p>No applicants yet</p>
+          </div>
+
+          <div *ngFor="let item of preView?.assessmentSubmissions">
+            <a
+              class="contentList active"
+              routerLink="submissions/{{ item?.submission?._id }}"
+            >
+              <div class="avatar">
+                <img src="{{ item?.professional?.profilePicture }}" alt="" />
+              </div>
+              <div class="desc">
+                <p class="name">
+                  {{ item?.professional?.name }}
+                  {{ item?.professional?.lastName }}
+                </p>
+                <p class="ass">{{ item?.professional?.subtitle }}</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <a *ngIf="isMobile" class="delet" (click)="deleteId()">Delete</a>
+    </div>
+  </div>
+</ng-template>

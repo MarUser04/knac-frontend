@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="title"><h2>List of professionals</h2></div>
+  <!-- <search-professional-admin></search-professional-admin> -->
+  <!-- <div class="boxSearch">
+    <span><i class="fa fa-search"></i></span>
+    <input type="text" placeholder="Search  Profesionals.." name="search" />
+  </div> -->
+  <div class="professional-list">
+    <div
+      *ngFor="let item of pageOfItems"
+      [ngClass]="{ sectionProfile: item.user }"
+    >
+      <div class="avatarBox" *ngIf="item.user">
+        <img src="{{ item?.profilePicture }}" alt="" />
+      </div>
+      <div class="boxProfile" *ngIf="item.user">
+        <a routerLink="{{ route }}{{ item?.user?._id }}">
+          {{ item?.name }} {{ item?.lastname }}
+        </a>
+        <span>{{ item?.subtitle }}</span>
+        <div class="powers">
+          <span>Superpowers:</span>
+          <div>
+            <p>{{ item?.superpowers }}</p>
+            <!-- <p>product manager</p>
+            <p>sketching</p> -->
+          </div>
+        </div>
+      </div>
+      <div class="viewProfile" *ngIf="item.user">
+        <!-- <div class="btnViewProf">
+          <button routerLink="{{ route }}{{ item.user }}">view profile</button>
+        </div> -->
+        <div class="btnViewProf">
+          <a (click)="disabledEnabledUser(item?.user?._id)">
+            {{ item?.user?.disabled ? 'Enable' : 'Disable' }}
+          </a>
+          <a class="delete" (click)="deleteCompany(item?.user?._id)">
+            X
+          </a>
+        </div>
+        <div class="boxDesc">
+          <div>
+            <span>Experience:</span>
+            <p class="text">{{ item?.experience }}</p>
+          </div>
+          <div>
+            <span>Availability:</span>
+            <p>{{ item?.availability }}</p>
+          </div>
+          <div>
+            <span style="margin-right: 2.5em;">Location:</span>
+            <p>{{ item?.location }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pagination">
+      <jw-pagination
+        [items]="professionals"
+        (changePage)="onChangePage($event)"
+      ></jw-pagination>
+    </div>
+  </div>
+</div>

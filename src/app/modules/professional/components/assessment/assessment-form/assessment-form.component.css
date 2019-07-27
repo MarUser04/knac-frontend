@@ -1,0 +1,433 @@
+.containerContent {
+  width: 54%;
+  margin: 83px auto 0px auto;
+  overflow: hidden;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  padding: 3.5% 4%;
+}
+
+.container-taking {
+  border: 0px !important;
+}
+
+.text-container {
+  margin-bottom: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.text-assessment {
+  display: flex;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.content {
+  color: #4f4f4f;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.skills-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
+  justify-content: space-around;
+  text-transform: capitalize;
+  align-items: center;
+}
+
+.skills-content div {
+  width: auto;
+  padding-bottom: 10px;
+}
+
+.skills-content div div {
+  color: #fff;
+  background-color: #6666ff;
+  width: auto;
+  margin: auto;
+  border-radius: 25px;
+  padding: 10px;
+  text-align: center;
+  font-size: 12px;
+}
+
+.text {
+  width: 100%;
+  resize: none;
+  font-size: 16px;
+  margin: 18px 0 0 0;
+  border: 0px;
+  background-color: white;
+  color: #4f4f4f;
+  white-space: pre-line;
+}
+
+.desc .duration {
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.desc .text {
+  width: auto;
+  margin: 0;
+}
+
+.text-write {
+  width: 96%;
+  resize: none;
+  font-size: 16px;
+  margin: 15px auto 0 0;
+  border: 1px solid #e4e4e4;
+  background-color: white;
+  color: #4f4f4f;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.duration {
+  margin-right: 5px;
+  font-size: 18px;
+  font-weight: 300;
+  color: #000;
+}
+
+.title-container h1 {
+  display: inline-block;
+  color: #0eaf81;
+  font-size: 24px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.title-container h1 {
+  display: inline-block;
+}
+
+.title-container span {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.title-container span a {
+  font-size: 20pt;
+  padding-left: 15px;
+  color: rgb(46, 46, 46);
+  text-decoration: none;
+}
+
+.skillscontainer {
+  flex-wrap: nowrap;
+}
+
+.skillizq {
+  width: auto;
+}
+
+.skillder {
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  margin-left: 1em;
+}
+
+.container-button {
+  width: 260px;
+  margin: 20px auto 80px;
+  text-align: center;
+}
+.container-button a {
+  font-weight: bold;
+}
+
+.next {
+  padding: 12px 92px;
+  background-color: #0eaf81;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  border: 0px;
+  font-size: 16px;
+  border-radius: 50px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.next:hover {
+  background-color: #0eaf81;
+}
+
+.upload {
+  background: transparent;
+  color: black;
+  border-radius: 50px;
+  padding: 8px 30px;
+  border: 1px solid gray;
+  font-size: 15px;
+  margin: 10px 0 0 0;
+  font-weight: bold;
+}
+
+.upload:hover {
+  background: #95989aa8;
+}
+
+span {
+  color: #4f4f4f;
+  font-size: 14px;
+}
+
+.hide {
+  display: none;
+}
+
+.clock {
+  margin: 10px auto;
+  width: 80%;
+  background: #aaaac0;
+}
+
+.timer {
+  color: #4f4f4f;
+  margin-right: 30px;
+  font-size: 16px;
+  min-width: 270px;
+  display: block;
+  margin: 0px;
+}
+
+.back {
+  text-decoration: none;
+  display: inline-block;
+  color: gray;
+  cursor: pointer;
+  margin-top: 17px;
+}
+
+.backMobile {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  position: fixed;
+  left: 0px;
+  background-position: left;
+  background-color: white;
+  z-index: 2;
+}
+
+.backMobile a {
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+  margin-left: 4%;
+}
+
+.container-time {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.modal {
+  width: 60%;
+  margin: 2em auto;
+}
+
+.titleModal {
+  color: #000000;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.contentModal {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.contentModal p {
+  color: #4f4f4f;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.contentModalButtom {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.contentModalButtom button {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #0eaf81;
+  letter-spacing: 4px;
+  border: 0px;
+  padding: 1em 2.8em;
+  border-radius: 40px;
+}
+
+.contentModalButtomWarning {
+  text-align: center;
+  margin-top: 1em;
+}
+
+.contentModalButtomWarning button {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #0eaf81;
+  letter-spacing: 4px;
+  border: 0px;
+  padding: 1em 4.5em;
+  border-radius: 40px;
+}
+
+.contentModalButtom span {
+  color: #4f4f4f;
+  font-size: 13px;
+  display: block;
+  margin-top: 1em;
+}
+
+.contentModalButtomWarning span {
+  color: #4f4f4f;
+  font-size: 16px;
+  display: block;
+  margin-top: 1em;
+}
+
+@media screen and (max-width: 800px) {
+  .containerContent {
+    width: 60%;
+    margin: 100px auto 0px auto;
+  }
+
+  .backMobile {
+    margin-top: -30px;
+  }
+
+  .skillscontainer {
+    flex-wrap: wrap;
+  }
+
+  .skillizq {
+    width: auto;
+  }
+
+  .skills-content {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .desc .duration {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .desc .text {
+    width: 100%;
+  }
+
+  .text-assessment .desc .duration {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .text-assessment .desc .text {
+    width: 100%;
+  }
+
+  .modal {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .containerContent {
+    width: 90%;
+    border: none;
+    padding: 5% 4%;
+    margin: 83px auto 0px auto;
+  }
+  .backMobile {
+    margin-top: -13px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .containerContent {
+    width: 90%;
+    border: none;
+    padding: 7% 5%;
+  }
+  .title-container .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0eaf81;
+  }
+  .text-container .duration {
+    font-size: 14px;
+  }
+  .text-container .content {
+    font-size: 12px;
+    color: #4f4f4f;
+  }
+  .skillizq .duration {
+    font-size: 14px;
+    align-self: center;
+  }
+  .skills-content {
+    width: 100%;
+    margin: 10px auto;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .skillder div div {
+    font-size: 12.5px;
+  }
+  .text-assessment .duration {
+    font-size: 14px;
+  }
+  .text-assessment .content {
+    color: #4f4f4f;
+    font-size: 12px;
+  }
+  .desc .duration {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .desc .duration {
+    font-size: 14px;
+  }
+  .desc .text {
+    font-size: 12px;
+    color: #4f4f4f;
+    width: 100%;
+  }
+  .form .duration {
+    font-size: 14px;
+  }
+  .form .text-write {
+    color: #4f4f4f;
+    font-size: 12px;
+    width: 93%;
+  }
+  .container-button .next {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .container-button .back {
+    font-size: 15px;
+    color: #4f4f4f;
+  }
+  .contentModalButtom button {
+    letter-spacing: 0px;
+    padding: 1em 2.8em;
+  }
+}

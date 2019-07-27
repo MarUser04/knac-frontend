@@ -1,0 +1,41 @@
+<div class="container" (window:resize)="onResize($event)">
+  <div class="title"><h1>Jobs</h1></div>
+  <div class="createPost">
+    <a routerLink="/company/jobs/create" class="createJob job-link">
+      <img src="./assets/images/post-job-icon.PNG" alt="" />
+      <p>Post a Job</p>
+    </a>
+  </div>
+  <div class="table">
+    <table>
+      <tr *ngFor="let item of pageOfItems; index as i" class="filaTable">
+        <td class="jobCel" *ngIf="!isMobile" >
+          <a class="job-link" routerLink="/company/jobs/{{ item._id }}">
+            {{ item?.title }}
+          </a>
+        </td>
+        <td class="trackCel" *ngIf="!isMobile" >
+          <span>Track:</span> {{ item?.track?.name }}
+        </td>
+        <td class="tdmobile" *ngIf="isMobile" >
+          <a class="job-link" routerLink="/company/jobs/{{ item._id }}">
+            {{item?.title}}
+          </a>
+          <p> <span>Track:</span> {{ item?.track?.name }} </p>
+        </td>
+        <td class="numApli">
+          <img src="./assets/images/Applicant icon.PNG" alt="" />
+          {{ item?.applicants.length }}
+          Applicants
+        </td>
+      </tr>
+    </table>
+
+    <div class="pagination">
+      <jw-pagination
+        [items]="jobs"
+        (changePage)="onChangePage($event)"
+      ></jw-pagination>
+    </div>
+  </div>
+</div>

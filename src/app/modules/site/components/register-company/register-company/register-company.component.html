@@ -1,0 +1,169 @@
+<div class="container-professional">
+  <div class="titles">
+    <div class="title"><h2>Sign Up</h2></div>
+    <div class="none"><h1>Find the Right Fit.</h1></div>
+    <div class="none"><h3>Join Knac now and get ready to meet with professionals.</h3></div>
+  </div>
+  <form
+    [formGroup]="f"
+    (ngSubmit)="f.valid && register()"
+    #formUpdate="ngForm"
+    class="form"
+  >
+    <!-- name -->
+    <div class="sectionGroup">
+      <label for="name">first name</label>
+      <input
+        type="text"
+        placeholder="First Name"
+        name="name"
+        id="name"
+        formControlName="name"
+        maxlength="30"
+        class="input"
+        [ngClass]="{ 'has-error': inputHasError(name, formUpdate.submitted) }"
+      />
+      <span *ngIf="inputHasError(name, formUpdate.submitted)">
+        <sh-error-message
+          [hasError]="name.errors.required"
+          text="name is"
+          strongText="required"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="name.errors.pattern"
+          text="only text is"
+          strongText="allowed"
+        ></sh-error-message>
+      </span>
+    </div>
+
+    <!-- lastName -->
+    <div class="sectionGroup">
+      <label for="lastName">last name</label>
+      <input
+        type="text"
+        placeholder="Last Name"
+        name="lastName"
+        id="lastName"
+        formControlName="lastName"
+        maxlength="30"
+        class="input"
+        [ngClass]="{
+          'has-error': inputHasError(lastName, formUpdate.submitted)
+        }"
+      />
+      <span *ngIf="inputHasError(lastName, formUpdate.submitted)">
+        <sh-error-message
+          [hasError]="lastName.errors.required"
+          text="last name is"
+          strongText="required"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="lastName.errors.pattern"
+          text="only text is"
+          strongText="allowed"
+        ></sh-error-message>
+      </span>
+    </div>
+
+    <!-- companyName -->
+    <div class="sectionGroup">
+      <label for="companyName">company name</label>
+      <input
+        type="text"
+        placeholder="Company Name"
+        name="companyName"
+        id="companyName"
+        formControlName="companyName"
+        maxlength="30"
+        class="input"
+        [ngClass]="{
+          'has-error': inputHasError(companyName, formUpdate.submitted)
+        }"
+      />
+      <span *ngIf="inputHasError(companyName, formUpdate.submitted)">
+        <sh-error-message
+          [hasError]="companyName.errors.required"
+          text="company name is"
+          strongText="required"
+        ></sh-error-message>
+      </span>
+    </div>
+
+    <!-- email -->
+    <div class="sectionGroup">
+      <label for="emailProfessional">what's your email?</label>
+      <input
+        type="email"
+        placeholder="What's Your Email?"
+        name="email"
+        id="emailProfessional"
+        formControlName="email"
+        class="input"
+        [ngClass]="{ 'has-error': inputHasError(email, formUpdate.submitted) }"
+      />
+      <span *ngIf="inputHasError(email, formUpdate.submitted)">
+        <sh-error-message
+          [hasError]="email.errors.required"
+          text="email is"
+          strongText="required"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="email.errors.isEmail && !email.errors.required"
+          text="enter a valid"
+          strongText="email address"
+        ></sh-error-message>
+      </span>
+    </div>
+
+    <!-- phone -->
+    <div class="sectionGroup">
+      <label for="phone">what's your phone number?</label>
+      <input
+        type="text"
+        placeholder="What's your phone number?"
+        name="phone"
+        id="phone"
+        formControlName="phone"
+        class="input"
+        [ngClass]="{ 'has-error': inputHasError(phone, formUpdate.submitted) }"
+      />
+      <span *ngIf="inputHasError(phone, formUpdate.submitted)">
+        <sh-error-message
+          [hasError]="phone.errors.required"
+          text="phone is"
+          strongText="required"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="phone.errors.isNumber"
+          text="phone is"
+          strongText="invalid"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="phone.errors.maxlength"
+          text="Must have a"
+          strongText="maximum of 20 digits"
+        ></sh-error-message>
+        <sh-error-message
+          [hasError]="phone.errors.minlength && !phone.errors.isNumber"
+          text="Must have"
+          strongText="at least 10 digits"
+        ></sh-error-message>
+      </span>
+    </div>
+
+    <div class="titles">
+      <h4>
+        By clicking Join Now, you agree to
+        <a routerLink="/home/terms/company" style="text-decoration:none"
+          >Knac’s Terms and Conditions.</a
+        >
+      </h4>
+    </div>
+
+    <div class="loginButton">
+      <button class="join" mat-button>JOIN NOW</button>
+      <sk-wave [isRunning]="loading" color="lightgrey"></sk-wave>
+    </div>
+  </form>
+</div>

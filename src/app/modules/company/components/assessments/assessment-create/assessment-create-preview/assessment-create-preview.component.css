@@ -1,0 +1,231 @@
+/* @import '../../../../../../../../node_modules/font-awesome/css/font-awesome.css'; */
+
+.container {
+  width: 50%;
+  margin: 83px auto;
+}
+
+.boxOne {
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  padding: 6% 7%;
+}
+
+.headerBox {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.headerBox h1 {
+  color: #0eaf81;
+  display: block;
+  font-size: 32px;
+  font-weight: 500;
+  text-transform: capitalize;
+  width: 85%;
+}
+
+.boxDetTrack {
+  display: flex;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.boxDetailSkills {
+  display: flex;
+  margin-bottom: 25px;
+  width: 100%;
+}
+
+.boxDetailAsset {
+  display: flex;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.boxDetail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.boxDetail div {
+  display: flex;
+}
+
+.skills-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+  flex-wrap: wrap;
+  width: 70%;
+  text-transform: capitalize;
+  margin-left: 2%;
+  text-align: center;
+}
+
+.skills-content div {
+  width: auto;
+  padding-bottom: 10px;
+}
+
+.skills-content div div {
+  color: #fff;
+  background-color: #6666ff;
+  width: 80%;
+  margin: auto;
+  border-radius: 25px;
+  padding: 10px;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.boxDesc {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-container {
+  margin-bottom: 5%;
+}
+
+.text-container-desc {
+  margin: 0;
+}
+
+.title-container {
+  display: inline-block;
+}
+
+.duration {
+  font-size: 18px;
+  color: #000;
+  margin-right: 5px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.content {
+  margin: 0;
+  color: #4f4f4f;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+.text {
+  width: 100%;
+  resize: none;
+  font-size: 16px;
+  margin: 18px auto;
+  border: 0px;
+  background-color: white;
+  color: #4f4f4f;
+  white-space: pre-line;
+}
+
+.botton {
+  margin: 35px auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.back,
+.btn-delete {
+  padding: 10px 5px;
+  letter-spacing: 1px;
+  background-color: #ffffff;
+  margin: 10px auto;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  width: 35%;
+  margin: auto;
+  border-radius: 50px;
+  color: #4f4f4f;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.next {
+  padding: 10px 5px;
+  background-color: #0eaf81;
+  margin: 10px auto;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  width: 35%;
+  border-radius: 50px;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+  border: 1px solid #0eaf81;
+  letter-spacing: 1px;
+  font-size: 18px;
+}
+
+.title-container span {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.title-container span a {
+  font-size: 20pt;
+  padding-left: 15px;
+  color: rgb(46, 46, 46);
+  text-decoration: none;
+}
+
+.backMobile {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  position: fixed;
+  left: 0px;
+  background-position: left;
+  background-color: white;
+  z-index: 2;
+  margin-top: -18px;
+}
+
+.backMobile a {
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+  margin-left: 4%;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 90%;
+    margin: 85px auto;
+  }
+  .boxOne {
+    border: none;
+    padding: none;
+  }
+  .headerBox h1 {
+    width: auto;
+  }
+
+  .skills-content {
+    width: 100%;
+  }
+  .skills-content div {
+    width: 100%;
+  }
+  .boxDetailAsset {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .boxDetailAsset div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .next {
+    width: 100%;
+  }
+}

@@ -1,0 +1,104 @@
+.container {
+  width: 80%;
+  height: 100%;
+  margin: 0px auto;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+}
+
+.img {
+  width: 25%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.img img {
+  width: 40%;
+}
+
+.titles {
+  font-family: Lato;
+  letter-spacing: 1px;
+}
+
+.titles h1 {
+  color: #000;
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.titles h2 {
+  color: #4f4f4f;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.main div {
+  margin: 30px 0;
+}
+
+.main a {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1em;
+  background-color: #0eaf81;
+  cursor: pointer;
+  border-radius: 40px;
+}
+
+.main .company {
+  padding: 10px 80px;
+}
+
+.main .professionals {
+  padding: 10px 60px;
+}
+
+@media screen and (max-width: 800px){
+
+  .container {
+    width: auto;
+    height: 100%;
+    margin: 0px auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 13px;
+  }
+  
+  .titles h1 {
+    font-size: 32px;
+  }
+
+  .titles h2 {
+    font-size: 16px;
+  }
+
+  .img {
+    width: 50%;
+  }
+
+  .img img {
+    width: 50%;
+  }
+
+  .main {
+    width: 90%;
+    margin: auto
+  }
+
+} 

@@ -1,0 +1,492 @@
+@import '../../../../../node_modules/font-awesome/css/font-awesome.css';
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Lato';
+}
+
+a {
+  text-decoration: none;
+  color: #4f4f4f;
+  font-weight: normal;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+.menu_bar {
+  display: none;
+}
+
+header {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  /*height: 55px;*/
+}
+
+header .menu_bar div {
+  font-size: 30px;
+}
+
+header nav {
+  background: #fff;
+  z-index: 1000;
+  width: auto;
+  height: 55px;
+}
+
+.cdk-overlay-pane {
+  width: 17em !important;
+}
+
+div #cdk-overlay-1 {
+  width: 17.1em !important;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: baseline;
+  text-transform: uppercase;
+  height: 55px;
+}
+
+header nav ul #lg_bar {
+  font-size: 30px;
+  border: none;
+  color: #fff;
+}
+
+#lg_bar a {
+  padding: 4px 0px 4px 32px;
+  color: #333;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+}
+
+#lg_bar a img {
+  width: 100%;
+  height: 80%;
+}
+
+#lg_bar a p {
+  padding-left: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+header nav ul .menuLi {
+  position: absolute;
+  right: 0;
+  height: 55px;
+  width: auto;
+  font-size: 0.8em;
+}
+
+header nav ul .menuLi .li {
+  height: 55px;
+  text-align: center;
+}
+
+header nav ul .menuLi .mrm {
+  margin-right: 5px;
+}
+
+header nav ul li a span {
+  float: right;
+  margin: 0px 5px;
+}
+
+header nav ul li {
+  display: inline-block;
+  position: relative;
+}
+
+header nav ul li:hover {
+  color: #0eaf81;
+}
+
+.active {
+  color: #0eaf81;
+}
+
+/*.active:hover {
+  border-bottom: 0px;
+}*/
+
+header nav ul .li a {
+  display: block;
+  text-decoration: none;
+  padding: 17px 10px;
+  font-size: 14px;
+  color: #4f4f4f;
+}
+
+header nav ul li a span {
+  margin-right: 10px;
+}
+
+/*
+header nav ul li:hover .children {
+  /* display:block;
+}*/
+
+header nav ul li .children {
+  display: none;
+  background: rgb(255, 255, 255, 0.5);
+  z-index: 1000;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 3px 3px 5px #888888;
+  width: auto;
+}
+
+header nav ul li .children li {
+  display: block;
+  overflow: hidden;
+  border-bottom: 1px solid #ccc;
+}
+
+header nav ul li .children li a {
+  display: block;
+}
+
+header nav ul li .children li a span {
+  float: right;
+  position: relative;
+  top: 3px;
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+header nav ul li .caret {
+  position: relative;
+  top: 3px;
+  margin-left: 10px;
+  margin-right: 0px;
+}
+header nav ul .lg-settings {
+  /*position: absolute;
+  right: 0;*/
+  height: 100%;
+  background-color: #0eaf81;
+}
+
+header nav ul .lg-settings:hover {
+  border: none;
+}
+
+header nav ul .lg-settings a {
+  padding: 10px 10px;
+  display: flex;
+  height: 100%;
+  color: #fff;
+  align-items: center;
+  cursor: pointer;
+}
+
+.NameBar {
+  width: auto !important;
+  height: auto !important;
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+.titleBar {
+  font-size: 1.3em;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.subtitleBar {
+  color: #4f4f4f;
+  text-transform: none;
+  font-size: 1.1em;
+}
+
+.firstBar {
+  display: flex;
+  flex-direction: row;
+  width: auto !important;
+  height: auto !important;
+}
+
+.a-icon {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+header nav ul .lg-settings a i {
+  margin-right: 0px 5px;
+}
+
+header nav ul .lg-settings a p {
+  margin: 0px 10px;
+  padding: 0px 13px;
+  font-size: 14px;
+}
+.titleBar {
+  font-weight: 500;
+}
+.subtitleBar {
+  font-weight: 500;
+}
+header nav ul .lg-settings a div {
+  background-color: #fff;
+  border-radius: 50%;
+  width: 43px;
+  height: 45px;
+  overflow: hidden;
+}
+
+header nav ul .lg-settings a div img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+header nav ul .lg-settings ul {
+  margin-left: -90px;
+}
+
+header nav ul .lg-settings ul li a {
+  padding: 10px 20px;
+}
+
+.mat-menu-item > a {
+  text-decoration: none;
+  color: black;
+  font-weight: normal;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+.mat-menu-item {
+  padding: 0px 10px;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.mat-menu-item:last-child {
+  border-bottom: none;
+}
+
+@media screen and (max-width: 1030px) {
+  header nav ul .menuLi {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .titleBar {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+  }
+  .subtitleBar {
+    font-size: 14px;
+    color: #4f4f4f;
+  }
+  .panel {
+    padding: 2px 0;
+    background-color: white;
+    margin: 1em 0;
+  }
+
+  .panel > a {
+    color: #4f4f4f !important;
+    border: none;
+    text-transform: capitalize;
+    margin: 5px 0;
+    font-size: 1.2em;
+  }
+
+  .hiddenPanel {
+    display: none !important;
+    transition: visibility 0s, opacity 0.5s linear;
+    height: auto;
+  }
+
+  .showPanel {
+    display: block !important;
+    transition: visibility 0s, opacity 0.5s linear;
+    height: auto;
+  }
+
+  .submenu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header nav ul {
+    height: auto;
+  }
+
+  .icon {
+    color: #000;
+  }
+
+  header nav ul li:hover {
+    border-bottom: none;
+  }
+
+  body {
+    padding-top: 64px;
+  }
+
+  header nav ul .lg-settings a {
+    color: #000;
+    height: auto;
+  }
+
+  header nav ul .lg-settings {
+    position: absolute;
+    background-color: #fff;
+    height: auto;
+  }
+
+  .menu_bar {
+    display: block;
+    position: fixed;
+    width: 100%;
+    top: 0 !important;
+    background: #ffffff;
+    z-index: 5;
+  }
+
+  .menu_bar .bt-menu {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    overflow: hidden;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .title {
+    display: inline;
+  }
+
+  .title:hover,
+  .icon:hover {
+    cursor: pointer;
+  }
+
+  .menu_bar span {
+    float: right;
+    font-size: 30px;
+    color: #333;
+  }
+
+  header nav ul li:hover {
+    border-bottom: none;
+    transition: none;
+    color: none;
+  }
+
+  .active {
+    border-bottom: none;
+    transition: none;
+    color: none;
+  }
+
+  header nav {
+    width: 100%;
+    height: calc(100% - 60px);
+    position: fixed;
+    right: 0;
+    margin: 60px 0;
+    padding: 1.2em;
+  }
+
+  .active {
+    color: none;
+  }
+
+  header nav ul {
+    display: flex;
+    justify-content: none;
+    width: 100% !important;
+  }
+
+  header nav ul .menuLi {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+
+  header nav ul .menuLi .li {
+    width: 100%;
+    text-align: left;
+  }
+
+  header nav ul #lg_bar {
+    display: none;
+  }
+
+  header nav ul li {
+    display: flex;
+    width: 100% !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  header nav ul li a {
+    display: block;
+  }
+
+  header nav ul li:hover .children {
+    display: none;
+    width: auto;
+  }
+
+  header nav ul li .children {
+    width: 100%;
+    position: relative;
+    background: rgba(255, 255, 255, 1);
+    border: none;
+    box-shadow: none;
+  }
+
+  header nav ul li .children li a {
+    margin-left: 20px;
+  }
+
+  header nav ul li .caret {
+    float: right;
+  }
+
+  .lg-settings a {
+    padding: 12px 20px;
+  }
+
+  header nav ul .lg-settings {
+    position: inherit;
+    right: 0;
+  }
+
+  header nav ul .li a {
+    font-weight: lighter !important;
+    font-size: 1.1em;
+    color: #4f4f4f;
+  }
+
+  header nav ul .lg-settings ul {
+    margin-left: 0px;
+  }
+}
+@media screen and (max-width: 420px) {
+  .mat-menu-item > a {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}

@@ -1,0 +1,430 @@
+// styles for the assessment list with the view button
+.container {
+  width: 54.5%;
+  margin: 70px auto;
+  .header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 3%;
+    .title {
+      margin-bottom: 8px;
+      h1 {
+        color: #000000;
+        font-size: 32px;
+        text-align: left;
+        font-weight: 900;
+        letter-spacing: 1px;
+      }
+    }
+    .search {
+      display: flex;
+      justify-content: space-between;
+      .textSearch {
+        color: #4f4f4f;
+        font-size: 16px;
+        align-self: center;
+      }
+      .boxSearch {
+        color: #4f4f4f;
+        font-size: 16px;
+        display: flex;
+        .radio {
+          display: block;
+          position: relative;
+          padding-left: 35px;
+          margin-bottom: 12px;
+          margin-left: 10px;
+          cursor: pointer;
+          font-size: 22px;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          /* hide the browser's default radio button */
+          input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+          }
+          /* create custom radio */
+          .check {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            border-radius: 3px;
+          }
+          .checksquare {
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 3px;
+          }
+          /* create the radio and hide when not checked */
+          .check:after {
+            content: '';
+            position: absolute;
+            display: none;
+          }
+          /* radio style */
+          .check:after {
+            top: 0;
+            left: 0;
+            width: 7px;
+            height: 7px;
+            border-radius: 25%;
+            background: white;
+            margin: 4px auto;
+          }
+        }
+
+        /* on mouse-over, add border color */
+        .radio:hover input ~ .check {
+        }
+
+        /* add background color when the radio is checked */
+        .radio input:checked ~ .check {
+          background-color: #0eaf81;
+          border: 1px solid #0eaf81;
+        }
+
+        /* show the radio when checked */
+        .radio input:checked ~ .check:after {
+          display: flex;
+          position: initial;
+        }
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    td {
+      width: 100%;
+      padding-bottom: 20px;
+      .content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #e4e4e4;
+        padding: 0 0 13px 0;
+        .avatar {
+          width: 80px;
+          height: 80px;
+          text-align: center;
+          display: flex;
+          border-radius: 50%;
+          border: 1px solid #e4e4e4;
+          .assessment-img {
+            width: 80px;
+            height: 80px;
+            -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+            border-radius: 50%;
+            margin: 0 auto;
+            object-fit: contain;
+            object-position: center center;
+          }
+        }
+        .content_name {
+          display: flex;
+          flex-direction: column;
+          width: 73.5%;
+          padding: 0 0 0 6px;
+          .info {
+            margin: auto 0;
+            display: flex;
+            flex-direction: column;
+            padding: 0 0 6px 0;
+            .assessment-title {
+              color: #0eaf81;
+              font-size: 18px;
+              font-weight: bold;
+              padding-bottom: 5px;
+              text-transform: capitalize;
+              width: 100%;
+            }
+            .assessment-content {
+              font-size: 16px;
+              color: #4f4f4f;
+              text-transform: capitalize;
+              width: 100%;
+              font-weight: 300;
+              padding-bottom: 5px;
+            }
+            .assessment-content-track {
+              font-size: 18px;
+              color: #282828;
+              text-transform: capitalize;
+              width: 100%;
+              word-break: break-all;
+              font-weight: 300;
+              span {
+                color: #4f4f4f;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+        .content_button {
+          margin: auto 0;
+          a {
+            color: white !important;
+            background: #0eaf81;
+            border-radius: 20px;
+            padding: 9px 38px;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            font-weight: bold;
+          }
+        }
+
+        .content_name_two {
+          display: flex;
+          flex-direction: column;
+          width: 60%;
+          padding: 0 0 0 6px;
+          .info {
+            margin: auto 0;
+            display: flex;
+            flex-direction: column;
+            padding: 0 0 6px 0;
+            .assessment-title {
+              color: #0eaf81;
+              font-size: 18px;
+              font-weight: 500;
+              padding-bottom: 5px;
+              text-transform: capitalize;
+              width: 100%;
+            }
+            .assessment-content {
+              font-size: 12px;
+              color: #4f4f4f;
+              text-transform: capitalize;
+              width: 100%;
+              font-weight: 300;
+              padding-bottom: 5px;
+            }
+            .assessment-content-track {
+              font-size: 12px;
+              color: #000;
+              text-transform: capitalize;
+              width: 100%;
+              word-break: break-all;
+              font-weight: 300;
+              span {
+                color: #4f4f4f;
+              }
+            }
+          }
+        }
+        .content_button_Two {
+          margin: auto 0;
+          width: 30%;
+          text-align: right;
+          span {
+            color: #6ac358;
+            font-size: 12px;
+            font-weight: bold;
+          }
+          button {
+            color: white !important;
+            background: #0eaf81;
+            border-radius: 20px;
+            padding: 9px 15px;
+            text-decoration: none;
+            font-size: 12px;
+            text-transform: uppercase;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            margin: 0 0 0 10px;
+            border: 0px;
+            font-weight: bold;
+          }
+          button:disabled {
+            color: white !important;
+            background: #d8d3d2 !important;
+            cursor: no-drop;
+          }
+        }
+      }
+    }
+    jw-pagination {
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 90%;
+    margin: 100px auto 20px auto;
+    .header {
+      margin-bottom: 10%;
+      .title {
+        h1 {
+          text-align: center;
+        }
+      }
+      .search {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        .boxSearch {
+          justify-content: center;
+        }
+        .textSearch {
+          width: 70%;
+          margin-bottom: 15px;
+        }
+      }
+    }
+    div {
+      table {
+        tr {
+          td {
+            .content {
+              .avatar {
+                width: 45px;
+                height: 45px;
+                .assessment-img {
+                  width: 45px;
+                  height: 45px;
+                }
+              }
+              .content_name_two {
+                .info {
+                  .assessment-title {
+                    color: #0EAF81;
+                    font-size: 15px;
+                    font-weight: bold;
+                    word-break: break-word;
+                  }
+                  .assessment-content {
+                    color: #4f4f4f;
+                    font-size: 12px;
+                  }
+                  .assessment-content-track {
+                    font-size: 12px;
+                    color: #000;
+                    .track {
+                      color: #4f4f4f;
+                    }
+                  }
+                }
+              }
+              .content_button_Two {
+                flex-direction: column-reverse;
+                display: flex;
+                span {
+                  margin-top: 10px;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    .header {
+      .title {
+        margin: 0;
+        h1 {
+          font-size: 20px;
+          font-weight: bold;
+          color: #000;
+        }
+      }
+      .search {
+        .textSearch {
+          font-size: 14px;
+          color: #4f4f4f;
+          margin: 1em 0;
+        }
+        .boxSearch {
+          justify-content: left;
+          div {
+            color: #4f4f4f;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    div {
+      table {
+        tr {
+          td {
+            .content {
+              .avatar {
+                .assessment-img {
+                }
+              }
+              .content_name_two {
+                .info {
+                  .assessment-title {
+                    color: #0EAF81;
+                    font-size: 15px;
+                    font-weight: bold;
+                    word-break: break-word;
+                  }
+                  .assessment-content {
+                    color: #4f4f4f;
+                    font-size: 12px;
+                  }
+                  .assessment-content-track {
+                    font-size: 12px;
+                    color: #000;
+                    .track {
+                      color: #4f4f4f;
+                    }
+                  }
+                }
+              }
+              .content_name {
+                .info {
+                  .assessment-title {
+                    color: #0EAF81;
+                    font-size: 15px;
+                    font-weight: bold;
+                    word-break: break-word;
+                  }
+                  .assessment-content {
+                    color: #4f4f4f;
+                    font-size: 12px;
+                  }
+                  .assessment-content-track {
+                    font-size: 12px;
+                    color: #000;
+                    .track {
+                      color: #4f4f4f;
+                    }
+                  }
+                }
+              }
+              .content_button_Two {
+                width: 70%;
+                flex-direction: column-reverse;
+                display: flex;
+                span {
+                  margin-top: 10px;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

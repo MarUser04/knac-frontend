@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="header">
+      <h1 class="title">Hi, {{(profile$ | async)?.contactName}}!</h1>
+      <p>
+        Get started with any of the buttons below. 
+        Filter in the rest of this box as to fill this for over 
+        two lines or wahtever we want to do with this.
+        There'll most likley be misspellings in this paragraph
+      </p>
+    </div>
+    <div class="main-container">
+      <mat-card class="card">
+        <h2 class="title">Post a Job</h2>
+        <p>
+          Get started with any of the buttons below. 
+          Filter in the rest of this box as to fill this for over 
+          two lines or wahtever we want to do with this.
+          There'll most likley be misspellings in this paragraph
+        </p>
+        <div>
+          <a 
+            mat-button 
+            routerLink="/company/jobslist"
+            class="button">
+            Post a Job
+          </a>
+        </div>
+      </mat-card>
+      <mat-card class="card">
+        <h2 class="title">View Professionals</h2>
+        <p>
+          Get started with any of the buttons below. 
+          Filter in the rest of this box as to fill this for over 
+          two lines or wahtever we want to do with this.
+          There'll most likley be misspellings in this paragraph
+        </p>
+        <div>
+          <a 
+            routerLink="/company/professionals"
+            mat-button 
+            class="button">
+            Professionals
+          </a>
+        </div>
+      </mat-card>
+      <mat-card class="card">
+        <h2 class="title">Create an Assessment</h2>
+        <p>
+          Get started with any of the buttons below. 
+          Filter in the rest of this box as to fill this for over 
+          two lines or wahtever we want to do with this.
+          There'll most likley be misspellings in this paragraph
+        </p>
+        <div>
+          <a
+            mat-button
+            routerLink="/company/assessments"
+            class="button">
+            Assessments
+        </a>
+        </div>
+      </mat-card>
+    </div>
+  </div>

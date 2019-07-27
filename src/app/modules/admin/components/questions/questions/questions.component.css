@@ -1,0 +1,66 @@
+.container {
+  width: 36%;
+  margin: 5% auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  padding: 10px;
+}
+
+.title-modal {
+  text-align: center;
+  padding: 0px;
+  font-size: 30px;
+  color: #050505;
+}
+
+.form {
+  margin: 3% auto;
+}
+
+.form div {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.form label {
+  margin-bottom: 5px;
+  margin-left: 10px;
+  color: #656565;
+  font-size: 14px;
+}
+
+.form input {
+  padding: 7px 10px;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+}
+
+.filter {
+  width: 75%;
+  margin: 20px auto;
+}
+
+swal {
+  font-size: 14px !important;
+}
+
+.has-error {
+  border-color: red;
+}
+
+.update {
+  margin: auto;
+  border: 0px;
+  background-color: #0eaf81;
+  padding: 7px 25px;
+  cursor: pointer;
+  border-radius: 25px;
+  color: #fff;
+  text-transform: uppercase;
+
+}

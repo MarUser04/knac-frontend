@@ -1,0 +1,371 @@
+* {
+  font-family: Lato;
+}
+
+.container {
+  width: 48.5%;
+  margin: 81px auto 0 auto;
+  overflow: hidden;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+}
+
+.port img {
+  width: 100%;
+  height: auto;
+  max-height: 162.63px;
+}
+
+.main {
+  padding: 20px 50px;
+
+}
+
+.info {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content_title {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+
+.Job-title {
+  color: #0eaf81;
+  display: block;
+  font-size: 1.3em;
+  padding-bottom: 14px;
+  text-transform: capitalize;
+  font-weight: bold;
+  word-break: none;
+  font-family: Lato;
+  order: 2;
+}
+
+.Job-company {
+  display: block;
+  padding: 10px 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #4f4f4f;
+  text-transform: capitalize;
+  word-break: break-all;
+  font-family: Lato;
+  order: 1;
+}
+
+.Job-img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.sectionGroup {
+  margin-bottom: 10px 0;
+}
+
+.sectionGroup span {
+  display: block;
+  font-size: 18px;
+  font-weight: 300;
+  color: #000;
+}
+
+.text {
+  color: #4f4f4f;
+  width: 100%;
+  margin-top: 15px;
+  resize: none;
+  font-size: 16px;
+  background: white;
+  border: 0px;
+  font-weight: 300;
+  line-height: 18px;
+  font-weight: lighter;
+  white-space: pre-line;
+}
+
+.container-button {
+  width: 260px;
+  margin: 35px auto;
+  text-align: center;
+}
+
+.next {
+  padding: 12px 88px;
+  background-color: #0eaf81;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  border: 0px;
+  font-size: 16px;
+  border-radius: 50px;
+  letter-spacing: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.next:hover {
+  background-color: #0eaf81;
+}
+
+.back {
+  text-decoration: none;
+  display: inline-block;
+  color: #4f4f4f;
+  cursor: pointer;
+  margin-top: 17px;
+  font-weight: bold;
+}
+
+.boxDetail {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 5%;
+  width: 95%;
+  font-size: 13px;
+  order: 3;
+}
+
+.trackBox {
+  display: -webkit-inline-box;
+  margin-bottom: 25px;
+}
+
+.trackBox h2 {
+  font-size: 18px;
+  color: #000;
+  font-weight: 300;
+  margin: 0 10px 0 0;
+}
+
+.trackBox span {
+  font-size: 16px;
+  color: #4f4f4f;
+  text-transform: capitalize;
+}
+
+.backMobile {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  position: fixed;
+  left: 0px;
+  background-position: left;
+  background-color: white;
+  z-index: 2;
+}
+
+.backMobile a {
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+  margin-left: 4%;
+}
+
+@media screen and (max-width: 800px) {
+  .main {
+    padding: 2em 2em;
+  }
+
+  .content_title {
+    flex-direction: column;
+  }
+
+  .info {
+    width: 98%;
+  }
+
+  .container {
+    width: 100%;
+    margin: 5.5em auto 0 auto;
+    overflow: hidden;
+    border: 1px solid #e4e4e4;
+    border: none;
+  }
+
+  .backMobile {
+    margin-top: 65px;
+  }
+
+  .container-button {
+    width: 100%;
+    margin: 34px auto;
+    text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .next {
+    width: 80%;
+  }
+
+  .Job-title {
+    color: #0eaf81;
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .boxDetail {
+    justify-content: space-evenly;
+    margin-bottom: 2em;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 5%;
+  }
+
+  .Job-company {
+    padding-bottom: 25px;
+    font-size: 1.2em;
+    font-weight: 300;
+    color: #000;
+    font-family: Lato;
+    /* width: 50%; */
+    position: absolute;
+    margin-top: 3em;
+    margin-left: 1em;
+  }
+
+  .Job-img {
+    width: 150px;
+    height: 150px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: center center;
+    object-position: center center;
+    float: right;
+  }
+
+  .trackBox h2 {
+    font-size: 1.2em;
+  }
+
+  .trackBox span {
+    margin: 1em 0;
+  }
+
+  .trackBox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sectionGroup span {
+    font-size: 1em;
+    margin: 10px 0;
+  }
+
+  .sectionGroup .text {
+    color: #4f4f4f;
+    width: 100%;
+    margin: 10px 0;
+    resize: none;
+    font-size: 1em;
+    background: white;
+    border: 0px;
+    font-weight: 300;
+    line-height: 20px;
+    font-weight: lighter;
+    white-space: pre-line;
+  }
+
+  .sectionGroup .descript {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container .main .content_title .info .Job-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0eaf81;
+    word-break: break-word;
+  }
+  .container .main .content_title .info .boxDetail {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    margin: 0 0 10px 0;
+    text-align: center;
+    order: 3;
+  }
+  .container .main .content_title .info .boxDetail div {
+    margin: 5px 0;
+  }
+  .container .main .content_title .info .boxDetail div span {
+    margin-left: 0.6em;
+  }
+  .container .main .content_title .info .Job-company {
+    margin-top: 1.2em;
+    margin-left: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+  }
+  .container .main .content_title .Job-img {
+    width: 100px;
+    height: 100px;
+  }
+  .container .main .sectionGroup .trackBox {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container .main .sectionGroup .trackBox h2 {
+    font-size: 14px;
+    color: #000;
+  }
+  .container .main .sectionGroup .trackBox span {
+    font-size: 12px;
+    color: #4f4f4f;
+    margin: 10px 0;
+    word-break: break-word;
+  }
+  .container .main .sectionGroup .descript {
+    font-size: 14px;
+    color: #000;
+  }
+  .container .main .sectionGroup .text {
+    margin: 10px 0;
+    font-size: 12px;
+    color: #4f4f4f;
+    word-break: break-word;
+  }
+  .container-button .next {
+    font-size: 15px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .container-button .back {
+    font-size: 15px;
+    color: #4f4f4f;
+  }
+  .content_title div {
+    margin: auto;
+  }
+  .content_title {
+    flex-direction: column-reverse;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Job-company {
+    order: 1;
+    width: 100%;
+    text-align: center;
+    position: inherit;
+  }
+  .Job-title {
+    order: 2;
+  }
+}

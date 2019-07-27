@@ -1,0 +1,131 @@
+<ng-template [ngIf]="preView?.name">
+  <div class="backMobile">
+    <a (click)="clickBack()" *ngIf="isMobile"
+      ><img src="./assets/images/BACK.PNG" alt="" /> Back</a
+    >
+  </div>
+  <div class="container">
+    <div class="boxOne">
+      <div class="headerBox">
+        <h1 class="titles">{{ preView?.name }}</h1>
+      </div>
+      <div class="boxDetail">
+        <div>
+          <span class="duration">
+            <img src="./assets/images/time-icon.PNG" alt="" /> Duration:
+          </span>
+          <span class="content">{{ preView?.durationInMinutes }} min</span>
+        </div>
+      </div>
+      <div class="boxDetTrack">
+        <div>
+          <span class="duration">Track: </span>
+          <span class="content">{{ trackInfo?.name }}</span>
+        </div>
+      </div>
+      <div class="boxDetailSkills">
+        <span class="duration">Skill(s) Being Tested:</span>
+        <div class="skills-content">
+          <div *ngFor="let item of skill">
+            <div>{{ item?.name }}</div>
+          </div>
+          <!--
+            <div><div>conversion</div></div>
+            <div><div>CTA</div></div>
+            <div><div>blog</div></div>
+            <div><div>marketing-Sales</div></div>
+            <div><div>content</div></div>
+            <div><div>video</div></div>
+            <div><div>communication</div></div>
+            <div><div>hubSpot</div></div>
+            <div><div>cross platform</div></div>
+            <div><div>design</div></div>
+            <div><div>landing pages</div></div>
+            <div><div>cross platform</div></div>
+            <div><div>design</div></div>
+            <div><div>landing pages</div></div>
+          -->
+        </div>
+      </div>
+      <div class="boxDetailAsset">
+        <div>
+          <span class="duration">Assessment type: </span>
+          <span class="content">{{ preView?.type }}</span>
+        </div>
+      </div>
+      <div class="boxDetailAsset">
+        <span class="duration"
+          >Which would you like Professionals to do?:
+        </span>
+        <span class="content">{{
+          preView?.isFile ? 'Upload File' : 'Write Answers'
+        }}</span>
+      </div>
+      <div class="boxDesc">
+        <span class="duration">Assessment Description:</span>
+        <p class="text">{{ preView?.question }}</p>
+      </div>
+    </div>
+    <div *ngIf="!loading; then button; else spinner"></div>
+    <ng-template #button>
+      <ng-template [ngIf]="action === 'create' || action === 'update'">
+        <div class="botton">
+          <a class="next" (click)="clickSubmit()">
+            {{ action === 'update' ? 'Update' : 'Done' }}</a
+          >
+          <a class="back" (click)="clickBack()">Back</a>
+        </div>
+      </ng-template>
+    </ng-template>
+    <ng-template #spinner>
+      <sk-wave [isRunning]="loading" color="lightgrey"></sk-wave>
+    </ng-template>
+  </div>
+</ng-template>
+
+<!--
+  <div class="divCont">
+     <span class="span">Duration of Assessment:</span>
+     <input type="text" placeholder="{{preView?.durationInMinutes}} Minutes" disabled name="name" id="name" class="input">
+   </div>
+   <div class="divCont">
+     <span class="span">Assessment type:</span>
+     <input type="text" placeholder="{{preView?.type}}" disabled name="name" id="name" class="input">
+   </div>
+   <!-- TODO BUGFIX in update / Create
+   <ng-template [ngIf]="action === 'edit' || action === 'professional'">
+     <div>
+       <span class="duration">Track:</span>
+       <input type="text" placeholder="{{preView?.track.name}}" disabled name="name" id="name" class="input">
+     </div>
+   </ng-template>
+   <!-- TODO BUGFIX in update / Create
+   <div class="divCont">
+     <span class="span">Professionals Must:</span>
+     <input type="text" placeholder="{{preView?.isFile ? 'Upload File':'Write Answers'}}" disabled name="name" id="name" class="input">
+   </div>
+   <div class="divCont">
+     <span class="span">Description</span>
+     <textarea class="text" rows="10" [defaultValue]="preView.question" disabled></textarea>
+   </div>
+   <div *ngIf="!loading; then button; else spinner"></div>
+   <ng-template #button>
+     <ng-template [ngIf]="action === 'create' || action === 'update'">
+       <div class="botton">
+         <a class="next" (click)="clickSubmit()"> {{ action === 'update' ? 'Update' : 'Done'}}</a>
+         <a class="back" (click)="clickBack()">Back</a>
+       </div>
+     </ng-template>
+     <!-- <ng-template [ngIf]="action === 'edit'">
+       <div class="botton">
+         <a class="back" routerLink="/company/assessments/">Back</a>
+         <a class="next" routerLink="/company/assessments/{{preView._id}}/submissions"> Submissions </a>
+         <a class="next" routerLink="/company/assessments/edit/{{preView._id}}"> Edit </a>
+         <a class="btn-delete" [swal]="deleteSwal" (click)="clickBack()">Delete</a>
+       </div>
+       <swal #deleteSwal title="Delete?" text="Are you sure to want to delete this Assessment?" type="warning" [showCancelButton]="true"
+         [focusCancel]="true" (confirm)="deleteAssessmentById()">
+       </swal>
+     </ng-template>
+   </ng-template>
+-->

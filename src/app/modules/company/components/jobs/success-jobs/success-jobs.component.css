@@ -1,0 +1,46 @@
+.container {
+  width: 49%;
+  margin: 9.5% auto;
+}
+
+.header h1 {
+  color: #000;
+  font-size: 32px;
+  margin: 12px 0;
+  letter-spacing: 1px;
+}
+
+.header {
+  margin: 15px 0;
+}
+
+.text {
+  margin: auto;
+  text-align: center;
+  border: 1px solid #e4e4e4;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #0eaf81;
+  font-weight: bold;
+}
+
+.divCont {
+  color: #4f4f4f;
+  margin: 26px 0 36px 0;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 800px){
+
+
+  .container {
+    width: 90%;
+    margin: auto;
+    margin-top: 9em;
+  }
+
+}

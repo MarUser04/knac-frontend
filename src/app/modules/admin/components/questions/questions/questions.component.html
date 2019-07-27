@@ -1,0 +1,57 @@
+<div class="container">
+  <h1 class="title-modal">Questions</h1>
+  <form [formGroup]="f" (ngSubmit)="submit()" #formUpdate="ngForm" class="form">
+    <div>
+      <label for="">Question 1</label>
+      <input type="text" placeholder="Question" name="firstName" id="firstName" formControlName="question1" [value]="question1.value"
+        [ngClass]="{'has-error' : inputHasError(question1, formUpdate.submitted) }">
+      <span *ngIf="inputHasError(question1, formUpdate.submitted)">
+        <sh-error-message [hasError]="question1.errors.required" text="question is" strongText="required"></sh-error-message>
+      </span>
+    </div>
+
+    <div>
+      <label for="">Question 2</label>
+      <input type="text" placeholder="Question" name="lastName" id="lastName" formControlName="question2" [value]="question2.value"
+        [ngClass]="{'has-error' : inputHasError(question2, formUpdate.submitted) }">
+      <span *ngIf="inputHasError(question2, formUpdate.submitted)">
+        <sh-error-message [hasError]="question2.errors.required" text="question is" strongText="required"></sh-error-message>
+      </span>
+    </div>
+
+    <div>
+      <label for="">Question 3</label>
+      <input type="text" placeholder="Question" name="companyName" id="companyName" formControlName="question3" [value]="question3.value"
+        [ngClass]="{'has-error' : inputHasError(question3, formUpdate.submitted) }">
+      <span *ngIf="inputHasError(question3, formUpdate.submitted)">
+        <sh-error-message [hasError]="question3.errors.required" text="question is" strongText="required"></sh-error-message>
+      </span>
+    </div>
+
+    <div>
+      <label for="">Question 4</label>
+      <input type="email" placeholder="Question" name="email" id="email" formControlName="question4" [value]="question4.value"
+        [ngClass]="{'has-error' : inputHasError(question4, formUpdate.submitted) }">
+      <span *ngIf="inputHasError(question4, formUpdate.submitted)">
+        <sh-error-message [hasError]="question4.errors.required" text="question is" strongText="required"></sh-error-message>
+      </span>
+    </div>
+
+    <div>
+      <label for="">Question 5</label>
+      <input type="text" placeholder="Question" name="phone" id="phone" formControlName="question5" [value]="question5.value" [ngClass]="{'has-error' : inputHasError(question5, formUpdate.submitted) }">
+      <span *ngIf="inputHasError(question5, formUpdate.submitted)">
+        <sh-error-message [hasError]="question5.errors.required" text="question is" strongText="required"></sh-error-message>
+      </span>
+      <br />
+    </div>
+
+    <div *ngIf="!loading; then button; else spinner"></div>
+    <ng-template #button>
+      <button class="update">create</button>
+    </ng-template>
+    <ng-template #spinner>
+      <sk-wave [isRunning]="loading" color="lightgrey"></sk-wave>
+    </ng-template>
+  </form>
+</div>

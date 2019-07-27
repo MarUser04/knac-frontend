@@ -1,0 +1,117 @@
+<div class="backMobile">
+  <a routerLink="/company/jobs" *ngIf="isMobile"
+    ><img src="./assets/images/BACK.PNG" alt="" /> Back</a
+  >
+</div>
+<div (window:resize)="onResize($event)" class="container">
+  <a class="back" routerLink="/company/jobs/" *ngIf="!isMobile">
+    <img src="./assets/images/BACK.PNG" alt="" /> Back</a
+  >
+  <div class="main">
+    <div class="job">
+      <div class="headerBox">
+        <h2>{{ data?.job?.title }}</h2>
+        <a class="next" routerLink="/company/jobs/edit/{{ id }}">Edit</a>
+      </div>
+      <div class="boxDetail">
+        <div>
+          <img src="./assets/images/locaion-icon.PNG" alt="" />
+          <span matTooltip="Location" matTooltipPosition="above">
+            {{ data?.job?.location }}</span
+          >
+        </div>
+        <div>
+          <img src="./assets/images/calendar-icon.PNG" alt="" />
+          <span matTooltip="Date" matTooltipPosition="above"
+            >Posted {{ date(data?.job?.created) }}</span
+          >
+        </div>
+        <div>
+          <img src="./assets/images/time-icon.PNG" alt="" />
+          <span matTooltip="Job Type" matTooltipPosition="above">{{
+            data?.job?.type
+          }}</span>
+        </div>
+      </div>
+      <div class="trackBox">
+        <h2>Track:</h2>
+        <span *ngIf="data?.job?.track">{{ data?.job?.track?.name }}</span>
+      </div>
+      <div class="boxCont">
+        <h2>Job Description:</h2>
+        <p class="text">{{ data?.job?.description }}</p>
+      </div>
+      <div class="boxCont">
+        <h2>Perks/Benefits:</h2>
+        <p class="text">{{ data?.job?.perks }}</p>
+      </div>
+      <a *ngIf="!isMobile" class="delet" (click)="deleteId()">Delete</a>
+    </div>
+    <!-- STATIC LIST OF APPLICANTS -->
+    <div class="list">
+      <div class="headerBox"><h3>List of Applicants</h3></div>
+      <div class="profList">
+        <div *ngIf="data?.applications?.length == 0" class="notYet">
+          <p>No applicants yet</p>
+        </div>
+
+        <div *ngFor="let item of data?.applications">
+          <a
+            class="contentList"
+            routerLink="/company/professionals/{{ item?.user?._id }}"
+          >
+            <div class="avatar">
+              <img src="{{ item?.profile?.profilePicture }}" alt="" />
+            </div>
+            <div class="desc">
+              <p class="name">
+                {{ item?.profile?.name }} {{ item?.profile?.lastName }}
+              </p>
+              <p class="ass">{{ item?.profile?.subtitle }}</p>
+            </div>
+          </a>
+        </div>
+        <!--
+          <a class="contentList active">
+            <div class="avatar">
+              <img src="./assets/images/img-avatar/BRANDON.PNG" alt="" />
+            </div>
+            <div class="desc">
+              <p class="name">Jason Phillips</p>
+              <p class="ass">Designer UI/UX</p>
+            </div>
+          </a>
+          <a class="contentList">
+            <div class="avatar">
+              <img src="./assets/images/img-avatar/william.PNG" alt="" />
+            </div>
+            <div class="desc">
+              <p class="name">Wiliam Cole</p>
+              <p class="ass">Web Designer UI/UX</p>
+            </div>
+          </a>
+          <a class="contentList">
+            <div class="avatar">
+              <img src="./assets/images/img-avatar/ANN YOUNG.PNG" alt="" />
+            </div>
+            <div class="desc">
+              <p class="name">ann ypung</p>
+              <p class="ass">Graphic Designer UI/UX</p>
+            </div>
+          </a>
+          <a class="contentList">
+            <div class="avatar">
+              <img src="./assets/images/img-avatar/DESTINY.PNG" alt="" />
+            </div>
+            <div class="desc">
+              <p class="name">destiny boyd</p>
+              <p class="ass">visual artist</p>
+            </div>
+          </a>
+        -->
+      </div>
+    </div>
+
+    <a *ngIf="isMobile" class="delet" (click)="deleteId()">Delete</a>
+  </div>
+</div>

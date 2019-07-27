@@ -1,0 +1,49 @@
+.container {
+  width: 48%;
+  margin: 133px auto;
+  text-align: center;
+  border: 1px solid lightgray;
+  border-radius: 8px;
+}
+
+div h1 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #050505;
+  letter-spacing: 1px;
+}
+
+div img {
+  margin-top: 30px;
+}
+
+div {
+  color: black;
+}
+
+div p {
+  width: 60%;
+  margin: 20px auto 30px auto;
+  font-size: 13px;
+  color: #4f4f4f;
+  line-height: 25px;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: #27c49e;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    width: 90%;
+    margin: 170px auto;
+  }
+  div p {
+    width: 90%;
+  }
+}

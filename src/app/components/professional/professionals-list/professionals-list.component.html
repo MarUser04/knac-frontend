@@ -1,0 +1,123 @@
+<div class="container">
+  <div class="title"><h2>List of professionals</h2></div>
+  <search-professional></search-professional>
+  <!-- <div class="boxSearch">
+    <span><i class="fa fa-search"></i></span>
+    <input type="text" placeholder="Search  Profesionals.." name="search" />
+  </div> -->
+  <div class="professional-list">
+    <div *ngIf="isMobile; then mobile; else notMobile"></div>
+    <ng-template #mobile>
+      <div
+        *ngFor="let item of pageOfItems; let in = index"
+        class="section-Container"
+      >
+        <div class="sectionProfileMobile">
+          <div class="sectionInfoMobile" (click)="showExpansion(in)">
+            <div *ngIf="!item?.profilePicture; then default; else img"></div>
+            <ng-template #default>
+              <div class="avatarBox">
+                <img src="/assets/images/user_placeholder.png" />
+              </div>
+            </ng-template>
+            <ng-template #img>
+              <div class="avatarBox">
+                <img src="{{ item?.profilePicture }}" />
+              </div>
+            </ng-template>
+            <div class="boxProfileMobile">
+              <a>
+                {{ item?.name }} {{ item?.lastname }}
+                <span><i class="fa fa-sort-down"></i></span
+              ></a>
+              <!-- <span><i class="fa fa-sort-down"></i></span> -->
+              <br />
+              <span class="subtitleMobile">{{ item?.subtitle }}</span>
+            </div>
+          </div>
+          <div class="btnViewProf">
+            <button routerLink="{{ route }}{{ item.user }}">
+              view profile
+            </button>
+          </div>
+        </div>
+        <div
+          class="viewProfile hidden"
+          [ngClass]="{ 'show-expansion': index === in }"
+        >
+          <div class="boxDesc">
+            <div class="powers">
+              <span>Superpowers:</span>
+              <div>
+                <p *ngFor="let super of item?.superpowers?.split(',')">
+                  {{ super }}
+                </p>
+              </div>
+              <!-- <p>{{ item?.superpowers }}</p> -->
+            </div>
+            <div>
+              <span style="margin-right: 18px;">Experience:</span>
+              <p class="text">{{ item?.experience }}</p>
+            </div>
+            <div>
+              <span style="margin-right: 17px;">Availability:</span>
+              <p>{{ item?.availability }}</p>
+            </div>
+            <div>
+              <span style="margin-right: 33px;">Location:</span>
+              <p>{{ item?.location }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #notMobile>
+      <div *ngFor="let item of pageOfItems" class="sectionProfile">
+        <div class="avatarBox">
+          <img src="{{ item?.profilePicture }}" alt="" />
+        </div>
+        <div class="boxProfile">
+          <a routerLink="{{ route }}{{ item.user }}">
+            {{ item?.name }} {{ item?.lastname }}
+          </a>
+          <span>{{ item?.subtitle }}</span>
+          <div class="powers">
+            <span>Superpowers:</span>
+            <div>
+              <p *ngFor="let super of item?.superpowers?.split(',')">
+                {{ super }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="viewProfile">
+          <div class="btnViewProf">
+            <button routerLink="{{ route }}{{ item.user }}">
+              view profile
+            </button>
+          </div>
+          <div class="boxDesc">
+            <div>
+              <span>Experience:</span>
+              <p class="text">{{ item?.experience }}</p>
+            </div>
+            <div>
+              <span>Availability:</span>
+              <p>{{ item?.availability }}</p>
+            </div>
+            <div>
+              <span style="margin-right: 2.5em;">Location:</span>
+              <p>{{ item?.location }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <div class="pagination">
+      <jw-pagination
+        [items]="professionals"
+        (changePage)="onChangePage($event)"
+      ></jw-pagination>
+    </div>
+  </div>
+</div>

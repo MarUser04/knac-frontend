@@ -1,0 +1,47 @@
+<div class="boxSelect">
+  <span>Filter by: </span>
+</div>
+<div class="boxSelect">
+  <ng-select
+    [items]="fields"
+    [formControl]="field"
+    class="field-select"
+    placeholder="Select	search option"
+  >
+  </ng-select>
+</div>
+<div class="boxSearch" *ngIf="showInput()">
+  <span>
+    <i class="fa fa-search"></i>
+  </span>
+  <input
+    type="search"
+    placeholder="Enter search text"
+    name="searchField"
+    id="search"
+    [formControl]="searchField"
+    class="input"
+  />
+</div>
+<div class="boxSelect" *ngIf="field.value === 'Track'">
+  <ng-select
+    [items]="track$ | async"
+    bindLabel="name"
+    bindValue="_id"
+    [formControl]="track"
+    placeholder="Select track"
+  >
+  </ng-select>
+</div>
+<div class="boxSelect" *ngIf="field.value === 'Experience'">
+  <ng-select
+    [items]="experiences"
+    [formControl]="experience"
+    class="track-select"
+    placeholder="Select experience"
+  >
+  </ng-select>
+</div>
+<span class="helper" *ngIf="showHelper()">
+  *You must select a field first.
+</span>

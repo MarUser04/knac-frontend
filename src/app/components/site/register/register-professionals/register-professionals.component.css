@@ -1,0 +1,207 @@
+@import "../../../../../../node_modules/font-awesome/css/font-awesome.css";
+
+.container-professional {
+  width: 80%;
+  height: 100%;
+  margin: 0px auto;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.titles {
+  font-family: Lato;
+  letter-spacing: 1px;
+}
+
+.titles h1 {
+  color: #4f4f4f;
+  font-size: 0.9em;
+  text-align: center;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.title h2 {
+ color: #050505;
+ font-weight: 900;
+ font-size: 32px;
+ text-transform: uppercase;
+}
+
+.titles h3 {
+  color: #4f4f4f;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.titles h4 {
+  color: #4f4f4f;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.titles a {
+  color: #0eaf81;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.form {
+  margin: 0px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionGroup {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.sectionGroup label {
+  color: #000;
+  text-align: left;
+  text-transform: capitalize;
+  font-size: 18px;
+}
+
+.input {
+  margin: 10px 0px;
+  width: 350px;
+  height: 30px;
+  font-size: 1em;
+  border: 1px solid #d1d1d1;
+  border-radius: 5px;
+  padding-left: 15px;
+}
+
+.input:focus {
+  border: 1px solid #d1d1d1;
+}
+
+.loginButton {
+  margin: 20px 0;
+  width: 35%;
+}
+
+.input {
+  color: #4f4f4f;
+  font-size: 16px;
+}
+
+.loginButton .join {
+  background: #0eaf81;
+  border: 0px;
+  border-radius: 40px;
+  font-size: 1em;
+  color: white;
+  width: 80%;
+  padding: 1% 0;
+}
+
+.loginButton .join-link {
+  padding: 1% 0;
+  background: #0e76a8;
+  border: 0px;
+  border-radius: 40px;
+  font-size: 0.85em;
+  color: white;
+  width: 80%;
+}
+
+.error-validation {
+  color: #e63232;
+  font-size: 16px;
+  position: absolute;
+  margin: 0 auto;
+  padding: 0;
+  width: 75%;
+}
+
+.has-error {
+  border-color: red;
+}
+
+.join:disabled {
+  background: #0eaf81 !important;
+  cursor: not-allowed !important;
+}
+
+#terms {
+  margin-right: 15px;
+  transform: scale(1.5);
+}
+
+.textOpt {
+  text-align: center;
+  font-size: 0.7em;
+  color: #c6c6c6;
+  font-weight: bold;
+}   
+
+@media screen and (max-width: 800px) {
+  .container-professional {
+    margin: 2em auto;
+    width: 100%;
+  }
+
+  .agreeBox {
+    width: 80%;
+  }
+
+  .title h2 {
+    margin-top: 1em;
+    margin-bottom: 2em;
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .sectionGroup {
+    width: 85%;
+  }
+
+  .sectionGroup label {
+    color: #000;
+    font-size: 14px;
+  }
+
+  .input {
+    color: #4f4f4f;
+    font-size: 12px;
+  }
+
+  .titles h4 {
+    color: #4f4f4f;
+    font-weight: lighter;
+    font-size: 12px;
+  }
+
+  .none h1 {
+    display: none !important;
+  }
+
+  .none h3 {
+    display: none !important;
+  }
+  
+  .input {
+    width: auto;
+  }
+
+  .loginButton {
+    width: 80%;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  
+}

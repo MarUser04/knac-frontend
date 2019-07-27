@@ -1,0 +1,1162 @@
+.cover-container img {
+  width: 100%;
+  max-height: 350px;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.subMax {
+  color: #4f4f4f;
+}
+
+.cont-text {
+  width: 70%;
+  margin: auto;
+}
+
+.cont-text h3 {
+  margin: 10px 20px;
+}
+
+i {
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.brand-container {
+  text-align: center;
+  position: relative;
+  top: -30px;
+  width: 75%;
+  background: #fff;
+  margin: auto;
+}
+
+.sectOne {
+  padding: 2.7% 5%;
+  border: 1px solid #e4e4e4;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  /*height: 14.750em*/
+}
+
+.sectOne .boxLeft {
+  display: flex;
+  width: 60%;
+  flex-direction: row;
+}
+
+.sectOne .boxLeft .mainCompanyInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-self: center;
+  margin-left: 1em;
+}
+
+.mainCompanyInfo h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #000;
+}
+
+.mainCompanyInfo p {
+  font-size: 18px;
+  color: #000;
+  margin-top: 10px;
+}
+
+.mainCompanyInfo p span {
+  font-size: 16px;
+  color: #4f4f4f;
+  margin-left: 0.5em;
+}
+
+.brand-container .sectOne .imgAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brand-container .sectOne .imgAvatar img {
+  width: 160px;
+  height: 160px;
+  background: white;
+  border-radius: 50%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.conte-edit {
+  width: 70%;
+}
+
+.editB {
+  display: flex;
+  justify-content: flex-end;
+  width: 95%;
+}
+
+.sectOne {
+  flex-direction: column;
+}
+
+.sectOne .dataProf {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  line-height: 20px;
+  border-left: 2px solid #e2e2e2;
+  margin: auto;
+}
+
+.sectOne .dataProf h1 {
+  font-size: 32px;
+  color: #5a5a5a;
+  text-align: left;
+  line-height: 40px;
+}
+
+.sectOne .dataProf .data {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectOne .dataProf .data span {
+  font-weight: 300;
+  color: #000;
+  font-size: 18px;
+}
+
+.sectOne .dataProf .data p {
+  padding: 0 10px 0 5px;
+  color: #4f4f4f;
+  font-size: 16px;
+}
+
+.superbox {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.sectOne .dataProf .data .colOne {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2em;
+}
+
+.sectOne .dataProf .data .colTwo {
+  display: flex;
+}
+
+.sectOne .dataProf .data .colOne div {
+  display: flex;
+  padding: 10px 10px 10px 0;
+}
+
+.sectOne .dataProf .editB {
+  padding: 5px 0px;
+  text-align: right;
+}
+
+.editB button {
+  background: transparent;
+  text-transform: uppercase;
+  color: #4f4f4f;
+  padding: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-bottom: none;
+}
+
+.sectTwo {
+  padding: 2% 5%;
+  border: 1px solid #e4e4e4;
+  margin: 5% 0;
+}
+
+.sectTwo .sectionDesc {
+  margin-bottom: 10%;
+}
+
+.title h1 {
+  font-size: 32px;
+  padding: 20px 0;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+}
+
+.sectTwo .sectionDesc .infoText {
+  margin: 2% 0 7% 0;
+}
+
+.sectTwo .sectionDesc .infoText p {
+  margin: auto;
+  color: #4f4f4f;
+  font-size: 16px;
+  white-space: pre-line;
+  line-height: 20px;
+  text-align: left;
+}
+
+.sectTwo .sectionDesc .slider {
+  width: 100%;
+}
+
+.slider ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.slider ul li {
+  list-style: none;
+  width: 30%;
+  align-self: center;
+}
+
+.slider ul li img {
+  width: 100%;
+}
+
+.dialog {
+  max-width: 65%;
+}
+
+/* .colImg {
+  display: flex;
+}
+
+.colImg div {
+  width: 30%;
+  margin: 0 20px;
+}
+
+.colImg div img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  object-position: center center;
+} */
+
+.divVideo {
+  margin-bottom: 50px;
+}
+
+.sectTwo .sectionJobs {
+  margin-bottom: 10%;
+}
+
+.sectTwo .sectionJobs .createPost {
+  text-align: right;
+  margin: auto;
+  width: 80%;
+  text-transform: uppercase;
+}
+
+.sectTwo .sectionJobs .createJob {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 15px 0px;
+  color: #0eaf81;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.sectTwo .sectionJobs .createJob i {
+  margin: 0px 10px;
+  font-size: 20px;
+}
+
+.sectTwo .sectionJobs .table {
+  margin: auto;
+  width: 80%;
+}
+
+.table table {
+  width: 100%;
+}
+
+.table tr .jobCel {
+  width: 40%;
+  text-align: left;
+  padding: 14px;
+}
+
+.jobCel a {
+  font-weight: 500;
+  color: #0eaf81;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.table tr .trackCel {
+  width: 40%;
+  text-align: left;
+  font-size: 16px;
+  padding: 14px;
+  color: #4f4f4f;
+  font-weight: 300;
+}
+
+.table tr .trackCel span {
+  color: #000;
+  font-weight: 300;
+  margin-right: 18px;
+  font-size: 18px;
+}
+
+.table tr .editCel {
+  width: 10%;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: right;
+  color: #b7b7b7;
+  cursor: pointer;
+}
+
+.table tr .editCel a {
+  color: #4f4f4f;
+  text-decoration: none;
+  padding-bottom: 5px;
+  font-size: 16px;
+}
+
+.table td {
+  padding: 15px 0;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+hr {
+  width: 250%;
+}
+
+.hide {
+  display: none;
+}
+
+.photoInfo {
+  display: flex;
+  flex-direction: row;
+  font-size: 15px;
+}
+
+.container {
+  width: 60%;
+  margin: 20px auto;
+  font-family: 'Lato';
+}
+
+.container .cont-gal {
+  margin: 20px auto;
+  width: 33%;
+  text-align: center;
+  display: inline-block;
+}
+
+section h2 {
+  padding: 40px;
+  padding-left: 0;
+}
+
+.imagen-container {
+  margin: 20px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: no-wrap;
+  justify-content: space-between;
+  padding: 30px 0px;
+}
+
+.about-imagen {
+  width: 20%;
+}
+
+.about-imagen img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+#video-container {
+  width: 60%;
+  margin: 0 20%;
+  padding-bottom: 50px;
+}
+
+.vg-icon-play_arrow:before {
+  content: '\e01b';
+  background: rgba(204, 98, 98, 0.5);
+  border-radius: 0.15em;
+}
+
+#table-assessment,
+#table-jobs {
+  width: 80%;
+}
+
+.table-title th {
+  text-align: left;
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+table tbody tr td {
+  padding: 14px 0px;
+}
+
+.take-it {
+  background: #ffd34c;
+  color: black;
+  font-weight: bold;
+  padding: 7px 40px;
+  border-radius: 3px;
+}
+
+.iconEdit {
+  font-size: 2em;
+}
+
+.iconEdit:nth-child(2),
+.iconEdit:nth-child(3) {
+  margin-top: 40px;
+  margin-left: 8em;
+}
+
+.jobs,
+.assessment {
+  display: flex;
+  flex-direction: row;
+}
+
+.editIcon {
+  font-size: 1em;
+  float: right;
+  padding: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  padding: 10px;
+}
+
+.title-modal {
+  margin: 1em auto;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: Lato;
+}
+
+.form {
+  margin: auto;
+}
+
+.form div {
+  margin: 10px 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form input {
+  padding: 5px 10px;
+  border: 1px solid #4f4f4f;
+  border-radius: 5px;
+}
+
+.filter {
+  width: 75%;
+  margin: 20px auto;
+}
+
+.update {
+  border: 1px solid #0eaf81;
+  border-radius: 20px;
+  padding: 10px 5px;
+  font-size: 1em;
+  width: 7em;
+  background: #0eaf81;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.containerPhoto {
+  position: relative;
+  display: block;
+  margin: auto !important;
+  background-color: #e2e2e2;
+  width: 75%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.imagePhoto {
+  text-align: center;
+  color: #4f4f4f;
+  cursor: pointer;
+  height: 120px;
+}
+
+.imagePhoto p {
+  margin: auto;
+}
+
+.galleryMod div {
+  margin: auto;
+}
+
+.imageProfile {
+  padding: 10px;
+  object-fit: cover;
+  object-position: center center;
+  margin: auto;
+  height: 8em;
+  width: 8em;
+}
+
+.SelectYour {
+  text-align: center;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #0eaf81;
+  font-weight: bold;
+}
+
+.swiper-container {
+  width: 80%;
+  z-index: 0;
+}
+
+.swiper-container img {
+  width: 80% !important;
+  object-fit: contain;
+  height: 400px !important;
+  object-position: center center;
+  overflow: hidden !important;
+}
+
+/* FORM EDIT PROFILE */
+
+.form input {
+  height: 24px;
+  margin-top: 8px;
+  color: #4f4f4f;
+  font-size: 16px;
+}
+
+.form label {
+  color: #000;
+  font-size: 18px;
+  font-family: Lato;
+}
+
+.form textarea {
+  color: #4f4f4f;
+  margin-top: 8px;
+  resize: none;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #4f4f4f;
+  padding: 10px;
+}
+
+.firstBox,
+.SecondBox {
+  flex-direction: row !important;
+}
+
+.firstBox div,
+.SecondBox div {
+  width: 50% !important;
+  margin: 0 8px;
+}
+
+.ThirdBox div {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.title-modal {
+  font-size: 26px;
+  color: #000;
+}
+
+.imageModal {
+  flex-direction: column-reverse !important;
+}
+
+.galleryMod {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: auto;
+}
+
+.picture {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.titlePicture p {
+  display: flex;
+  justify-content: space-between;
+  color: #4f4f4f;
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+.fullPhoto {
+  width: 90% !important;
+  cursor: auto;
+  height: 100%;
+}
+
+.titlePicture span {
+  color: #000;
+  cursor: pointer;
+}
+
+.titlePicture {
+  margin-top: 4px !important;
+  margin-bottom: 2px !important;
+}
+
+.marginPicture {
+  margin: 6% !important;
+  margin-top: 3% !important;
+}
+
+.videoLine {
+  display: inline-block !important;
+  margin-left: 8px !important;
+  color: #4f4f4f;
+}
+
+.videoLine span {
+  color: #000;
+  cursor: pointer;
+}
+
+.videoBox a {
+  color: #0eaf81;
+}
+
+.rowUp {
+  flex-direction: row !important;
+}
+
+.rowUp span {
+  margin-left: 8px;
+}
+
+/**********************/
+
+@media screen and (max-width: 800px) {
+  .cont-text[_ngcontent-c6] {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .container {
+    width: 90%;
+    margin: 20px auto;
+    font-family: 'Lato';
+  }
+
+  .containerPhoto {
+    width: 100%;
+  }
+
+  .titlePicture p {
+    font-size: 10px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+
+  .container .cont-gal {
+    margin: 20px auto;
+    width: 33%;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  /* FORM EDIT PROFILE */
+
+  form {
+    width: 90%;
+  }
+
+  .form input {
+    height: 24px;
+    margin-top: 8px;
+    color: #4f4f4f;
+    font-size: 16px;
+  }
+
+  .form label {
+    color: #000;
+    font-size: 18px;
+    font-family: Lato;
+  }
+
+  .form textarea {
+    color: #4f4f4f;
+    margin-top: 8px;
+    resize: none;
+    font-size: 16px;
+  }
+
+  .title-modal {
+    font-size: 26px;
+    color: #000;
+  }
+
+  .imageModal {
+    flex-direction: column-reverse !important;
+  }
+
+  .galleryMod {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+  }
+
+  .picture {
+    margin: auto;
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  /**********************/
+
+  .cover-container {
+    margin-top: 4em;
+  }
+  .cover-container img {
+    width: 100%;
+    object-fit: cover;
+    height: 25vh;
+  }
+  .brand-container {
+    text-align: center;
+    position: initial;
+    width: 90%;
+  }
+  .sectOne {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .superbox {
+    flex-direction: column;
+  }
+  .sectOne .boxLeft {
+    margin: auto;
+  }
+  .sectOne .boxLeft .mainCompanyInfo {
+    margin-top: 2em;
+    margin-left: 0;
+  }
+  .mainCompanyInfo h1 {
+    text-align: center;
+    margin-bottom: 0.8em;
+  }
+  .sectOne .dataProf .data .colOne div {
+    justify-content: center;
+  }
+  .sectOne .dataProf {
+    width: auto;
+    border-left: none;
+  }
+  .sectTwo .sectionJobs .table {
+    width: 100%;
+    margin: 0;
+  }
+  .sectTwo .sectionJobs .table .filaTable {
+    display: flex;
+    flex-direction: column;
+  }
+  .sectTwo .sectionJobs .table .filaTable {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #e4e4e4;
+  }
+  .sectTwo .sectionJobs .table .filaTable .resM {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+  .sectTwo .sectionJobs .table .filaTable .resM .jobCel {
+    padding: 1px 0;
+    border: none;
+    width: 100%;
+  }
+  .sectTwo .sectionJobs .table .filaTable .resM .jobCel .job-link {
+    color: #0eaf81;
+  }
+  .sectTwo .sectionJobs .table .filaTable .resM .trackCel {
+    padding: 1px 0;
+    border: none;
+    width: 100%;
+  }
+  .sectTwo .sectionJobs .table .filaTable .editCel {
+    width: 40%;
+    padding: 0;
+    border: none;
+    align-self: center;
+  }
+  .cont-text[_ngcontent-c6] {
+    width: 80%;
+    margin: 20px auto;
+  }
+  .container[_ngcontent-c5] {
+    width: 90%;
+    margin: 20px auto;
+    font-family: 'Lato';
+  }
+  .container .cont-gal {
+    margin: 15px auto;
+    text-align: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #video-container {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  #table-assessment,
+  #table-jobs {
+    width: 100%;
+  }
+
+  .take-it {
+    padding: 7px 20px;
+    font-size: 8pt;
+  }
+
+  .imgAvatar {
+    width: auto;
+    margin-top: -6em;
+  }
+  .sectOne .boxLeft {
+    flex-direction: column;
+  }
+
+  .table tr .jobCel {
+    width: 75%;
+  }
+  .sectTwo .sectionJobs .table .filaTable .editCel {
+    width: 25%;
+  }
+  .trackmobile {
+    color: #000;
+    font-size: 18px;
+  }
+  .pmobile {
+    color: #4f4f4f;
+    font-size: 12px;
+  }
+  .pmobile span {
+    font-size: 14px;
+  }
+  
+  .editB button {
+    font-size: 18px;
+    border-bottom: none;
+    margin: 2em 0;
+    letter-spacing: 2px;
+  }
+  .editB {
+    justify-content: center;
+  }
+  .sectTwo .sectionJobs .createJob {
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .galleryMod {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  .galleryMod div {
+    margin-top: 8px;
+  }
+
+  .update {
+    width: 90%;
+  }
+
+  .mobileForm {
+    margin-top: 10px !important;
+    margin-bottom: -10px !important;
+  }
+
+  .containerPhoto {
+    width: 100%;
+  }
+
+  .firstBox,
+  .SecondBox {
+    flex-direction: column !important;
+  }
+
+  .firstBox div,
+  .SecondBox div {
+    margin: 0;
+    width: 100% !important;
+  }
+
+  .rowUp {
+    flex-direction: column !important;
+  }
+
+  .rowUp span {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+
+  .ThirdBox div {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .titlePicture p {
+    font-size: 12px;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .cover-container {
+    margin-top: 4em;
+  }
+  .cover-container img {
+    width: 100%;
+    object-fit: cover;
+    height: 25vh;
+  }
+  .brand-container {
+    text-align: center;
+    position: initial;
+    width: 90%;
+  }
+  .sectOne {
+    border: none;
+    flex-direction: column;
+    padding: 0;
+  }
+  .dataProf {
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+  }
+  .brand-container .sectOne .dataProf h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000000;
+  }
+  .dataProf .data .colOne {
+    display: flex;
+    flex-direction: column;
+  }
+  .sectOne .dataProf .data .colOne div {
+    padding: 10px 0;
+    justify-content: center;
+    font-size: 14px;
+  }
+  .sectOne .dataProf .data .colOne div span {
+    font-size: 14px;
+    color: #000000;
+  }
+  .sectTwo {
+    border: none;
+    padding: 5% 0;
+  }
+  .sectTwo .sectionDesc {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+  .sectTwo .sectionDesc .title {
+    order: 1;
+  }
+  .title h1 {
+    font-size: 32px;
+    color: #000000;
+    font-weight: bold;
+  }
+  .sectTwo .sectionDesc .infoText {
+    order: 3;
+  }
+  .sectTwo .sectionDesc .slider {
+    order: 2;
+  }
+  .sectTwo .sectionDesc .infoText p {
+    text-align: center;
+    color: #4f4f4f;
+    font-size: 16px;
+  }
+  .sectTwo .sectionJobs .title h1 {
+    padding: 0;
+    font-size: 20px;
+  }
+  .sectTwo .sectionJobs .table {
+    width: 100%;
+    margin: 0;
+  }
+  .sectTwo .sectionJobs .table .filaTable {
+    display: flex;
+    flex-direction: column;
+  }
+  .sectTwo .sectionJobs .table .filaTable {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #e4e4e4;
+  }
+  .sectTwo .sectionJobs .table .filaTable .resM {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+  .sectTwo .sectionJobs .table .filaTable .resM .jobCel {
+    padding: 1px 0;
+    border: none;
+    width: 100%;
+  }
+  .sectTwo .sectionJobs .table .filaTable .resM .jobCel .job-link {
+    color: #0eaf81;
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .sectTwo .sectionJobs .table .filaTable .resM .trackCel {
+    padding: 1px 0;
+    border: none;
+    width: 100%;
+    font-size: 14px;
+  }
+  .sectTwo .sectionJobs .table .filaTable .editCel {
+    width: 25%;
+    padding: 0;
+    border: none;
+    align-self: center;
+  }
+  .sectTwo .sectionJobs .table .filaTable .editCel a {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .cont-text[_ngcontent-c6] {
+    width: 80%;
+    margin: 20px auto;
+  }
+  .container[_ngcontent-c5] {
+    width: 90%;
+    margin: 20px auto;
+    font-family: 'Lato';
+  }
+  .container .cont-gal {
+    margin: 15px auto;
+    text-align: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #video-container {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  #table-assessment,
+  #table-jobs {
+    width: 100%;
+  }
+
+  .take-it {
+    padding: 7px 20px;
+    font-size: 8pt;
+  }
+  .mainCompanyInfo h1 {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+  }
+  .editB button {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .sectionDesc .title h1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+  }
+  .sectTwo .infoText {
+    font-size: 12px;
+    color: #4f4f4f;
+  }
+  .sectionJobs .title h1 {
+    font-size: 20px;
+  }
+  .createPost a {
+    font-size: 14px;
+    color: #0EAF81;
+    font-weight: bold;
+  }
+  .jobCel a {
+    font-size: 15px;
+    font-weight: bold;
+    color: #0EAF81;
+  }
+  .trackCel {
+    font-size: 14px; 
+  }
+  .editCel {
+    font-size: 14px;
+    color: #4f4f4f;
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .imagePhoto {
+    height: 110px !important;
+    margin-top: 0 !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .picture {
+    height: 75px;
+  }
+}
